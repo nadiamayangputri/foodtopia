@@ -25,6 +25,12 @@ body {
     font-size: 1.5em;
 }
 
+.login:hover,
+.signup:hover{
+    transform: scale(1.2);
+}
+
+
 .login,
 .signup {
     border-radius: 5px;
@@ -46,6 +52,12 @@ ul {
     margin: auto;
     color: #000;
     padding: 0;
+}
+
+.home:hover,
+.lookup:hover,
+.games:hover{
+    transform: scale(0.9);
 }
 
 .home,
