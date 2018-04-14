@@ -16,7 +16,7 @@ body {
     padding: 0;
 }
 
-body {
+.content{
     background: #ffffff;
     font-family: 'Press Start 2P',cursive;
     font-size: 10px;
@@ -49,13 +49,13 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin: 0 0 3em;
+    margin: 0 0 0.5rem;
 }
 
 .deck .card {
     height: 3.7rem;
     width: 3.7rem;
-    margin: 0.2rem 0.2rem;
+    margin: 0.1rem 0.1rem;
     background: #141214;;
     font-size: 0;
     color: #ffffff;

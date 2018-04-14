@@ -1,3 +1,4 @@
+
 html {
     box-sizing: border-box;
     height: 100%;
@@ -11,6 +12,11 @@ body {
     flex-direction: column;
 }
 
+#navbar{
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1px;
+}
 .main-header {
     display: flex;
     justify-content: space-around;
@@ -183,7 +189,7 @@ ul {
     }
     
     .copyright {
-        font-size: 1em;
+        font-size: 1.5em;
     }
 
 }
