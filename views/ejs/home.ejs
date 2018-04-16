@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Foodtopia</title>
-    <link href="css/template.css" rel="stylesheet">
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
 
     <!--template CSS-->
-    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
+    <link href="css/template.css" rel="stylesheet">
+
+    <!--CSS of page-->
+    <link href="css/home.css" rel="stylesheet">
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -32,7 +37,46 @@
 </header>
 
 <div class="content">
-    <!--put content here-->
+    <div class="main-background">
+        <div class="main">
+            <h1 class="tagline">Explore fresh food ingredients daily!</h1>
+            <form>
+                <div class="form-group">
+                    <label>Search food or food ingredient</label>
+                    <input type="text" class="form-control" id="search" placeholder="Search...">
+                    <button class="search-btn">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="grid-container">
+
+        <div class="grid-item match-game">
+            <button class="play-btn">Play</button>
+        </div>
+        <div class="grid-item first-fact">
+            <h3>Did you know?</h3>
+            <img src="../img/protein.png" alt="protein" class="fact-img">
+            <p>Protein, which is found in meat, milk products, beans and fish, builds muscles and repairs damage.
+            </p>
+        </div>
+        <div class="grid-item journal-ad">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. stique, tortor mauris molestie elit,</p>
+        </div>
+        <div class="grid-item second-fact">
+            <h3>Did you know?</h3>
+            <img src="../img/fiber.png" alt="fiber" class="fact-img">
+            <p>Fiber helps your body digest food. It is found in vegetables, whole grains and fruit.
+            </p>
+        </div>
+        <div class="grid-item points-ad">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vul ln molestie elit,</p>
+        </div>
+        <div class="grid-item word-game">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.</p>
+        </div>
+    </div>
+    <button class="create-account">Create account now</button>
 </div>
 
 <footer class="footer">
