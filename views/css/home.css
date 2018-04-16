@@ -16,6 +16,7 @@
     width: 70%;
     padding: 1em;
     margin: auto;
+    margin-top: -1px;
     margin-bottom: 2em;
     font-family: "Baloo", sans-serif;
 }
@@ -216,6 +217,7 @@
         grid-template-areas:
                 "game-1 game-1 ad-1 fact-1 fact-1"
                 "fact-2 ad-2 ad-2 game-2 game-2";
+        margin: 80px;
     }
     .fact-img {
 

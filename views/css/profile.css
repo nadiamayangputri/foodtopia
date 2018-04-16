@@ -1,0 +1,101 @@
+.content,
+.nav{
+    background-color: #fbffd4;
+}
+
+.content {
+    font-family: "Baloo", sans-serif;
+}
+
+#profile {
+    grid-area: profile;
+    background-color: #a6ef19;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    margin: 10px 20px;
+    padding: 10px;
+}
+
+.icon {
+    display: block;
+    width: 50px;
+}
+
+.username {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0.6em;
+    width: 50%;
+    padding: 5px;
+    font-size: 1.5em;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+li {
+    display: block;
+}
+
+#fact-day {
+    grid-area: fact;
+    background-color: #ffc957;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    margin: 10px 20px;
+    padding: 10px;
+}
+
+.fact-heading {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #ffe4ab;
+    border-radius: 0.6em;
+    width: 60%;
+    padding: 5px;
+    color: #fb6159;
+}
+
+.subheading {
+    background-color: #fb6159;
+    border-top: solid 5px #fff;
+    border-bottom: solid 5px #fff;
+    font-family: "Candal", sans-serif;
+    color: #fff;
+    padding: 10px;
+}
+
+#journal {
+    grid-area: journal;
+    min-height: 200px;
+}
+
+#collection {
+    grid-area: collection;
+    min-height: 200px;
+}
+
+.empty {
+    display: block;
+    margin-top: 50px;
+    text-align: center;
+    color: #aaa;
+    font-family: "Baloo", sans-serif;
+}
+
+@media (min-width: 768px) {
+    .content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "fact profile"
+            "journal journal"
+            "collection collection";
+    }
+}
