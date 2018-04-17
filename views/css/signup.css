@@ -17,7 +17,7 @@
 input[type=text], input[type=password] {
     width: 50%;
     padding: 15px;
-    margin: 5px 0 22px 0;
+    margin: 5px 0 5px 0;
     display: inline-block;
     border: none;
     background: #f1f1f1;
@@ -39,6 +39,9 @@ input[type=text]:focus, input[type=password]:focus {
     width: 50%;
     opacity: 0.9;
 
+}
+#submit_signup:hover, #cancel:hover{
+    transform: scale(0.9);
 }
 #cancel {
     background-color: lightcoral;
@@ -62,6 +65,7 @@ button:hover {
 .cancelbtn, .signupbtn {
     float: left;
     width: 50%;
+
 }
 
 /* Add padding to container elements */
@@ -75,13 +79,11 @@ button:hover {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     margin: auto;
-    width: 100%; /* Full width */
+    width: 60%; /* part width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-
+    border-radius: 1rem;
     padding-top: 50px;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
 /* Modal Content/Box */
 .modal-content {
@@ -94,9 +96,6 @@ button:hover {
     transform: translate(-50%, -50%);
     background-color: #b0f442;
     padding: 1rem 1.5rem;
-
-    border-radius: 1rem;
-
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
@@ -107,10 +106,10 @@ hr {
 }
 
 /* The Close Button (x) */
-.close {
+#toprightx {
     position: absolute;
     right: 35px;
-    top: 35px;
+    top: 15px;
     font-size: 5rem;
     font-weight: bold;
     color: #f1f1f1;
@@ -120,6 +119,7 @@ hr {
 .close:focus {
     color: #f44336;
     cursor: pointer;
+    transform: scale(0.9);
 }
 
 /* Clear floats */

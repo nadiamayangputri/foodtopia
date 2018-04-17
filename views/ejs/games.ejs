@@ -5,6 +5,7 @@
     <title>Foodtopia</title>
     <link href="../css/template.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/signup.css" >
+    <link rel="stylesheet" href="../css/games.css" >
     <!--template CSS-->
     <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
 
@@ -12,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
-    </head>
+</head>
 <body>
 
 <header id = "navbar">
@@ -22,7 +23,7 @@
         <!-- The Modal (contains the Sign Up form) -->
         <div id="id02" class="modal">
             <button onclick="document.getElementById('id02').style.display='none'" class="home"><img src="../icon/closed.png"></button>
-             <form class="modal-content" >
+            <form class="modal-content" >
                 <div class="container">
                     <h1 id = "banner1">  Welcome back!</h1>
                     <hr>
@@ -74,20 +75,38 @@
             </form>
         </div>
     </div>
-
     <div class="nav">
         <ul>
-            <li><button type="button" class="home"><img class="nav-icon" src="icon/home-icon-silhouette.png"><div>Home</div></button></li>
+            <li><button type="button" class="home"><img class="nav-icon" src="../icon/home-icon-silhouette.png"><div>Home</div></button></li>
 
-            <li><button type="button" class="lookup"><img class="nav-icon" src="icon/magnifier.png"><div>Lookup</div></button></li>
+            <li><button type="button" class="lookup"><img class="nav-icon" src="../icon/magnifier.png"><div>Lookup</div></button></li>
 
-            <li><button type="button" class="games"><img class="nav-icon" src="icon/gamepad-console.png"><div>Games</div></button></li>
+            <li><button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png"><div>Games</div></button></li>
         </ul>
     </div>
 </header>
 
 <div class="content">
     <!--put content here-->
+
+    <h1 class = "title">Games</h1>>
+    <div id = "ad_to_create_account">
+        <h2>Collect points and gain badges !</h2>
+        <img class="star" src="../icon/pinkstar.png">
+        <img class="star" src="../icon/fireworks.png">
+        <img class="star" src="../icon/yellowstar.png">
+        <br>
+        <button onclick="document.getElementById('id01').style.display='block'" type="button" id="signup">  Create account now  </button>
+
+    </div>
+    <div id = games>
+        <a id = "game1" href="/games/match"><img src="../icon/gamematch.png"></a>
+        <a id = "game2" href="/games/wordsearch"><img src="../icon/gamewordsearch.png"></a>
+
+    </div>
+
+
+
 </div>
 
 <footer class="footer">

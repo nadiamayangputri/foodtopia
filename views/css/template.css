@@ -31,14 +31,14 @@ body {
     font-size: 1.5em;
 }
 
-.login:hover,
-.signup:hover{
+#login:hover,
+#signup:hover{
     transform: scale(1.2);
 }
 
 
-.login,
-.signup {
+#login,
+#signup {
     border-radius: 5px;
     border: none;
     background-color: #cdf576;
@@ -128,8 +128,8 @@ ul {
     Media Queries
    ====================*/
 @media (min-width: 600px) {
-    .login,
-    .signup {
+    #login,
+    #signup {
         padding: 5px 10px;
     }
     
@@ -161,8 +161,8 @@ ul {
     }
      
     
-    .login,
-    .signup {
+    #login,
+    #signup {
         border-radius: 5px;
         border: none;
         margin: auto 10px;

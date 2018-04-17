@@ -33,7 +33,23 @@ h1 {
     font-size: 1.4em;
 }
 
-
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */
+@font-face {font-family:"KR Fruitsy";
+    src:url("../icon/KR_Fruitsy/KR_Fruitsy.eot?")
+    format("eot"),url("../icon/KR_Fruitsy/KR_Fruitsy.woff")
+    format("woff"),url("../icon/KR_Fruitsy/KR_Fruitsy.ttf")
+    format("truetype"),url("../icon/KR_Fruitsy/KR_Fruitsy.svg#KRFruitsy")
+    format("svg");
+    font-weight:normal;
+    font-style:normal;}
+h4{
+    font-family: 'KR Fruitsy',cursive;
+    font-size: 0.2rem;
+}
+h5{
+    font-family: 'Coda',cursive;
+    font-size: 0.2rem;
+}
 /*
  * Styles for the deck of cards
  */
@@ -41,7 +57,7 @@ h1 {
 
 .deck {
     width: 85%;
-    background: #716F71;
+    background: #f47a42;
     padding: 1rem;
     border-radius: 4px;
     box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
