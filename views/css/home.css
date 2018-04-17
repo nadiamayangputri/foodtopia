@@ -205,6 +205,11 @@
         margin-top: 180px;
         padding: 10px 20px;
     }
+
+    .create-account {
+        font-size: 1.2em;
+        padding: 10px 30px;
+    }
 }
 
 @media (min-width: 1500px) {
@@ -231,6 +236,11 @@
     .play-btn {
         margin-top: 220px;
         padding: 15px 20px;
+    }
+
+    .create-account {
+        font-size: 1.2em;
+        padding: 15px 35px;
     }
 
 }
