@@ -24,17 +24,26 @@
 .star:hover {
 
     /*  Making button bigger on hover  */
-    transform: scale(1.5);
+    transform: scale(1.3);
 }
 #games{
     background-color: #EE8A82;
-    padding: 3rem 0 2rem 2rem;
-    margin: 3em;
+    padding: 3rem 0;
+    /*margin: 3em;*/
     border-radius: 3rem;
+    text-align:center;
 }
-#game1:hover, #game2:hover{
-    transform: scale(1.2);
+#game1:hover,
+#game2:hover{
+    transform: scale(0.8);
 }
+#game1, #game2{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 .title { grid-area: title; }
 #ad_to_create_account { grid-area: ad; }
 #game1 { grid-area: game1; }
@@ -43,8 +52,32 @@
 .grid-container {
     display: grid;
     grid-template-areas:
-            'title title title title'
-            'ad ad ad ad'
-            'game1 game1 game2 game2';
+            'title title '
+            'ad ad'
+            'game1 game2 ';
     grid-gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+                'title'
+                'ad '
+                'game1'
+                'game2 ';
+        grid-gap: 10px;
+    }
+}
+@media only screen and (min-width: 768px) {
+
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+                'title'
+                'ad '
+                'game1'
+                'game2 ';
+        grid-gap: 10px;
+    }
 }
