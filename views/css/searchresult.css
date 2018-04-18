@@ -1,32 +1,40 @@
 .content{
-    background: #ff8351;
 
 }
-.searchbox{
-    height: 200px;
-    background: white;
+.searchbox {
+    margin-top: 50px;
+    font-family: "Baloo", sans-serif;
+    text-align: center  ;
+    height: 250px;
 }
 .searchbox input, button {
     border: none;
     outline: none;
 }
 
-.searchbutton {
-    font-family: 'Baloo', cursive;
-    margin-top: 1%;
-    border-radius: 15%;
-    background: greenyellow;
-    height: 30px;
-    width: 70px;
-
+.search-btn {
+    display: block;
+    border: none;
+    border-radius: 17px;
+    background-color: #a6ef19;
+    padding: 5px 20px;
+    color: #fff;
+    margin: 15px auto;
 }
 .searchbox {
+    font-family: "Baloo", sans-serif;
     text-align: center  ;
 }
 
 .searchbox form {
     align-items: center;
     height: 42px;
+}
+
+
+.searchtext {
+    font-size: 1.5em;
+    color: #ff5d55;
 }
 
 .searchbox input {
@@ -48,8 +56,10 @@
     position: center;
     align-items: center;
     height: 80%;
+    background: #ff8351;
 }
 .box{
+    font-family: 'Baloo', cursive;
     position: relative;
     top: 5%;
     left: 10%;
@@ -84,7 +94,6 @@
     position: relative;
     top: 5%;
     left: 5%;
-    font-family: 'Baloo', cursive;
     text-align: center;
     grid-column: c1-s/c2-s;
     grid-row: r1-s/r2-s;
@@ -96,7 +105,6 @@
 }
 
 .Hightlight{
-    font-family: 'Baloo', cursive;
     color: #ffe517;
     text-align: center;
     grid-column: c2-s;
