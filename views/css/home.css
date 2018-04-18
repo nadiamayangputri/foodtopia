@@ -6,10 +6,6 @@
 
 .main-background {
     background-color: #fff;
-    /*background-image: url("../img/mobile-background.png");*/
-    /*background-size: contain;*/
-    /*background-position: center;*/
-    /*background-repeat: no-repeat;*/
 }
 
 .main {
@@ -20,6 +16,7 @@
     width: 70%;
     padding: 1em;
     margin: auto;
+    margin-top: -1px;
     margin-bottom: 2em;
     font-family: "Baloo", sans-serif;
 }
@@ -59,6 +56,7 @@
     background-color: white;
     border: 4px solid #fff;
     padding: 10px;
+    font-weight: normal;
 }
 
 .match-game {
@@ -80,7 +78,7 @@
 
 .first-fact {
     grid-area: fact-1;
-    background-color: #f4d742;
+    background-color: #afef2f;
 }
 
 .journal-ad {
@@ -91,7 +89,7 @@
 .second-fact {
     grid-area: fact-2;
     padding: 10px;
-    background-color: #f4d742;
+    background-color: #afef2f;
 }
 
 .points-ad {
@@ -101,6 +99,12 @@
 
 .word-game {
     grid-area: game-2;
+    height: 200px;
+    background-image: url("../img/wordsearch.png");
+    background-color: #feee77;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .grid-container {
@@ -114,17 +118,34 @@
     grid-gap: 2em;
     margin: 20px 50px;
 }
+.grid-container h3 {
+    font-family: "Baloo", sans-serif;
+    color: #bb285c;
+    text-align: center;
+}
+
+.journal-ad h3,
+.points-ad h3 {
+    color: #fff;
+}
 
 .play-btn {
     margin: auto;
-    margin-top: 100px;
+    margin-top: 120px;
     display: block;
     border: none;
     background-color: #a6ef19;
     border-radius: 10px;
-    padding: 3px 15px;
+    padding: 5px 15px;
     font-family: "Baloo", sans-serif;
     color: #fff;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+    color: #a6ef19;
+    border: 5px solid #a6ef19;
 }
 
 .create-account {
@@ -160,16 +181,66 @@
                 "ad-2 game-2 game-2"
                 "fact-2 fact-2 ad-1";
     }
+
+    .match-game,
+    .word-game {
+        height: 300px;
+    }
+
+    .fact-img {
+        float: none;
+        margin: auto;
+        width: 150px;
+     }
+
+    .grid-item {
+        font-size: 1.2em;
+    }
+
+    .grid-item p {
+        margin: 10px;
+    }
+
+    .play-btn {
+        margin-top: 180px;
+        padding: 10px 20px;
+    }
+
+    .create-account {
+        font-size: 1.2em;
+        padding: 10px 30px;
+    }
 }
 
-@media (min-width: 1024px) {
-    .match-game {
+@media (min-width: 1500px) {
+    .match-game,
+    .word-game {
         height: 400px;
     }
     .grid-container {
-        grid-template-columns: 3fr 2fr 1fr 1fr;
+        grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
         grid-template-areas:
-                "game-1 ad-1 fact-1 fact-1"
-                "ad-2 game-2 game-2 fact-2";
+                "game-1 game-1 ad-1 fact-1 fact-1"
+                "fact-2 ad-2 ad-2 game-2 game-2";
+        margin: 80px;
     }
+    .fact-img {
+
+        width: 200px;
+    }
+
+    .grid-item {
+        font-size: 1.5em;
+    }
+
+    .play-btn {
+        margin-top: 220px;
+        padding: 15px 20px;
+    }
+
+    .create-account {
+        font-size: 1.2em;
+        padding: 15px 35px;
+    }
+
 }

@@ -5,6 +5,10 @@ module.exports.home = function (req, res) {
     res.render('ejs/home');
 }
 
+module.exports.profile = function (req, res) {
+    res.render('ejs/profile');
+}
+
 module.exports.lookup = function (req, res) {
     res.render('ejs/lookup');
 }
