@@ -103,6 +103,7 @@ button:hover {
     margin: auto;
     width: 60%; /* part width */
     height: 100%; /* Full height */
+    overflow: auto;
     border-radius: 1rem;
     padding-top: 50px;
 }
