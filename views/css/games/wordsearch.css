@@ -1,6 +1,8 @@
 /* Wordsearch */
 /* CSS reset */
-
+.nav, .content{
+    background-color: #fbffd4;
+}
 h2{
     font-family: 'Baloo', cursive;
     margin: 0;

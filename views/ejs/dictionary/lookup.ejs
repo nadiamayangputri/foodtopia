@@ -2,19 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Search Result</title>
-    <link href="../css/template.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/signup.css" >
-    <link href="../css/searchresult.css" rel="stylesheet">
+    <title>Foodtopia</title>
 
-    <!--template CSS-->
-    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
-
+    <link rel="stylesheet" href="../../css/account/signup.css" >
+    <link href="../../css/dictionary/lookup.css" rel="stylesheet">
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
 
+    <!--template CSS-->
+    <link href="../../css/template.css" rel="stylesheet">
 
 
 </head>
@@ -24,18 +22,17 @@
     <div class="main-header">
         <h1 class="name">Foodtopia</h1>
         <button type="button" id="login">Log in</button>
-
         <button type="button" id="signup">Sign up</button>
 
     </div>
 
     <div class="nav">
         <ul>
-            <li><a href="/" ><button type="button" class="home"><img class="nav-icon" src="../icon/home-icon-silhouette.png"><div>Home</div></button></a></li>
+            <li><a href="/" ><button type="button" class="home"><img class="nav-icon" src="../../icon/home-icon-silhouette.png"><div>Home</div></button></a></li>
 
-            <li><a href="/lookup" ><button type="button" class="lookup"><img class="nav-icon" src="../icon/magnifier.png"><div>Lookup</div></button></a></li>
+            <li><a href="/lookup" ><button type="button" class="lookup"><img class="nav-icon" src="../../icon/magnifier.png"><div>Lookup</div></button></a></li>
 
-            <li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png"><div>Games</div></button></a></li>
+            <li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../../icon/gamepad-console.png"><div>Games</div></button></a></li>
         </ul>
     </div>
 </header>
@@ -46,76 +43,64 @@
         <p class="searchtext">Search by keyword</p>
         <form>
             <input type="text" name="search" placeholder="Search...">
-            <button class="search-btn">Search</button>
+            <div><a href='/lookup/searchresult'><button type="button" class="search-btn"> Search </button></a></div>
         </form>
     </div>
-    <div class="result">
-        <div class="box">
-            <div class="food one">
-                <div class="label">Label</div>
-                <div class="img"><img src="../img/picture.png"></div>
-                <div class="highlight">Highlight</div>
-                <div class="readmore"><button>Read More</button></div>
-            </div>
-            <div class="food two">
-                <div class="label">Label</div>
-                <div class="img"><img src="../img/picture.png"></div>
-                <div class="highlight">Highlight</div>
-                <div class="readmore"><button>Read More</button></div>
-            </div>
-            <div class="food three">
-                <div class="label">Label</div>
-                <div class="img"><img src="../img/picture.png"></div>
-                <div class="highlight">Highlight</div>
-                <div class="readmore"><button>Read More</button></div>
-            </div>
-             <div class="food four">
-                <div class="label">Label</div>
-                <div class="img"><img src="../img/picture.png"></div>
-                <div class="highlight">Highlight</div>
-                <div class="readmore"><button>Read More</button></div>
-             </div>
-            <div class="food five">
-                <div class="label">Label</div>
-                <div class="img"><img src="../img/picture.png"></div>
-                <div class="highlight">Highlight</div>
-                <div class="readmore"><button>Read More</button></div>
-            </div>
-            <div class="food six">
-                <div class="label">Label</div>
-                <div class="img"><img src="../img/picture.png"></div>
-                <div class="highlight">Highlight</div>
-                <div class="readmore"><button>Read More</button></div>
-            </div>
-        </div>
 
-        <div class="page">
-            <span class="disabled"> &lt; </span>
-            <span class="current">1</span>
-            <a href="#?page=2">2</a>
-            <a href="#?page=3">3</a>
-            <a href="#?page=4">4</a>
-            <a href="#?page=5">5</a>
-            <a href="#?page=6">6</a>
-            <a href="#?page=7">7</a>
-            ...
-            <a href="#?page=199">199</a>
-            <a href="#?page=200">200</a>
-            <a href="#?page=2"> &gt; </a>
+    <div class="display">
+        <div class="category-container">
+            <p>Browse by category</p>
+            <div class="category odd"><a href="/lookup/searchresult">Vegetable</a></div>
+            <div class="category even"><a href="/lookup/searchresult">Fruit</a></div>
+            <div class="category odd"><a href="/lookup/searchresult">Grains</a></div>
+            <div class="category even"><a href="/lookup/searchresult">Spices</a></div>
+            <div class="category odd"><a href="/lookup/searchresult">Meat</a></div>
+            <div class="category even"><a href="/lookup/searchresult">Diary</a></div>
+        </div>
+        <div class="alphabet">
+            <p>Search Alphabetically</p>
+            <ul class="alphalist">
+                <li><button>A</button></li>
+                <li><button>B</button></li>
+                <li><button>C</button></li>
+                <li><button>D</button></li>
+                <li><button>E</button></li>
+                <li><button>F</button></li>
+                <li><button>G</button></li>
+                <li><button>H</button></li>
+                <li><button>I</button></li>
+                <li><button>J</button></li>
+                <li><button>K</button></li>
+                <li><button>L</button></li>
+                <li><button>M</button></li>
+                <li><button>N</button></li>
+                <li><button>O</button></li>
+                <li><button>P</button></li>
+                <li><button>Q</button></li>
+                <li><button>R</button></li>
+                <li><button>S</button></li>
+                <li><button>T</button></li>
+                <li><button>U</button></li>
+                <li><button>V</button></li>
+                <li><button>W</button></li>
+                <li><button>X</button></li>
+                <li><button>Y</button></li>
+                <li><button>Z</button></li>
+            </ul>
         </div>
     </div>
 </div>
 
-
 <footer class="footer">
     <p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>
 </footer>
+
 <!-- The Modal (contains the login form) -->
 <div id="id02" class="modal">
-    <form class="modal-content" >
+    <form class="modal-content">
         <div class="banner-img">
             <button onclick="document.getElementById('id02').style.display='none'" type="button" id="my-close-btn" data-dismiss="modal" aria-label="Close">
-            X
+                X
             </button>
         </div>
         <div class="container">
@@ -129,7 +114,7 @@
                 <input type="password" placeholder="Your passcode" name="psw" required>
                 <br>
                 <label>
-                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
                 </label>
 
 
@@ -173,7 +158,8 @@
         </div>
     </form>
 </div>
+
 </body>
-<script src="../js/signup.js" type="text/javascript"></script>
+<script src="../../js/signup.js" type="text/javascript"></script>
 
 </html>

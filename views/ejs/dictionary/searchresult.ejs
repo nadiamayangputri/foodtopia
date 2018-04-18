@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Foodtopia</title>
-    <!--template CSS-->
-    <link href="../css/template.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/signup.css" >
-    <link rel="stylesheet" href="../css/information.css">
+    <title>Search Result</title>
+
+    <link href="../../css/dictionary/searchresult.css" rel="stylesheet">
+
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
 
+    <!--template CSS-->
+    <link href="../../css/template.css" rel="stylesheet">
+    <link href="../../css/account/signup.css" rel="stylesheet">
 
 
 </head>
@@ -28,13 +30,15 @@
 
     <div class="nav">
         <ul>
-            <li><a href="/" ><button type="button" class="home"><img class="nav-icon" src="../icon/home-icon-silhouette.png"><div>Home</div></button></a></li>
+            <li><a href="/" ><button type="button" class="home"><img class="nav-icon" src="../../icon/home-icon-silhouette.png"><div>Home</div></button></a></li>
 
-            <li><a href="/lookup" ><button type="button" class="lookup"><img class="nav-icon" src="../icon/magnifier.png"><div>Lookup</div></button></a></li>
+            <li><a href="/lookup" ><button type="button" class="lookup"><img class="nav-icon" src="../../icon/magnifier.png"><div>Lookup</div></button></a></li>
 
-            <li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png"><div>Games</div></button></a></li>
+            <li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../../icon/gamepad-console.png"><div>Games</div></button></a></li>
         </ul>
     </div>
+
+
 </header>
 
 <div class="content">
@@ -42,29 +46,67 @@
     <div class = "searchbox">
         <p class="searchtext">Search by keyword</p>
         <form>
-            <input type="text" name="search">
-            <div><button type="button" class="searchbutton"> Search </button> </div>
+            <input type="text" name="search" placeholder="Search...">
+            <div><a href="/information"><button type="button" class="search-btn"> Search </button></a></div>
         </form>
     </div>
-    <div class = "information">
-        <div class="wrapper">
-            <div class="box item1">Strawberry</div>
-            <div class="box item2"><img src="../icon/Strawberry_icon-icons.com_68687.png"></div>
-            <div class="box item3">Category</div>
-            <div class="box item4">
-                <li>Fact: 1</li>
-                <li>Fact: 2</li>
-                <li>Fact: 3</li>
-                <li>Fact: 4</li>
+    <div class="result">
+        <div class="box">
+            <div class="food one">
+                <div class="label">Label</div>
+                <div class="img"><img src="../img/picture.png"></div>
+                <div class="highlight">Highlight</div>
+                <div class="readmore"><a href="/information"><button>Read More</button></a></div>
             </div>
-            <div class="box item5">Nutrition Facts</div>
-            <div class="box item6">Pros</div>
-            <div class="box item7">Cons</div>
-            <div class="box item8">Add to My Collection</div>
+            <div class="food two">
+                <div class="label">Label</div>
+                <div class="img"><img src="../img/picture.png"></div>
+                <div class="highlight">Highlight</div>
+                <div class="readmore"><a href="/information"><button>Read More</button></a></div>
+            </div>
+            <div class="food three">
+                <div class="label">Label</div>
+                <div class="img"><img src="../img/picture.png"></div>
+                <div class="highlight">Highlight</div>
+                <div class="readmore"><a href="/information"><button>Read More</button></a></div>
+            </div>
+             <div class="food four">
+                <div class="label">Label</div>
+                <div class="img"><img src="../img/picture.png"></div>
+                <div class="highlight">Highlight</div>
+                 <div class="readmore"><a href="/information"><button>Read More</button></a></div>
+             </div>
+            <div class="food five">
+                <div class="label">Label</div>
+                <div class="img"><img src="../img/picture.png"></div>
+                <div class="highlight">Highlight</div>
+                <div class="readmore"><a href="/information"><button>Read More</button></a></div>
+            </div>
+            <div class="food six">
+                <div class="label">Label</div>
+                <div class="img"><img src="../img/picture.png"></div>
+                <div class="highlight">Highlight</div>
+                <div class="readmore"><a href="/information"><button>Read More</button></a></div>
+            </div>
+        </div>
+
+        <div class="page">
+            <span class="disabled"> &lt; </span>
+            <span class="current">1</span>
+            <a href="#?page=2">2</a>
+            <a href="#?page=3">3</a>
+            <a href="#?page=4">4</a>
+            <a href="#?page=5">5</a>
+            <a href="#?page=6">6</a>
+            <a href="#?page=7">7</a>
+            ...
+            <a href="#?page=199">199</a>
+            <a href="#?page=200">200</a>
+            <a href="#?page=2"> &gt; </a>
         </div>
     </div>
-
 </div>
+
 
 <footer class="footer">
     <p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>
@@ -74,7 +116,7 @@
     <form class="modal-content" >
         <div class="banner-img">
             <button onclick="document.getElementById('id02').style.display='none'" type="button" id="my-close-btn" data-dismiss="modal" aria-label="Close">
-                X
+            X
             </button>
         </div>
         <div class="container">
@@ -88,7 +130,7 @@
                 <input type="password" placeholder="Your passcode" name="psw" required>
                 <br>
                 <label>
-                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
                 </label>
 
 
@@ -133,6 +175,6 @@
     </form>
 </div>
 </body>
-<script src="../js/signup.js" type="text/javascript"></script>
+<script src="../../js/signup.js" type="text/javascript"></script>
 
 </html>

@@ -1,6 +1,5 @@
-.content{
-    background: #ff8351;
-
+.nav, .content{
+    background-color: #fbffd4;
 }
 
 .searchtext {
@@ -15,8 +14,8 @@
     font-family: "Baloo", sans-serif;
     text-align: center  ;
     height: 250px;
-    background-color: white;
 }
+
 .searchbox input, button {
     border: none;
     outline: none;
@@ -32,6 +31,7 @@
     margin: 15px auto;
 }
 .searchbox {
+    font-family: "Baloo", sans-serif;
     text-align: center  ;
 }
 
@@ -40,14 +40,21 @@
     height: 42px;
 }
 
+
+.searchtext {
+    font-size: 1.5em;
+    color: #ff5d55;
+}
+
 .searchbox input {
     height: 42px;
     padding-left: 13px;
     width: 250px;
     border-radius: 42px;
-    border: none;
+    border:  4px groove #ff5d55;
     background: #F9F0DA;
     transition: .3s linear;
+
 
 }
 
@@ -59,6 +66,8 @@
     position: center;
     align-items: center;
     height: 80%;
+    padding: 20px;
+    background: #ff8351;
 }
 
 .box{
@@ -66,7 +75,7 @@
     grid-template-rows: auto;
     grid-column-gap: 5px;
     grid-row-gap: 10px;
-    margin: 20px 50px;
+    font-family: "Baloo", sans-serif;
 }
 .food{
     margin: 10px;
@@ -86,7 +95,6 @@
     position: relative;
     top: 5%;
     left: 5%;
-    font-family: 'Baloo', cursive;
     text-align: center;
     grid-column: c1-s/c2-s;
     grid-row: r1-s/r2-s;

@@ -12,6 +12,15 @@ body {
     flex-direction: column;
 }
 
+a,
+a:hover,
+a:active,
+a:link,
+a.visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 #navbar {
     position: -webkit-sticky;
     position: sticky;
@@ -225,6 +234,11 @@ button:hover {
         margin-top: 10px;
         margin-left: 15px;
         font-size: 2.5em;
+    }
+
+    .footer {
+        height: 100px;
+        padding: 30px
     }
 }
 

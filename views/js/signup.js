@@ -5,6 +5,7 @@ var signupbtn = document.getElementById('signup');
 var signupbtn2 = document.getElementsByClassName('create-account')[0]
 var loginbtn = document.getElementById('login');
 // When the user clicks anywhere outside of the modal, close it
+
 window.onclick = function(event) {
     if ((event.target == modal)|| (event.target == modal2)){
         modal.style.display = "none";
@@ -12,7 +13,6 @@ window.onclick = function(event) {
 };
 signupbtn.onclick = function() {
     modal.style.display = "block";
-    window.style.backgroundColor("rgba(0,0,0,0.3)")
 };
 
 signupbtn2.onclick = function() {
