@@ -1,0 +1,122 @@
+html body{
+    height: 100%;
+}
+.content{
+    height: 100%;
+    background: #ff5d55;
+}
+.searchbox{
+    height: 30%;
+    background: white;
+}
+.searchbox input, button {
+    border: none;
+    outline: none;
+}
+
+.searchbutton {
+    font-family: 'Baloo', cursive;
+    margin-top: 1%;
+    border-radius: 15%;
+    background: greenyellow;
+    height: 30px;
+    width: 70px;
+
+}
+.searchbox {
+    text-align: center  ;
+}
+
+.searchbox form {
+    align-items: center;
+    height: 42px;
+}
+
+.searchbox input {
+    height: 42px;
+    padding-left: 13px;
+    width: 250px;
+    border-radius: 42px;
+    border: none;
+    background: #F9F0DA;
+    transition: .3s linear;
+
+}
+
+.searchbox input:focus {
+    width: 300px;
+}
+
+.display{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    height:70%;
+}
+
+.left{
+    border-radius: 15%;
+    position: relative;
+    top: 10%;
+    left:7.5%;
+    height: 80%;
+    background: white;
+}
+.right{
+    display: inline-block;
+    border-radius: 15%;
+    position: relative;
+    top: 10%;
+    left: 12.5%;
+    height: 80%;
+    background: white;
+}
+
+.left p{
+    flex: auto;
+    margin-top: 6%;
+    margin-bottom: 5%;
+    font-family: 'Baloo', cursive;
+    text-align: center;
+}
+.right p{
+    flex: auto;
+    margin-top: 6%;
+    margin-bottom: 5%;
+    font-family: 'Baloo', cursive;
+    text-align: center;
+}
+
+.category{
+    flex: auto;
+    margin-top: 5px;
+    font-family: 'Baloo', cursive;
+    border-radius:10%;
+    text-align: center;
+    margin-left: 25%;
+    display: block;
+    height: 65px;
+    width: 50%;
+    padding:4%;
+    background-color: aquamarine;
+}
+
+.alphalist {
+    height: 400px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px 50px 50px;
+    grid-gap:1px;
+}
+
+.alphalist button {
+    font-family: 'Baloo', cursive;
+    height: 100%;
+    width: 50px;
+    background-color: #ffe517;
+}
+
+
+
+
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lookup</title>
+    <link href="../css/template.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/signup.css" >
+    <link href="../css/lookup.css" rel="stylesheet">
+
+    <!--template CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+<body>
+
+<header id = "navbar">
+    <div class="main-header">
+        <h1 class="name">Foodtopia</h1>
+        <button type="button" id="login">Log in</button>
+        <!-- The Modal (contains the Sign Up form) -->
+        <div id="id02" class="modal">
+            <button onclick="document.getElementById('id02').style.display='none'" class="home"><img src="../icon/closed.png"></button>
+            <form class="modal-content" >
+                <div class="container">
+                    <h1 id = "banner1">  Welcome back!</h1>
+                    <hr>
+                    <label for="email"><b>Nickname   </b></label>
+                    <input type="text" placeholder="Your nickname" name="email" required>
+                    <br>
+                    <label for="psw"><b>Password   </b></label>
+                    <input type="password" placeholder="Your passcode" name="psw" required>
+                    <br>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                    </label>
+
+                    <div class="clearfix">
+
+                        <button type="submit" class="signup" id="submit_signup">Log me in !</button>                    </div>
+                </div>
+            </form>
+        </div>
+
+        <button type="button" id="signup">Sign up</button>
+
+        <!-- The Modal (contains the Sign Up form) -->
+        <div id="id01" class="modal">
+            <button onclick="document.getElementById('id01').style.display='none'" class="home"><img src="../icon/closed.png"></button>
+
+            <form class="modal-content" action="home.ejs">
+                <div class="container">
+                    <h1 id = "banner1">  Join us today!</h1>
+                    <p id = "banner2">  Please fill in this form to create an account.</p>
+                    <hr>
+                    <label for="email"><b>Nickname   </b></label>
+                    <input type="text" placeholder="Create a unique name here!" name="email" required>
+                    <br>
+                    <label for="psw"><b>Password   </b></label>
+                    <input type="password" placeholder="Your secret code for foodtopia..." name="psw" required>
+                    <br>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+                    </label>
+
+                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+                    <div class="clearfix">
+                        <button type="button" id="cancel" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Maybe later...</button>
+                        <button type="submit" class="signup" id="submit_signup">Sign Me Up ! </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="nav">
+        <ul>
+            <li><button type="button" class="home"><img class="nav-icon" src="../icon/home-icon-silhouette.png"><div>Home</div></button></li>
+
+            <li><button type="button" class="lookup"><img class="nav-icon" src="../icon/magnifier.png"><div>Lookup</div></button></li>
+
+            <li><button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png"><div>Games</div></button></li>
+        </ul>
+    </div>
+</header>
+
+<div class="content">
+    <!--put content here-->
+    <div class = "searchbox">
+        <p class="searchtext">Search by keyword</p>
+        <form>
+            <input type="text" name="search">
+            <div><button type="button" class="searchbutton"> Search </button> </div>
+        </form>
+    </div>
+
+    <div class="display">
+        <div class="left">
+            <p>Browse by category</p>
+            <div class="category">Vegatable</div>
+            <div class="category">Fruits</div>
+            <div class="category">Meat</div>
+            <div class="category">Diary</div>
+            <div class="category">Button</div>
+        </div>
+        <div class="right">
+            <p>Search Alphabetically</p>
+            <ul class="alphalist">
+                <li><button>A</button></li>
+                <li><button>B</button></li>
+                <li><button>C</button></li>
+                <li><button>D</button></li>
+                <li><button>E</button></li>
+                <li><button>F</button></li>
+                <li><button>G</button></li>
+                <li><button>H</button></li>
+                <li><button>I</button></li>
+                <li><button>J</button></li>
+                <li><button>K</button></li>
+                <li><button>L</button></li>
+                <li><button>M</button></li>
+                <li><button>N</button></li>
+                <li><button>O</button></li>
+                <li><button>P</button></li>
+                <li><button>Q</button></li>
+                <li><button>R</button></li>
+                <li><button>S</button></li>
+                <li><button>T</button></li>
+                <li><button>U</button></li>
+                <li><button>V</button></li>
+                <li><button>W</button></li>
+                <li><button>X</button></li>
+                <li><button>Y</button></li>
+                <li><button>Z</button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>
+</footer>
+
+</body>
+</html>

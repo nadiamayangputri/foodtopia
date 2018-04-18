@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Result</title>
+    <link href="../css/template.css" rel="stylesheet">
+    <link href="../css/searchresult.css" rel="stylesheet">
+
+    <!--template CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<header>
+    <div class="main-header">
+        <h1 class="name">Foodtopia</h1>
+        <button type="button" id="login">Log in</button>
+        <button type="button" id="signup">Sign up </button>
+    </div>
+
+    <div class="nav">
+        <ul>
+            <li><button type="button" class="home"><img class="nav-icon" src="../icon/home-icon-silhouette.png"><div>Home</div></button></li>
+
+            <li><button type="button" class="lookup"><img class="nav-icon" src="../icon/magnifier.png"><div>Lookup</div></button></li>
+
+            <li><button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png"><div>Games</div></button></li>
+        </ul>
+    </div>
+</header>
+
+<div class="content">
+    <!--put content here-->
+    <div class = "searchbox">
+        <p class="searchtext">Search by keyword</p>
+        <form>
+            <input type="text" name="search">
+            <div><button type="button" class="searchbutton"> Search </button> </div>
+        </form>
+    </div>
+    <div class="result">
+        <div class="box">
+            <div class="food">
+                <div class="label">Strawberry</div>
+                <div class="img"><img src="../icon/Strawberry_icon-icons.com_68687.png"></div>
+                <div class="Hightlight">Hightlight</div>
+                <div class="readmore"><button>Read More</button></div>
+            </div>
+            <div class="food"></div>
+            <div class="food"></div>
+            <div class="food"></div>
+            <div class="food"></div>
+            <div class="food"></div>
+        </div>
+
+        <div class="page">
+            <span class="disabled"> &lt; </span>
+            <span class="current">1</span>
+            <a href="#?page=2">2</a>
+            <a href="#?page=3">3</a>
+            <a href="#?page=4">4</a>
+            <a href="#?page=5">5</a>
+            <a href="#?page=6">6</a>
+            <a href="#?page=7">7</a>
+            ...
+            <a href="#?page=199">199</a>
+            <a href="#?page=200">200</a>
+            <a href="#?page=2"> &gt; </a>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>
+</footer>
+
+</body>
+</html>

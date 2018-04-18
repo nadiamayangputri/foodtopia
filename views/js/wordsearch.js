@@ -26,7 +26,7 @@
         var default_settings = {
             'directions': ['W', 'N', 'WN', 'EN'],
             'gridSize': 7,
-            'words': ['Apple','Orange', 'three', 'four', 'five'],
+            'words': ['Apple','Orange', 'three', 'four', 'five', 'six'],
             'wordsList' : [],
             'debug': false
         }
