@@ -1,27 +1,30 @@
 .title{
     font-family: 'Baloo', sans-serif;
+    font-size: 3rem;
     margin: auto;
+    color: #ed6875;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 .nav, .content{
     background-color: #fbffd4;
 }
-.ad_to_create_account{
+#ad_to_create_account{
     font-family: 'Bitter', serif;
-}
-.title { grid-area: header; }
-.ad_to_create_account { grid-area: ad; }
-.game1 { grid-area: game1; }
-.game2 { grid-area: game2; }
+    margin: 0.5rem auto;
+    color: #ed6875;
 
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-            'none none none none'
-            'header header header header'
-            'ad ad ad ad'
-            'game1 game1 game2 game2';
-    grid-gap: 10px;
+}
+#icons{
+    margin: 0.5rem auto;
+    font-size: 2rem;
+    width: 70%;}
+.star{
+    margin: 1rem 1rem;
+}
+.star:hover {
+
+    /*  Making button bigger on hover  */
+    transform: scale(1.5);
 }
 #games{
     background-color: #EE8A82;
@@ -31,4 +34,17 @@
 }
 #game1:hover, #game2:hover{
     transform: scale(1.2);
+}
+.title { grid-area: title; }
+#ad_to_create_account { grid-area: ad; }
+#game1 { grid-area: game1; }
+#game2 { grid-area: game2; }
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+            'title title title title'
+            'ad ad ad ad'
+            'game1 game1 game2 game2';
+    grid-gap: 10px;
 }

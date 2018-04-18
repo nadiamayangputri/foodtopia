@@ -11,7 +11,7 @@
 #id01, #id02{
     font-family: 'Baloo', sans-serif;
     color: #e2714f;
-    background-image: url("../icon/cartoonbanner.jpg");
+    background-image: url("../img/cartoonbanner.jpg");
     background-size: contain;
 }
 /* Full-width input fields */
