@@ -2,25 +2,23 @@
     width: 100%;
 }
 
-.searchbox{
-    height: 30%;
-    background: white;
-}
+
 .searchbox input, button {
     border: none;
     outline: none;
 }
 
 
-.searchbutton {
-    font-family: 'Baloo', cursive;
-    margin-top: 1%;
-    border-radius: 15%;
-    background: greenyellow;
-    height: 30px;
-    width: 70px;
-
+.search-btn {
+    display: block;
+    border: none;
+    border-radius: 17px;
+    background-color: #a6ef19;
+    padding: 5px 20px;
+    color: #fff;
+    margin: 15px auto;
 }
+
 .searchbox {
     margin-top: 50px;
     font-family: "Baloo", sans-serif;
@@ -60,7 +58,7 @@
     background: #ff5d55;
 }
 
-.category-container{
+.category-container {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -69,13 +67,15 @@
     background: white;
     margin: 10px 20px;
     padding: 20px;
+    max-height: 350px;
 }
-.alphabet{
+.alphabet {
     grid-area: alphabet;
     border-radius: 20px;
     background: white;
     margin: 10px 20px;
     padding: 20px;
+    max-height: 350px;
 }
 
 .category-container p{
@@ -95,6 +95,7 @@
 }
 
 .category{
+    border: 1px solid #fff;
     font-family: 'Baloo', cursive;
     border-radius: 10px;
     text-align: center;
@@ -123,9 +124,10 @@
 
 .alphalist button {
     font-family: 'Baloo', cursive;
-    height: 100%;
     width: 50px;
+    height: 100%;
     background-color: #ffe517;
+    color: #e93578;
 }
 
 @media (min-width: 768px) {
@@ -134,12 +136,16 @@
         padding: 30px;
     }
 
-    .category-container {
+    .category-container p {
+        margin: 0 auto;
+        font-size: 1.5em;
     }
 
-    .alphabet {
-
+    .alphabet p {
+        margin: 0 auto;
+        font-size: 1.5em;
     }
+
 }
 
 @media (min-width: 1024px) {
@@ -151,6 +157,18 @@
         padding: 50px;
     }
 
+    .category-container p {
+        max-height: 40px;
+    }
+
+    .category-container,
+    .alphabet {
+        padding: 20px;
+    }
+
+    .alphalist button {
+        width: 60px;
+    }
 
 }
 

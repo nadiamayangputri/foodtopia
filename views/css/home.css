@@ -40,15 +40,21 @@
     margin: auto;
     margin-top: 10px;
 }
+#search {
+    width: 220px;
+    height: 35px;
+}
 
 .search-btn {
+    display: block;
     border: none;
     border-radius: 17px;
     background-color: #a6ef19;
     padding: 5px 20px;
     color: #fff;
-    margin-top: 15px;
+    margin: 15px auto;
 }
+
 
 .grid-item {
     border-radius: 15px;
@@ -77,7 +83,14 @@
 
 .first-fact {
     grid-area: fact-1;
+    padding: 15px;
     background-color: #afef2f;
+}
+
+.fact-content {
+    background-color: #ccfb72;
+    border-radius: 15px;
+    padding: 5px;
 }
 
 .journal-ad {
@@ -87,7 +100,7 @@
 
 .second-fact {
     grid-area: fact-2;
-    padding: 10px;
+    padding: 15px;
     background-color: #afef2f;
 }
 
@@ -211,11 +224,23 @@
     }
 }
 
+@media (min-width: 1024px) {
+    #search {
+        width: 300px;
+        height: 40px;
+    }
+}
+
 @media (min-width: 1500px) {
     .match-game,
     .word-game {
         height: 400px;
     }
+
+    #search {
+        width: 350px;
+    }
+
     .grid-container {
         grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
         grid-template-areas:
