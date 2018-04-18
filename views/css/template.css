@@ -128,6 +128,13 @@ ul {
     -webkit-text-fill-color: transparent;
 }
 
+button {
+    border: none;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
 
 /* ====================
     Media Queries
@@ -200,10 +207,14 @@ ul {
 }
 
 @media (min-width: 1024px) {
-    .login,
-    .signup,
     .nav {
         font-size: 1.2em;
+    }
+
+    #login,
+    #signup {
+        font-size: 1.3em;
+        padding: 12px;
     }
 
     .main-header {

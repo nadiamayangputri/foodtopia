@@ -2,23 +2,34 @@
     background: #ff8351;
 
 }
+
+.searchtext {
+    font-size: 1.5em;
+    color: #ff5d55;
+}
+
+
 .searchbox{
-    height: 200px;
-    background: white;
+    padding-top: 50px;
+    margin-top: -1px;
+    font-family: "Baloo", sans-serif;
+    text-align: center  ;
+    height: 250px;
+    background-color: white;
 }
 .searchbox input, button {
     border: none;
     outline: none;
 }
 
-.searchbutton {
-    font-family: 'Baloo', cursive;
-    margin-top: 1%;
-    border-radius: 15%;
-    background: greenyellow;
-    height: 30px;
-    width: 70px;
-
+.search-btn {
+    display: block;
+    border: none;
+    border-radius: 17px;
+    background-color: #a6ef19;
+    padding: 5px 20px;
+    color: #fff;
+    margin: 15px auto;
 }
 .searchbox {
     text-align: center  ;
@@ -44,31 +55,22 @@
     width: 300px;
 }
 
-.result{
+.result {
     position: center;
     align-items: center;
     height: 80%;
 }
-.box{
-    position: relative;
-    top: 5%;
-    left: 10%;
-    width: 80%;
-}
+
 .box{
     display:grid;
     grid-template-rows: auto;
     grid-column-gap: 5px;
     grid-row-gap: 10px;
-
+    margin: 20px 50px;
 }
 .food{
-    position: relative;
-    top: 10%;
-    margin-top: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
-    border-radius: 10%;
+    margin: 10px;
+    border-radius: 10px;
     background: white;
 }
 
@@ -95,7 +97,7 @@
     grid-row: r2-s/r4-e;
 }
 
-.Hightlight{
+.highlight{
     font-family: 'Baloo', cursive;
     color: #ffe517;
     text-align: center;
@@ -104,10 +106,12 @@
 }
 
 .readmore{
+    font-family: 'Baloo', cursive;
     text-align: center;
     grid-column: c2-s;
     grid-row: r4-s;
 }
+
 
 .img img{
     position: relative;
@@ -117,71 +121,54 @@
 }
 
 .readmore button{
-    border-radius: 20%;
+    border-radius: 10px;
+    padding: 5px 10px;
     background: #a6ef19;
+    color: white;
 }
 
 .page {
     position: relative;
     top: 10%;
-    padding-right: 7px;
-    padding-left: 7px;
+    padding: 7px;
     font-weight: bold;
     font-size: 13.2pt;
-    padding-bottom: 7px;
     margin: 3px;
-    padding-top: 7px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center
 }
 .page a {
-    border-right: #d9d300 2px solid;
-    padding-right: 5px;
-    border-top: #d9d300 2px solid;
-    padding-left: 5px;
-    padding-bottom: 2px;
+    border: #d9d300 2px solid;
+    padding: 2px 5px;
     margin: 2px;
-    border-left: #d9d300 2px solid;
     color: #fff;
-    padding-top: 2px;
-    border-bottom: #d9d300 2px solid;
     background-color: #d90;
     TEXT-DECORATION: none
 }
 .page a:hover {
-    border-right: #ff0 2px solid;
-    border-top: #ff0 2px solid;
-    border-left: #ff0 2px solid;
+    border: #ff0 2px solid;
     color: #000;
-    border-bottom: #ff0 2px solid;
-    background-color: #ff0
+    background-color: #ff0;
 }
 .page a:active {
-    border-right: #ff0 2px solid;
-    border-top: #ff0 2px solid;
-    border-left: #ff0 2px solid;
+    border: #ff0 2px solid;
     color: #000;
-    border-bottom: #ff0 2px solid;
-    background-color: #ff0
+    background-color: #ff0;
 }
 .page span.current {
-    border-right: #fff 2px solid;
-    padding-right: 5px;
-    border-top: #fff 2px solid;
-    padding-left: 5px;
+    border: #fff 2px solid;
+    padding: 2px 5px;
     font-weight: bold;
-    padding-bottom: 2px;
     margin: 2px;
-    border-left: #fff 2px solid;
     color: #000;
-    padding-top: 2px;
-    border-bottom: #fff 2px solid
 }
 .page span.disabled {
-    display: none
+    display: none;
 }
 
 @media (min-width: 768px) {
+
+
     .box{
         margin-top: 3%;
         display:grid;
@@ -209,4 +196,6 @@
         grid-column:3/4;;
     }
 }
+
+
 

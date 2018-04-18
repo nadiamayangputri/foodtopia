@@ -11,12 +11,11 @@
 #id01, #id02{
     font-family: 'Baloo', sans-serif;
     color: #e2714f;
-    background-image: url("../icon/cartoonbanner.jpg");
-    background-size: contain;
+
 }
 /* Full-width input fields */
 input[type=text], input[type=password] {
-    width: 50%;
+    width: 80%;
     padding: 15px;
     margin: 5px 0 5px 0;
     display: inline-block;
@@ -32,28 +31,44 @@ input[type=text]:focus, input[type=password]:focus {
 
 /* Set a style for all buttons */
 #submit_signup, #cancel {
-    background-color: #4CAF50;
+    background-color: #a6ef19;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 150px;
     opacity: 0.9;
 
 }
 #submit_signup:hover, #cancel:hover{
     transform: scale(0.9);
 }
-#cancel {
-    background-color: lightcoral;
-}
+
 #submit_signup{
-    background-color: #4CAF50;
+    background-color: #a6ef19;
+    margin: auto;
 }
 
 
 button:hover {
     opacity:1;
+}
+
+#my-close-btn {
+    background-color: #a6ef19;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    border-radius: 50px;
+    text-align: center;
+    font-family: "Baloo", sans-serif;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+#my-close-btn:hover {
+    transform: scale(1.2);
 }
 
 /* Extra styles for the cancel button */
@@ -65,13 +80,19 @@ button:hover {
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn {
     float: left;
-    width: 50%;
-
 }
+
 
 /* Add padding to container elements */
 .container {
-    padding: 16px;
+    padding: 30px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 }
 
 /* The Modal (background) */
@@ -96,7 +117,7 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #b0f442;
-    padding: 1rem 1.5rem;
+    /*padding: 1rem 1.5rem;*/
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
@@ -134,5 +155,23 @@ hr {
 @media screen and (max-width: 300px) {
     .cancelbtn, .signupbtn {
         width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .banner-img{
+        height: 200px;
+        background-image: url("../icon/signup-background.png");
+        background-size: cover;
+    }
+
+    input[type=text], input[type=password] {
+        width: 50%;
+    }
+}
+
+@media (min-width: 1366px) {
+    .banner-img{
+        height: 250px;
     }
 }
