@@ -12,6 +12,7 @@
     font-family: 'Baloo', sans-serif;
     color: #e2714f;
     background-image: url("../icon/cartoonbanner.jpg");
+    background-size: contain;
 }
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -77,7 +78,7 @@ button:hover {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 3; /* Sit on top */
     margin: auto;
     width: 60%; /* part width */
     height: 100%; /* Full height */
@@ -89,7 +90,7 @@ button:hover {
 .modal-content {
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-
+    z-index: 3; /* Sit on top */
     position: absolute;
     top: 50%;
     left: 50%;
