@@ -53,7 +53,6 @@
 
 
 .wrapper{
-    flex: auto;
     grid-column: cs-2/cs-3;
     grid-row: auto;
     position: absolute;
@@ -73,8 +72,6 @@
     grid-template-rows: auto auto auto auto auto auto auto auto;
 
 }
-
-
 
 .box {
     text-align: center;
