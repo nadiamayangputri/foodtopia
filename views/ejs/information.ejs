@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Foodtopia</title>
-    <!--template CSS-->
     <link href="../css/template.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/signup.css" >
-
-    <!--CSS of page-->
-    <link href="css/home.css" rel="stylesheet">
+    <link href="../css/information.css" rel="stylesheet">
+    <!--template CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
 
 </head>
 <body>
@@ -26,12 +23,12 @@
         <!-- The Modal (contains the Sign Up form) -->
         <div id="id02" class="modal">
             <button onclick="document.getElementById('id02').style.display='none'" class="home"><img src="../icon/closed.png"></button>
-             <form class="modal-content" >
+            <form class="modal-content" >
                 <div class="container">
                     <h1 id = "banner1">  Welcome back!</h1>
                     <hr>
-                    <label for="email"><b>Username   </b></label>
-                    <input type="text" placeholder="Your username" name="email" required>
+                    <label for="email"><b>Nickname   </b></label>
+                    <input type="text" placeholder="Your nickname" name="email" required>
                     <br>
                     <label for="psw"><b>Password   </b></label>
                     <input type="password" placeholder="Your passcode" name="psw" required>
@@ -58,7 +55,7 @@
                     <h1 id = "banner1">  Join us today!</h1>
                     <p id = "banner2">  Please fill in this form to create an account.</p>
                     <hr>
-                    <label for="email"><b>Username   </b></label>
+                    <label for="email"><b>Nickname   </b></label>
                     <input type="text" placeholder="Create a unique name here!" name="email" required>
                     <br>
                     <label for="psw"><b>Password   </b></label>
@@ -81,56 +78,42 @@
 
     <div class="nav">
         <ul>
-            <li><a href="/" ><button type="button" class="home"><img class="nav-icon" src="../icon/home-icon-silhouette.png"><div>Home</div></button></a></li>
+            <li><button type="button" class="home"><img class="nav-icon" src="../icon/home-icon-silhouette.png"><div>Home</div></button></li>
 
-            <li><a href="/lookup" ><button type="button" class="lookup"><img class="nav-icon" src="../icon/magnifier.png"><div>Lookup</div></button></a></li>
+            <li><button type="button" class="lookup"><img class="nav-icon" src="../icon/magnifier.png"><div>Lookup</div></button></li>
 
-            <li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png"><div>Games</div></button></a></li>
+            <li><button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png"><div>Games</div></button></li>
         </ul>
     </div>
 </header>
 
 <div class="content">
-    <div class="main-background">
-        <div class="main">
-            <h1 class="tagline">Explore fresh food ingredients daily!</h1>
-            <form>
-                <div class="form-group">
-                    <label>Search food or food ingredient</label>
-                    <input type="text" class="form-control" id="search" placeholder="Search...">
-                    <button class="search-btn">Search</button>
-                </div>
-            </form>
+    <!--put content here-->
+    <div class = "searchbox">
+        <p class="searchtext">Search by keyword</p>
+        <form>
+            <input type="text" name="search">
+            <div><button type="button" class="searchbutton"> Search </button> </div>
+        </form>
+    </div>
+    <div class = "information">
+        <div class="wrapper">
+            <div class="box item1">Strawberry</div>
+            <div class="box item2"><img src="../icon/Strawberry_icon-icons.com_68687.png"></div>
+            <div class="box item3">Category</div>
+            <div class="box item4">
+                <li>Fact: 1</li>
+                <li>Fact: 2</li>
+                <li>Fact: 3</li>
+                <li>Fact: 4</li>
+            </div>
+            <div class="box item5">Nutrition Facts</div>
+            <div class="box item6">Pros</div>
+            <div class="box item7">Cons</div>
+            <div class="box item8">Add to My Collection</div>
         </div>
     </div>
-    <div class="grid-container">
 
-        <div class="grid-item match-game">
-            <button class="play-btn">Play</button>
-        </div>
-        <div class="grid-item first-fact">
-            <h3>Did you know?</h3>
-            <img src="../img/protein.png" alt="protein" class="fact-img">
-            <p>Protein, which is found in meat, milk products, beans and fish, builds muscles and repairs damage.
-            </p>
-        </div>
-        <div class="grid-item journal-ad">
-            <h3>Ad for Journal</h3>
-        </div>
-        <div class="grid-item second-fact">
-            <h3>Did you know?</h3>
-            <img src="../img/fiber.png" alt="fiber" class="fact-img">
-            <p>Fiber helps your body digest food. It is found in vegetables, whole grains and fruit.
-            </p>
-        </div>
-        <div class="grid-item points-ad">
-            <h3>Ad for Points</h3>
-        </div>
-        <div class="grid-item word-game">
-            <button class="play-btn">Play</button>
-        </div>
-    </div>
-    <button class="create-account">Create account now</button>
 </div>
 
 <footer class="footer">

@@ -1,0 +1,157 @@
+.content{
+    width: 100%;
+}
+
+.searchbox{
+    height: 30%;
+    background: white;
+}
+.searchbox input, button {
+    border: none;
+    outline: none;
+}
+
+
+.searchbutton {
+    font-family: 'Baloo', cursive;
+    margin-top: 1%;
+    border-radius: 15%;
+    background: greenyellow;
+    height: 30px;
+    width: 70px;
+
+}
+.searchbox {
+    margin-top: 50px;
+    font-family: "Baloo", sans-serif;
+    text-align: center  ;
+    height: 250px;
+}
+
+.searchtext {
+    font-size: 1.5em;
+    color: #ff5d55;
+}
+
+.searchbox form {
+    align-items: center;
+    height: 42px;
+}
+
+.searchbox input {
+    height: 42px;
+    padding-left: 13px;
+    width: 300px;
+    border-radius: 42px;
+    border: none;
+    background: #F9F0DA;
+    transition: .3s linear;
+
+}
+
+.searchbox input:focus {
+    width: 350px;
+}
+
+.display{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "category" "alphabet";
+    background: #ff5d55;
+}
+
+.category-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    grid-area: category;
+    border-radius: 20px;
+    background: white;
+    margin: 10px 20px;
+    padding: 20px;
+}
+.alphabet{
+    grid-area: alphabet;
+    border-radius: 20px;
+    background: white;
+    margin: 10px 20px;
+    padding: 20px;
+}
+
+.category-container p{
+    flex: auto;
+    margin-top: 6%;
+    margin-bottom: 5%;
+    font-family: 'Baloo', cursive;
+    text-align: center;
+
+}
+.alphabet p{
+    flex: auto;
+    margin-top: 6%;
+    margin-bottom: 5%;
+    font-family: 'Baloo', cursive;
+    text-align: center;
+}
+
+.category{
+    font-family: 'Baloo', cursive;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    color: #fff;
+}
+
+.odd {
+    background-color: #3ee1bf;
+}
+
+.even {
+    background-color: #88fbe3;
+}
+
+
+.alphalist {
+    height: 400px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px 50px 50px 50px;
+    grid-gap:1px;
+}
+
+.alphalist button {
+    font-family: 'Baloo', cursive;
+    height: 100%;
+    width: 50px;
+    background-color: #ffe517;
+}
+
+@media (min-width: 768px) {
+
+    .display {
+        padding: 30px;
+    }
+
+    .category-container {
+    }
+
+    .alphabet {
+
+    }
+}
+
+@media (min-width: 1024px) {
+    .display{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "category alphabet";
+        grid-gap: 40px;
+        padding: 50px;
+    }
+
+
+}
+
+
