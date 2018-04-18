@@ -1,0 +1,123 @@
+html body{
+    height: 100%;
+}
+.content{
+    height: 100%;
+    background: #ff5d55;
+}
+.searchbox{
+    height: 30%;
+    background: white;
+}
+.searchbox input, button {
+    border: none;
+    outline: none;
+}
+
+.searchbutton {
+    font-family: 'Baloo', cursive;
+    margin-top: 1%;
+    border-radius: 15%;
+    background: greenyellow;
+    height: 30px;
+    width: 70px;
+
+}
+.searchbox {
+    text-align: center  ;
+}
+
+.searchbox form {
+    align-items: center;
+    height: 42px;
+}
+
+.searchbox input {
+    height: 42px;
+    padding-left: 13px;
+    width: 250px;
+    border-radius: 42px;
+    border: none;
+    background: #F9F0DA;
+    transition: .3s linear;
+
+}
+
+.searchbox input:focus {
+    width: 300px;
+}
+
+.display{
+    display: flex;
+    height:70%;
+}
+
+.left{
+
+    border-radius: 15%;
+    float: left;
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 80%;
+    width:40%;
+    background: white;
+}
+.right{
+    border-radius: 15%;
+    float: right;
+    margin-top: 5%;
+    margin-left: 10%;
+    height: 80%;
+    width: 40%;
+    background: white;
+}
+
+.left p{
+    flex: auto;
+    margin-top: 6%;
+    margin-bottom: 5%;
+    font-family: 'Baloo', cursive;
+    text-align: center;
+}
+.right p{
+    flex: auto;
+    margin-top: 6%;
+    margin-bottom: 5%;
+    font-family: 'Baloo', cursive;
+    text-align: center;
+}
+
+.category{
+    flex: auto;
+    margin-top: 5px;
+    font-family: 'Baloo', cursive;
+    border-radius:10%;
+    text-align: center;
+    margin-left: 25%;
+    display: block;
+    height: 65px;
+    width: 50%;
+    padding:4%;
+    background-color: aquamarine;
+}
+
+.alphalist {
+    flex: auto;
+    margin-left: 20%;
+    width: 60%;
+}
+
+.alphalist button {
+    flex: auto;
+    font-family: 'Baloo', cursive;
+    height: 100%;
+    width: 50px;
+    border-radius: 15px;
+    transform: scale(0.8);
+    padding: 4px;
+}
+
+
+
+
+
