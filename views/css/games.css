@@ -1,0 +1,34 @@
+.title{
+    font-family: 'Baloo', sans-serif;
+    margin: auto;
+}
+.nav, .content{
+    background-color: #fbffd4;
+}
+.ad_to_create_account{
+    font-family: 'Bitter', serif;
+}
+.title { grid-area: header; }
+.ad_to_create_account { grid-area: ad; }
+.game1 { grid-area: game1; }
+.game2 { grid-area: game2; }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+            'none none none none'
+            'header header header header'
+            'ad ad ad ad'
+            'game1 game1 game2 game2';
+    grid-gap: 10px;
+}
+#games{
+    background-color: #EE8A82;
+    padding: 3rem 0 2rem 2rem;
+    margin: 3em;
+    border-radius: 3rem;
+}
+#game1:hover, #game2:hover{
+    transform: scale(1.2);
+}
