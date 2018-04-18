@@ -1,8 +1,9 @@
 .content{
-    height: 100%;
+    background: #ff8351;
+
 }
 .searchbox{
-    height: 20%;
+    height: 200px;
     background: white;
 }
 .searchbox input, button {
@@ -44,9 +45,9 @@
 }
 
 .result{
+    position: center;
     align-items: center;
     height: 80%;
-    background: #ff8351;
 }
 .box{
     position: relative;
@@ -56,8 +57,7 @@
 }
 .box{
     display:grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 150px 150px 150px;
+    grid-template-rows: auto;
     grid-column-gap: 5px;
     grid-row-gap: 10px;
 
@@ -179,5 +179,34 @@
 }
 .page span.disabled {
     display: none
+}
+
+@media (min-width: 768px) {
+    .box{
+        margin-top: 3%;
+        display:grid;
+        grid-template-columns: 1fr 300px 300px 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 5px;
+        grid-row-gap: 10px;
+    }
+    .one{
+        grid-column: 2/3;
+    }
+    .two {
+        grid-column: 3/4;
+    }
+    .three{
+        grid-column: 2/3;
+    }
+    .four{
+        grid-column: 3/4;
+    }
+    .five{
+        grid-column: 2/3;
+    }
+    .six{
+        grid-column:3/4;;
+    }
 }
 
