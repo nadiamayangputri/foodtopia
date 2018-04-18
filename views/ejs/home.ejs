@@ -16,6 +16,8 @@
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
 
+
+
 </head>
 <body>
 
@@ -23,60 +25,9 @@
     <div class="main-header">
         <h1 class="name">Foodtopia</h1>
         <button type="button" id="login">Log in</button>
-        <!-- The Modal (contains the Sign Up form) -->
-        <div id="id02" class="modal">
-            <button onclick="document.getElementById('id02').style.display='none'" class="home"><img src="../icon/closed.png"></button>
-             <form class="modal-content" >
-                <div class="container">
-                    <h1 id = "banner1">  Welcome back!</h1>
-                    <hr>
-                    <label for="email"><b>Username   </b></label>
-                    <input type="text" placeholder="Your username" name="email" required>
-                    <br>
-                    <label for="psw"><b>Password   </b></label>
-                    <input type="password" placeholder="Your passcode" name="psw" required>
-                    <br>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                    </label>
-
-                    <div class="clearfix">
-
-                        <button type="submit" class="signup" id="submit_signup">Log me in !</button>                    </div>
-                </div>
-            </form>
-        </div>
 
         <button type="button" id="signup">Sign up</button>
 
-        <!-- The Modal (contains the Sign Up form) -->
-        <div id="id01" class="modal">
-            <button onclick="document.getElementById('id01').style.display='none'" class="home"><img src="../icon/closed.png"></button>
-
-            <form class="modal-content" action="home.ejs">
-                <div class="container">
-                    <h1 id = "banner1">  Join us today!</h1>
-                    <p id = "banner2">  Please fill in this form to create an account.</p>
-                    <hr>
-                    <label for="email"><b>Username   </b></label>
-                    <input type="text" placeholder="Create a unique name here!" name="email" required>
-                    <br>
-                    <label for="psw"><b>Password   </b></label>
-                    <input type="password" placeholder="Your secret code for foodtopia..." name="psw" required>
-                    <br>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                    </label>
-
-                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-                    <div class="clearfix">
-                        <button type="button" id="cancel" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Maybe later...</button>
-                        <button type="submit" class="signup" id="submit_signup">Sign Me Up ! </button>
-                    </div>
-                </div>
-            </form>
-        </div>
     </div>
 
     <div class="nav">
@@ -88,6 +39,74 @@
             <li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png"><div>Games</div></button></a></li>
         </ul>
     </div>
+</header>
+
+<div class="content">
+    <!--put content here-->
+</div>
+
+<!-- The Modal (contains the login form) -->
+<div id="id02" class="modal">
+    <button onclick="document.getElementById('id02').style.display='none'" class="home"><img src="../icon/closed.png"></button>
+    <form class="modal-content" >
+        <div class="container">
+            <h1 id = "banner1">  Welcome back!</h1>
+            <hr>
+            <label for="email"><b>Username   </b></label>
+            <input type="text" placeholder="Your username" name="email" required>
+            <br>
+            <label for="psw"><b>Password   </b></label>
+            <input type="password" placeholder="Your passcode" name="psw" required>
+            <br>
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <div class="clearfix">
+
+                <button type="submit" class="signup" id="submit_signup">Log me in !</button>                    </div>
+        </div>
+    </form>
+</div>
+
+
+<!-- The Modal (contains the Sign Up form) -->
+<div id="id01" class="modal">
+    <button onclick="document.getElementById('id01').style.display='none'" class="home"><img src="../icon/closed.png"></button>
+
+    <form class="modal-content" action="home.ejs">
+        <div class="container">
+            <h1 id = "banner1">  Join us today!</h1>
+            <p id = "banner2">  Please fill in this form to create an account.</p>
+            <hr>
+            <label for="email"><b>Username   </b></label>
+            <input type="text" placeholder="Create a unique name here!" name="email" required>
+            <br>
+            <label for="psw"><b>Password   </b></label>
+            <input type="password" placeholder="Your secret code for foodtopia..." name="psw" required>
+            <br>
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+            <div class="clearfix">
+                <button type="button" id="cancel" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Maybe later...</button>
+                <button type="submit" class="signup" id="submit_signup">Sign Me Up ! </button>
+            </div>
+        </div>
+    </form>
+                    <div class="clearfix">
+                        <button type="button" id="cancel" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Maybe later...</button>
+                        <button type="submit" class="signup" id="submit_signup">Sign Me Up ! </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
 </header>
 
 <div class="content">
