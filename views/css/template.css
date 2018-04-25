@@ -25,6 +25,7 @@ a.visited {
     position: -webkit-sticky;
     position: sticky;
     top: -1px;
+    z-index: 999;
 }
 .main-header {
     display: flex;
@@ -121,7 +122,7 @@ ul {
     color: #fff;
     text-align: right;
     margin: 0;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 .team-name {
@@ -143,6 +144,54 @@ button {
 
 button:hover {
     transform: scale(1.1);
+}
+
+.searchbox input, button {
+    border: none;
+    outline: none;
+}
+
+
+.search-btn {
+    display: block;
+    border: none;
+    border-radius: 17px;
+    background-color: #a6ef19;
+    padding: 5px 20px;
+    color: #fff;
+    margin: 15px auto;
+}
+
+.searchbox {
+    margin-top: 50px;
+    font-family: "Baloo", sans-serif;
+    text-align: center  ;
+    height: 250px;
+}
+
+.searchtext {
+    font-size: 1.5em;
+    color: #ff5d55;
+}
+
+.searchbox form {
+    align-items: center;
+    height: 42px;
+
+}
+
+.searchbox input {
+    height: 42px;
+    padding-left: 13px;
+    width: 300px;
+    border-radius: 42px;
+    background: #F9F0DA;
+    transition: .3s linear;
+
+}
+
+.searchbox input:focus {
+    width: 350px;
 }
 
 /* ====================
@@ -210,7 +259,7 @@ button:hover {
     }
     
     .copyright {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
 }

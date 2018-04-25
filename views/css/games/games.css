@@ -1,20 +1,14 @@
-/*.title{*/
-    /*font-family: 'Baloo', sans-serif;*/
-    /*font-size: 3rem;*/
-    /*margin: auto;*/
-    /*color: #e2043b;*/
-    /*text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;*/
-/*}*/
+
 .nav, .content{
     background-color: #fbffd4;
 }
 #ad_to_create_account{
     font-family: 'Baloo', serif;
+    font-size: 1em;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 10px;
     color: #444;
     text-align: center;
-    height: 300px;
 }
 
 .create-account {
@@ -23,54 +17,59 @@
     border-radius: 20px;
     background-color: #ff5d55;
     font-family: "Baloo", sans-serif;
-    font-size: 0.7em;
+    font-size: 0.5em;
     color: #fff;
-    padding: 5px 15px;
+    padding: 3px 8px;
     margin: auto;
     margin-bottom: 2em;
+}
+
+#ad_to_create_account h2 {
+    font-size: 1em;
 }
 
 #icons{
     margin: 0.5rem auto;
     font-size: 2rem;
     width: 70%;}
+
 .star{
-    margin: 1rem 1rem;
+    margin: 10px;
+    width: 40px;
 }
 .star:hover {
 
     /*  Making button bigger on hover  */
     transform: scale(1.3);
 }
-.match {
-    grid-area: match;
-    background-image: url("../../img/match_game.png");
-    background-color: #606060;
+
+.match,
+.wordsearch {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
     height: 200px;
     margin: 20px;
-    border: 5px solid #ff5d55;
+    border: 3px solid #fff;
 }
+
+.match {
+    grid-area: match;
+    background-image: url("../../img/match_game.png");
+    background-color: #606060;
+}
+
 
 .wordsearch {
     grid-area: word;
     background-image: url("../../img/wordsearch.png");
     background-color: #feee77;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 10px;
-    height: 200px;
-    margin: 20px;
-    border: 5px solid #ff5d55;
 }
 
 
 #games{
-    background-color: #ff807a;
+    background-color: #ff5d55;
     padding: 20px;
     text-align:center;
 }
@@ -95,6 +94,28 @@ button#game2 {
 
 
 @media only screen and (min-width: 768px) {
+
+    #ad_to_create_account{
+        margin: auto;
+        margin-top: 50px;
+        color: #444;
+        text-align: center;
+        height: 300px;
+    }
+
+    #ad_to_create_account h2 {
+        font-size: 2em;
+    }
+
+    .create-account {
+        font-size: 0.6em;
+        padding: 5px 15px;
+        margin-top: 20px;
+    }
+
+    .star {
+        width: 55px;
+    }
 
     #games{
         display: grid;

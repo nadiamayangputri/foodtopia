@@ -1,55 +1,7 @@
 .nav, .content{
     background-color: #fbffd4;
 }
-.searchbox {
-    margin-top: 60px;
-    font-family: "Baloo", sans-serif;
-    text-align: center  ;
-}
-.searchbox input, button {
-    border: none;
-    outline: none;
-}
 
-.searchbutton {
-    display: block;
-    border: none;
-    border-radius: 17px;
-    background-color: #a6ef19;
-    padding: 5px 20px;
-    color: #fff;
-    margin: 15px auto;
-
-}
-.searchtext {
-    font-size: 1.5em;
-    color: #ff5d55;
-}
-.searchbox {
-    font-family: "Baloo", sans-serif;
-    text-align: center  ;
-    height: 300px;
-}
-
-.searchbox form {
-    align-items: center;
-    height: 42px;
-}
-
-.searchbox input {
-    height: 42px;
-    padding-left: 13px;
-    width: 250px;
-    border-radius: 42px;
-    border:  4px groove #ff5d55;
-    background: #F9F0DA;
-    transition: .3s linear;
-
-}
-
-.searchbox input:focus {
-    width: 300px;
-}
 
 .information{
 
