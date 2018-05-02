@@ -12,5 +12,5 @@ mongoose.connect(mongoDB,function (err) {
         console.log('successfully connected to mongo.');
     }
 });
-// require('./users');
+require('./users.js');
 require('./ingredients.js');
