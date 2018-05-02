@@ -2,6 +2,7 @@ const members = require('../models/members_array');
 
 var mongoose = require('mongoose');
 var ingredients = mongoose.model('ingredients');
+var users = mongoose.model('users');
 
 module.exports.home = function (req, res) {
     res.render('ejs/home');
@@ -36,6 +37,25 @@ module.exports.match_game = function (req,res) {
 module.exports.signup = function (req,res) {
     res.render('ejs/account/signup');
 
+};
+
+module.exports.createUser = function (req, res) {
+    console.log('Controller - New user.');
+    var newUser = new users({
+        "username":req.body.username,
+        "password":req.body.password,
+        "admin":req.body.admin,
+        "photo":req.body.photo
+    });
+    newUser.save(function(err, user) {
+        if (err) {
+            console.log('New user failed to save.');
+            res.sendStatus(400);
+        }else{
+            res.send(user);
+            console.log('New user successfully saved.');
+        }
+    })
 };
 
 var findAllIngredients = function(req,res){

@@ -5,6 +5,7 @@ const controller = require('../controller/controller');
 
 router.get('/', controller.home);
 router.get('/profile', controller.profile);
+router.post('/user/new',controller.createUser);// Create new user
 
 router.get('/games', controller.games);
 router.get('/games/match', controller.match_game);
