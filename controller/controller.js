@@ -1,5 +1,7 @@
 const members = require('../models/members_array');
 
+var mongoose = require('mongoose');
+var ingredients = mongoose.model('ingredients');
 
 module.exports.home = function (req, res) {
     res.render('ejs/home');
@@ -35,3 +37,27 @@ module.exports.signup = function (req,res) {
     res.render('ejs/account/signup');
 
 };
+
+var findAllIngredients = function(req,res){
+    ingredients.find(function(err,ingredients){
+        if(!err){
+            res.send(ingredients);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
+
+var findIngredientByName = function(req, res){
+    var ingredientName = req.params.name;
+    ingredients.find({name:ingredientName},function(err){
+        if(!err){
+            res.send(ingredientName);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
+
+module.exports.findIngredientByName = findIngredientByName;
+module.exports.findAllIngredients = findAllIngredients;
