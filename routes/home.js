@@ -15,7 +15,8 @@ router.get('/lookup', controller.lookup);
 router.get('/lookup/searchresult', controller.searchresult);
 router.get('/information', controller.information);
 
-router.get('/:name',controller.findIngredientByName);
 router.get('/api',controller.findAllIngredients);
+router.get('/name/:name',controller.findIngredientByName);
+
 
 module.exports = router;

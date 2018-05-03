@@ -70,7 +70,7 @@ var findAllIngredients = function(req,res){
 
 var findIngredientByName = function(req, res){
     var ingredientName = req.params.name;
-    ingredients.find({name:ingredientName},function(err){
+    ingredients.find({name:ingredientName},function(err,ingredientName){
         if(!err){
             res.send(ingredientName);
         }else{
