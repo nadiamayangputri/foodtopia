@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controller/controller');
-
+const userController = require('../controller/users');
+const ingredientController = require('../controller/ingredients');
 
 router.get('/', controller.home);
 router.get('/profile', controller.profile);
-router.post('/user/new',controller.createUser);// Create new user
+
+router.post('/user/new',userController.createUser);// Create new user
+
 
 router.get('/games', controller.games);
 router.get('/games/match', controller.match_game);
@@ -15,8 +18,7 @@ router.get('/lookup', controller.lookup);
 router.get('/lookup/searchresult', controller.searchresult);
 router.get('/information', controller.information);
 
-router.get('/api',controller.findAllIngredients);
-router.get('/name/:name',controller.findIngredientByName);
-
+router.get('/name/:name',ingredientController.findIngredientByName);
+router.get('/api',ingredientController.findAllIngredients);
 
 module.exports = router;

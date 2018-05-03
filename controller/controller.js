@@ -1,8 +1,5 @@
-const members = require('../models/members_array');
 
 var mongoose = require('mongoose');
-var ingredients = mongoose.model('ingredients');
-var users = mongoose.model('users');
 
 module.exports.home = function (req, res) {
     res.render('ejs/home');
@@ -38,46 +35,3 @@ module.exports.signup = function (req,res) {
     res.render('ejs/account/signup');
 
 };
-
-module.exports.createUser = function (req, res) {
-    console.log('Controller - New user.');
-    var newUser = new users({
-        "username":req.body.username,
-        "password":req.body.password,
-        "admin":req.body.admin,
-        "photo":req.body.photo
-    });
-    newUser.save(function(err, user) {
-        if (err) {
-            console.log('New user failed to save.');
-            res.sendStatus(400);
-        }else{
-            res.send(user);
-            console.log('New user successfully saved.');
-        }
-    })
-};
-
-var findAllIngredients = function(req,res){
-    ingredients.find(function(err,ingredients){
-        if(!err){
-            res.send(ingredients);
-        }else{
-            res.sendStatus(404);
-        }
-    });
-};
-
-var findIngredientByName = function(req, res){
-    var ingredientName = req.params.name;
-    ingredients.find({name:ingredientName},function(err,ingredientName){
-        if(!err){
-            res.send(ingredientName);
-        }else{
-            res.sendStatus(404);
-        }
-    });
-};
-
-module.exports.findIngredientByName = findIngredientByName;
-module.exports.findAllIngredients = findAllIngredients;
