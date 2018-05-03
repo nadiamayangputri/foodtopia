@@ -18,7 +18,7 @@ body {
 
 .content{
     background: #ffffff;
-    font-family: 'Press Start 2P',cursive;
+    font-family: 'Press Start 2P', cursive;
     font-size: 10px;
 }
 
@@ -32,7 +32,17 @@ body {
 h1 {
     font-size: 1.4em;
 }
-
+#attribution{
+    font-size: 1.1em;
+    font-family:'Comic Sans MS', bold, sans-serif;
+    text-align: justify;
+    clear:left;
+    color: orange;
+}
+#attribution:hover{
+    color: lightcoral;
+    transform: scale(1.1);
+}
 .nav, .content{
     background-color: #fbffd4;
 }
