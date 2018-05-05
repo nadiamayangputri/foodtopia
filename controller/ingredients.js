@@ -21,5 +21,17 @@ var findIngredientByName = function(req, res){
     });
 };
 
+var findIngredientByCategory = function(req, res){
+    var ingredientCategory = req.params.category;
+    ingredients.find({name:ingredientCategory},function(err,ingredientCategory){
+        if(!err){
+            res.send(ingredientCategory);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
+
 module.exports.findIngredientByName = findIngredientByName;
 module.exports.findAllIngredients = findAllIngredients;
+module.exports.findIngredientByCategory = findIngredientByCategory;
