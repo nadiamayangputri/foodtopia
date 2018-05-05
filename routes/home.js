@@ -18,10 +18,8 @@ router.get('/lookup', controller.lookup);
 router.get('/lookup/searchresult', controller.searchresult);
 router.get('/information', controller.information);
 
-router.get('/ingredients',controller.findAllIngredients);
-router.get('/ingredients/:name',controller.findIngredientByName);
-router.get('/ingredients/:category',controller.findIngredientByCategory);
-router.get('/name/:name',ingredientController.findIngredientByName);
-router.get('/api',ingredientController.findAllIngredients);
+router.get('/ingredients',ingredientController.findAllIngredients);
+router.get('/ingredients/:name',ingredientController.findIngredientByName);
+//router.get('/ingredients/:category',ingredientController.findIngredientByCategory);
 
 module.exports = router;
