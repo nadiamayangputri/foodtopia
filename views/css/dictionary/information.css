@@ -33,17 +33,12 @@
     border: 5px solid #ffe517;
 }
 
-.pros {
-    grid-area: pros;
+.recipes {
+    grid-area: recipes;
     background-color: #cdf576;
     border: 5px solid #a6ef19;
 }
 
-.cons {
-    grid-area: cons;
-    background-color: #ff807a;
-    border: 5px solid #ff5d55;
-}
 
 .box {
     text-align: center;
@@ -61,14 +56,14 @@
     background-color: white;
     max-width: 1000px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 10px;
     border-radius: 25px;
 }
 
 .food-img{
     grid-area: img;
     display: block;
-    width: 250px;
+    width: 280px;
     margin: auto;
 }
 
@@ -97,7 +92,7 @@
         grid-template-areas:
             "name name name name"
             "img general general general"
-            "fact fact fact nutrition"
-            "pros pros cons cons";
+            "fact fact fact fact"
+            "recipes recipes recipes recipes";
     }
 }

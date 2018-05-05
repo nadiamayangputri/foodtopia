@@ -1,15 +1,13 @@
 .content{
     width: 100%;
 }
+
 .nav, .content{
     background-color: #fbffd4;
 }
 
 
 .display{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: "category" "alphabet";
     background: #ff5d55;
 }
 
@@ -22,28 +20,16 @@
     background: white;
     margin: 10px 20px;
     padding: 20px;
-    max-height: 350px;
+    max-height: 450px;
+    min-width: 350px;
 }
 
-.alphabet {
-    grid-area: alphabet;
-    border-radius: 20px;
-    background: white;
-    margin: 10px 20px;
-    padding: 20px;
-    max-height: 350px;
-}
 
 .category-container p{
     flex: auto;
     font-family: 'Baloo', cursive;
     text-align: center;
 
-}
-.alphabet p{
-    flex: auto;
-    font-family: 'Baloo', cursive;
-    text-align: center;
 }
 
 .category{
@@ -52,6 +38,7 @@
     border-radius: 10px;
     text-align: center;
     width: 50%;
+    margin: 3px;
     padding: 10px;
     color: #fff;
 }
@@ -65,22 +52,6 @@
 }
 
 
-.alphalist {
-    height: 400px;
-    width: 300px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 50px 50px 50px 50px 50px;
-    grid-gap:1px;
-}
-
-.alphalist button {
-    font-family: 'Baloo', cursive;
-    width: 50px;
-    height: 100%;
-    background-color: #ffe517;
-    color: #e93578;
-}
 
 @media (min-width: 768px) {
 
@@ -93,19 +64,10 @@
         font-size: 1.5em;
     }
 
-    .alphabet p {
-        margin: 0 auto;
-        font-size: 1.5em;
-    }
-
 }
 
 @media (min-width: 1024px) {
     .display{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "category alphabet";
-        grid-gap: 40px;
         padding: 50px;
     }
 
