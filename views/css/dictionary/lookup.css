@@ -21,6 +21,10 @@
     align-items: center;
     flex-direction: column;
     grid-area: category;
+}
+
+.category-container,
+.random-container {
     border-radius: 20px;
     background: white;
     margin: 10px 20px;
@@ -71,6 +75,11 @@
         margin: 0;
     }
 
+    .random-container {
+        grid-area: random;
+        margin: 0;
+    }
+
     .ingredients {
         grid-area: ingredients;
         padding: 20px;
@@ -80,11 +89,17 @@
     }
 
     .display {
+        /*display: grid;*/
+        /*grid-template-columns: 1fr 2fr;*/
+        /*grid-template-areas: "category ingredients" ;*/
+        /*grid-gap: 20px;*/
         display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas: "category ingredients" ;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+                "category random"
+                "ingredients ingredients";
         grid-gap: 20px;
-        padding: 20px;
+        padding: 50px;
         min-height: 450px;
     }
 
