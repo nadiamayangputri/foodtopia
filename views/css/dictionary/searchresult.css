@@ -2,6 +2,21 @@
     background-color: #fbffd4;
 }
 
+.title {
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+    padding: 10px;
+    font-family: "Baloo", sans-serif;
+    color: #fff;
+    background: #fc9e79;
+    border-radius: 10px;
+}
+
+.title:first-letter {
+    text-transform: uppercase;
+}
+
 .result {
     align-items: center;
     padding: 20px;
