@@ -9,13 +9,16 @@ router.get('/profile', controller.profile);
 
 router.post('/user/new',userController.createUser);// Create new user
 
-
 router.get('/games', controller.games);
 router.get('/games/match', controller.match_game);
 router.get('/games/wordsearch', controller.wordsearch);
 
-router.get('/lookup', controller.lookup);
+router.get('/lookup', ingredientController.allIngredients);
+
 router.get('/lookup/searchresult', controller.searchresult);
+
+
+router.get('/lookup/category/:category', ingredientController.searchIngredientByCategory);
 router.get('/information', controller.information);
 
 router.get('/ingredients',ingredientController.findAllIngredients);

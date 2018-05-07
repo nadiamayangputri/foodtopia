@@ -6,9 +6,14 @@
     background-color: #fbffd4;
 }
 
+#search {
+    grid-area: search;
+}
 
 .display{
+    grid-area: category;
     background: #ff5d55;
+    font-family: 'Baloo', cursive;
 }
 
 .category-container {
@@ -24,10 +29,16 @@
     min-width: 350px;
 }
 
+.ingredients {
+    padding: 20px;
+    min-width: 350px;
+    background: #ff857f;
+    border-radius: 20px;
+}
+
 
 .category-container p{
     flex: auto;
-    font-family: 'Baloo', cursive;
     text-align: center;
 
 }
@@ -55,13 +66,31 @@
 
 @media (min-width: 768px) {
 
+    .category-container {
+        grid-area: category;
+        margin: 0;
+    }
+
+    .ingredients {
+        grid-area: ingredients;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+    }
+
     .display {
-        padding: 30px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "category ingredients" ;
+        grid-gap: 20px;
+        padding: 20px;
+        min-height: 450px;
     }
 
     .category-container p {
-        margin: 0 auto;
-        font-size: 1.5em;
+        font-size: 1em;
+        max-height: 200px;
     }
 
 }
@@ -75,14 +104,11 @@
         max-height: 40px;
     }
 
-    .category-container,
-    .alphabet {
+    .category-container{
         padding: 20px;
     }
 
-    .alphalist button {
-        width: 60px;
-    }
+
 
 }
 

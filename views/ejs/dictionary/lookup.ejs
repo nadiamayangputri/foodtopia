@@ -39,7 +39,7 @@
 
 <div class="content">
     <!--put content here-->
-    <div class = "searchbox">
+    <div class = "searchbox" id="search">
         <p class="searchtext">Search by keyword</p>
         <form>
             <input type="text" name="search" placeholder="Enter an ingredient ">
@@ -50,13 +50,25 @@
     <div class="display">
         <div class="category-container">
             <p>Browse by category</p>
-            <div class="category odd"><a href="/lookup/searchresult">Vegetable</a></div>
-            <div class="category even"><a href="/lookup/searchresult">Fruit</a></div>
-            <div class="category odd"><a href="/lookup/searchresult">Herbs & Spices</a></div>
-            <div class="category even"><a href="/lookup/searchresult">Dairy</a></div>
-            <div class="category odd"><a href="/lookup/searchresult">Common food ingredient</a></div>
+            <div class="category odd"><a href="/lookup/category/vegetable">Vegetable</a></div>
+            <div class="category even"><a href="/lookup/category/fruit">Fruit</a></div>
+            <div class="category odd"><a href="/lookup/category/herbs and spices">Herbs & Spices</a></div>
+            <div class="category even"><a href="/lookup/category/dairy">Dairy</a></div>
+            <div class="category odd"><a href="/lookup/category/common food ingredients">Common food ingredient</a></div>
         </div>
-
+        <div class="ingredients">
+            <% for(var i=0; i < ingredients.length; i++) { %>
+            <div class="food">
+                <div class="label"><%= ingredients[i].name %></div>
+                <div class="img" style="background-image:url(<%= ingredients[i].img %>)" >
+                </div>
+                <div class="highlight">
+                    <p class=><%= ingredients[i].facts[0] %></p>
+                </div>
+                <div class="readmore"><a href="/information"><button>Read More</button></a></div>
+            </div>
+            <% } %>
+        </div>
     </div>
 </div>
 

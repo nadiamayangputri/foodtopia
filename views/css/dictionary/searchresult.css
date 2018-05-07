@@ -3,146 +3,29 @@
 }
 
 .result {
-    position: center;
     align-items: center;
-    height: 80%;
     padding: 20px;
     background: #ff8351;
 }
 
 .box{
-    display:grid;
-    grid-template-rows: auto;
-    grid-column-gap: 5px;
-    grid-row-gap: 10px;
     font-family: "Baloo", sans-serif;
-}
-.food{
-    margin: 10px;
-    border-radius: 10px;
-    background: white;
-}
-
-.food{
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns:[c1-s] auto [c2-s] auto [c2-e];
-    grid-template-rows: [r1-s] auto [r2-s] auto [r3-s] auto
-    [r4-s] auto [r4-e];
-}
-
-.label{
-    position: relative;
-    top: 5%;
-    left: 5%;
-    text-align: center;
-    grid-column: c1-s/c2-s;
-    grid-row: r1-s/r2-s;
-}
-
-.img{
-    grid-column: c1-s/c2-s;
-    grid-row: r2-s/r4-e;
-}
-
-.highlight{
-    font-family: 'Baloo', cursive;
-    color: #ffe517;
-    text-align: center;
-    grid-column: c2-s;
-    grid-row: r2-s/r4-s;
-}
-
-.readmore{
-    font-family: 'Baloo', cursive;
-    text-align: center;
-    grid-column: c2-s;
-    grid-row: r4-s;
-}
-
-
-.img img{
-    position: relative;
-    left: 30%;
-    width: 90px;
-    height: 90px;
-}
-
-.readmore button{
-    border-radius: 10px;
-    padding: 5px 10px;
-    background: #a6ef19;
-    color: white;
-}
-
-.page {
-    position: relative;
-    top: 10%;
-    padding: 7px;
-    font-weight: bold;
-    font-size: 13.2pt;
-    margin: 3px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center
-}
-.page a {
-    border: #d9d300 2px solid;
-    padding: 2px 5px;
-    margin: 2px;
-    color: #fff;
-    background-color: #d90;
-    TEXT-DECORATION: none
-}
-.page a:hover {
-    border: #ff0 2px solid;
-    color: #000;
-    background-color: #ff0;
-}
-.page a:active {
-    border: #ff0 2px solid;
-    color: #000;
-    background-color: #ff0;
-}
-.page span.current {
-    border: #fff 2px solid;
-    padding: 2px 5px;
-    font-weight: bold;
-    margin: 2px;
-    color: #000;
-}
-.page span.disabled {
-    display: none;
 }
 
 @media (min-width: 768px) {
-
+    .result {
+        padding: 50px 220px;
+    }
 
     .box{
-        margin-top: 3%;
+        margin-top: 10px;
         display:grid;
-        grid-template-columns: 1fr 300px 300px 1fr;
+        grid-template-columns: 2fr 2fr;
         grid-template-rows: auto;
-        grid-column-gap: 5px;
+        grid-column-gap: 10px;
         grid-row-gap: 10px;
     }
-    .one{
-        grid-column: 2/3;
-    }
-    .two {
-        grid-column: 3/4;
-    }
-    .three{
-        grid-column: 2/3;
-    }
-    .four{
-        grid-column: 3/4;
-    }
-    .five{
-        grid-column: 2/3;
-    }
-    .six{
-        grid-column:3/4;;
-    }
+
 }
 
 

@@ -194,6 +194,52 @@ button:hover {
     width: 350px;
 }
 
+.label{
+    text-align: center;
+    font-size: 1.2em;
+    grid-area: label;
+}
+
+.label:first-letter {
+    text-transform: uppercase;
+}
+
+.img {
+    min-height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 5px;
+    grid-area: img;
+}
+
+.readmore{
+    font-family: 'Baloo', cursive;
+    text-align: center;
+    grid-area: more;
+}
+
+.highlight {
+    color: #3a3a3a;
+    padding: 10px;
+    font-size: 0.8em;
+    text-align: center;
+    grid-area: highlight;
+}
+
+.food{
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+}
+
+.readmore button{
+    border-radius: 10px;
+    padding: 5px 10px;
+    background: #a6ef19;
+    color: white;
+}
+
 /* ====================
     Media Queries
    ====================*/
