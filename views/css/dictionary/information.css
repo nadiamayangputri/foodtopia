@@ -8,6 +8,9 @@
 .category:first-letter{
     text-transform: uppercase;
 }
+li:first-letter{
+    text-transform: uppercase;
+}
 .information{
 
     background: #ff8351;

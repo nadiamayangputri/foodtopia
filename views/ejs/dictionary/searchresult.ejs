@@ -44,11 +44,11 @@
 
 <div class="content">
     <!--put content here-->
-    <div class = "searchbox">
+    <div class = "searchbox" id="search">
         <p class="searchtext">Search by keyword</p>
-        <form>
-            <input type="text" name="search" placeholder="Enter an ingredient ">
-            <div><a href="/information"><button type="button" class="search-btn"> Search </button></a></div>
+        <form id = "searchbox">
+            <input type="text" id="input" placeholder="Enter an ingredient " value="">
+            <div><button type="submit" class="search-btn"> Search </button></div>
         </form>
     </div>
     <div class="result">
@@ -62,7 +62,7 @@
                 <div class="highlight">
                     <p class=><%= ingredientsCategory[i].facts[0] %></p>
                 </div>
-                <div class="readmore"><a href=<%="/ingredients/name/"+ingredientsCategory[i].name%>><button>Read More</button></a></div>
+                <div class="readmore"><a href=<%="/lookup/"+ingredientsCategory[i].name%>><button>Read More</button></a></div>
             </div>
             <% } %>
         </div>
@@ -146,6 +146,7 @@
         </div>
     </div>
 </div>
+<script src="../../js/search.js" type="text/javascript"></script>
 
 <!--Bootstrap JS-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

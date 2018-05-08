@@ -13,8 +13,8 @@ var urlencodedParser = express().use(bodyParser.urlencoded({ extended: false }))
 router.get('/', controller.home);
 router.get('/profile', controller.profile);
 
-router.post('/user/new',urlencodedParser,userController.createUser);// Create new user
-router.post('/user/existing',urlencodedParser,userController.validateLogin);// Create new user
+//router.post('/user/new',urlencodedParser,userController.createUser);// Create new user
+//router.post('/user/existing',urlencodedParser,userController.validateLogin);// Create new user
 
 router.get('/games', controller.games);
 router.get('/games/match', controller.match_game);
@@ -22,15 +22,15 @@ router.get('/games/wordsearch', controller.wordsearch);
 
 router.get('/lookup', ingredientController.allIngredients);
 
-router.get('/lookup/searchresult', controller.searchresult);
+//router.get('/lookup/searchresult', controller.searchresult);
 
 
 router.get('/lookup/category/:category', ingredientController.searchIngredientByCategory);
-router.get('/information', controller.information);
+//router.get('/information', controller.information);
 
 router.get('/ingredients',ingredientController.findAllIngredients);
-router.get('/ingredients/name/:name',urlencodedParser,ingredientController.findIngredientByName);
-router.get('/ingredients/category/:category',ingredientController.findIngredientByCategory);
+router.get('/lookup/:name',ingredientController.findIngredientByName);
+//router.get('/ingredients/category/:category',ingredientController.findIngredientByCategory);
 
 
 module.exports = router;

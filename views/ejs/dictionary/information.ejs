@@ -38,11 +38,11 @@
 
 <div class="content">
     <!--put content here-->
-    <div class = "searchbox">
+    <div class = "searchbox" id="search">
         <p class="searchtext">Search by keyword</p>
-        <form>
-            <input type="text" name="search" placeholder="Enter an ingredient ">
-            <div><a href="/information"><button type="button" class="search-btn"> Search </button></a></div>
+        <form id = "searchbox">
+            <input type="text" id="input" placeholder="Enter an ingredient " value="">
+            <div><button type="submit" class="search-btn"> Search </button></div>
         </form>
     </div>
     <div class = "information">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="recipe two">
                     <img class="food-img" src=<%=recipe1[1].image%>>
-                    <p><a href=<%=url2%>><%=recipe1[1].title%></a></p>
+                    <p><a href=<%=url2      %>><%=recipe1[1].title%></a></p>
                 </div>
                 <div class="recipe three">
                     <img class="food-img" src=<%=recipe1[4].image%>>
@@ -161,6 +161,7 @@
         </div>
     </div>
 </div>
+<script src="../../js/search.js" type="text/javascript"></script>
 <!--Bootstrap JS-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
