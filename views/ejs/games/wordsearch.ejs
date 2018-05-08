@@ -48,6 +48,7 @@
             <h2 class="logo">Word search game</h2>
             <section id="ws-area"></section>
             <ul class="ws-words"></ul>
+            <div class="image"></div>
         </div>
         <script src="../../js/game/wordsearch/utility.js"></script>
         <script src="../../js/game/wordsearch/wordsearch.js"></script>
@@ -61,8 +62,18 @@
             for (i in words) {
                 var liEl = document.createElement('li');
                 liEl.setAttribute('class', 'ws-word');
+                liEl.setAttribute('style', 'font-size:0');
                 liEl.innerText = words[i];
                 wordsWrap.appendChild(liEl);
+            }
+            var imgs = gameobj.settings.img,
+                image = document.querySelector('.image');
+            for (i in imgs) {
+                var img = document.createElement('img');
+                img.setAttribute('class', 'images');
+                //liEl.style.backgroundImage = "https://source.unsplash.com/b9wQvEXJTFg"  ;
+                img.setAttribute('src',imgs[i]);
+                image.appendChild(img);
             }
         </script>
         <!--put content here-->

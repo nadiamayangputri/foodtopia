@@ -26,7 +26,14 @@
         var default_settings = {
             'directions': ['W', 'N', 'WN', 'EN'],
             'gridSize': 7,
-            'words': ['Apple','Orange', 'three', 'four', 'five', 'six'],
+            'words': ['Apple','Orange', 'Chili', 'Garlic', 'Corn', 'Tomato'],
+            'img' : [
+                'https://source.unsplash.com/b9wQvEXJTFg',
+                'https://source.unsplash.com/Zh6C3GydNBA',
+                'https://source.unsplash.com/2GYNq35kD0w',
+                'https://source.unsplash.com/muv4YPu4Og4',
+                'https://www.naturalfoodseries.com/wp-content/uploads/2017/10/Corn-800x416.jpg',
+                'https://source.unsplash.com/iASD5_HpTZc'],
             'wordsList' : [],
             'debug': false
         }
