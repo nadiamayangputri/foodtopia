@@ -2,7 +2,12 @@
     background-color: #fbffd4;
 }
 
-
+.title:first-letter {
+    text-transform: uppercase;
+}
+.category:first-letter{
+    text-transform: uppercase;
+}
 .information{
 
     background: #ff8351;
@@ -25,7 +30,13 @@
     grid-area: fact;
     background-color: #ffee6c;
     border: 5px solid #ffe517;
+
 }
+li {
+    text-align: left;
+}
+
+
 
 .nutrition-fact {
     grid-area: nutrition;
@@ -66,6 +77,18 @@
     width: 280px;
     margin: auto;
 }
+h5{
+    grid-area: head;
+}
+. one{
+    grid-area: recipe1;
+}
+. two{
+    grid-area: recipe2;
+}
+. three{
+    grid-area: recipe3;
+}
 
 .add-collection {
     display: inline;
@@ -94,5 +117,12 @@
             "img general general general"
             "fact fact fact fact"
             "recipes recipes recipes recipes";
+    }
+
+    .recipes{
+        display: grid;
+        grid-template-areas:
+                "head head head"
+                "recipe1 recipe2 recipe3"
     }
 }

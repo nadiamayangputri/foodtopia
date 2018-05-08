@@ -48,22 +48,38 @@
     <div class = "information">
         <div class="wrapper">
             <div class="food-name">
-                <h1>Label</h1>
+                <h1 class="title"><%=ingredients.name%></h1>
             </div>
-            <img src="../../img/picture.png" class="food-img">
+            <img class="food-img" src=<%=ingredients.img%> >
             <div class="box general-info">
-                <p>Category:</p>
-                <p>Where it comes from:</p>
-                <p>Some of the varieties:</p>
+                <p class="category"><%=ingredients.category%></p>
+                <p>The Origin: <%=ingredients.origin%></p>
+                <p>Kinds</p>
+                <% for(var i=0; i < ingredients.kinds.length; i++) { %>
+                <li class="kinds"><%=ingredients.kinds[i]%></li>
+                <% } %>
+
             </div>
             <div class="box fact">
-                <li>Fact: 1</li>
-                <li>Fact: 2</li>
-                <li>Fact: 3</li>
-                <li>Fact: 4</li>
+                <% for(var i=0; i < ingredients.facts.length; i++) { %>
+                <li class="facts"><%=ingredients.facts[i]%></li>
+                <% } %>
             </div>
             <div class="box recipes">
                 <h5>Recipes you can make with this ingredient:</h5>
+                <div class="recipe one">
+                    <img class="food-img" src=<%=recipe1[0].image%> >
+                    <p><a href=<%=url1%>><%=recipe1[0].title%></a></p>
+                </div>
+                <div class="recipe two">
+                    <img class="food-img" src=<%=recipe1[1].image%>>
+                    <p><a href=<%=url2%>><%=recipe1[1].title%></a></p>
+                </div>
+                <div class="recipe three">
+                    <img class="food-img" src=<%=recipe1[4].image%>>
+                    <p><a href=<%=url3%>><%=recipe1[4].title%></a></p>
+                </div>
+
             </div>
 
             <button type="button" class="add-collection">+</button>
