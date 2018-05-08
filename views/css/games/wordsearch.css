@@ -37,29 +37,29 @@ h2{
     margin-bottom: 40px;
 }
 
-.ws-area, .ws-words {
+.ws-area{
     display: inline-block;
     vertical-align: top;
 }
 
-.ws-words {
-    width: 190px;
-    margin-left: 20px;
-    text-align: left;
-}
-
-.ws-word {
-    margin-top: 8%;
-    margin-left: 5px;
-    display: inline-block;
-    background: orange;
-    height: 80px;
-    width: 80px;
-    margin-bottom: 4px;
-}
-
 .ws-words ::first-letter{
     text-transform : capitalize;
+}
+
+.image{
+    margin-top: 5px;
+    display: grid;
+    grid-template-areas:
+    "a b"
+    "c d"
+    "e f"
+}
+.images{
+    margin-left: 5%;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    height: 95px;
+    width: 95px;
 }
 
 .ws-area {
