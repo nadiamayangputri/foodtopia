@@ -4,10 +4,17 @@ const controller = require('../controller/controller');
 const userController = require('../controller/users');
 const ingredientController = require('../controller/ingredients');
 
+
+const bodyParser = require('body-parser');
+express().use(bodyParser.json()); // for parsing application/json
+var urlencodedParser = express().use(bodyParser.urlencoded({ extended: false }));
+// for parsing application/x-www-form-urlencoded
+
 router.get('/', controller.home);
 router.get('/profile', controller.profile);
 
-router.post('/user/new',userController.createUser);// Create new user
+router.post('/user/new',urlencodedParser,userController.createUser);// Create new user
+router.post('/user/existing',urlencodedParser,userController.validateLogin);// Create new user
 
 router.get('/games', controller.games);
 router.get('/games/match', controller.match_game);
@@ -22,7 +29,7 @@ router.get('/lookup/category/:category', ingredientController.searchIngredientBy
 router.get('/information', controller.information);
 
 router.get('/ingredients',ingredientController.findAllIngredients);
-router.get('/ingredients/name/:name',ingredientController.findIngredientByName);
+router.get('/ingredients/name/:name',urlencodedParser,ingredientController.findIngredientByName);
 router.get('/ingredients/category/:category',ingredientController.findIngredientByCategory);
 
 
