@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,23 +24,30 @@
 
 <header id = "navbar">
     <div class="main-header">
-
         <h1 class="name">Foodtopia</h1>
+
+        <% if (user) { %>
+        <a href="/profile"> <button type="button" id="login">My Profile</button></a>
+        <a href="/logout"> <button type="button" id="login">Log out</button></a>
+        <% } else { %>
         <button type="button" id="login" data-toggle="modal" data-target="#id02">Log in</button>
         <button type="button" id="signup" data-toggle="modal" data-target="#id01">Sign up </button>
+
+        <% } %>
 
     </div>
 
     <div class="nav">
         <ul>
-            <li><a href="/" ><button type="button" class="home"><img class="nav-icon" src="../../icon/home-icon-silhouette.png"><div>Home</div></button></a></li>
+            <li><a href="/" ><button type="button" class="home"><img class="nav-icon" src="../icon/home-icon-silhouette.png"><div>Home</div></button></a></li>
 
-            <li><a href="/lookup" ><button type="button" class="lookup"><img class="nav-icon" src="../../icon/magnifier.png"><div>Lookup</div></button></a></li>
+            <li><a href="/lookup" ><button type="button" class="lookup"><img class="nav-icon" src="../icon/magnifier.png"><div>Lookup</div></button></a></li>
 
-            <li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../../icon/gamepad-console.png"><div>Games</div></button></a></li>
+            <li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png"><div>Games</div></button></a></li>
         </ul>
     </div>
 </header>
+
 
 <div class="content">
     <!--put content here-->
@@ -76,9 +84,7 @@
                 image.appendChild(img);
             }
         </script>
-        <!--put content here-->
     </div>
-
 </div>
 
 <footer class="footer">
@@ -96,22 +102,26 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form name="signupform" action="/profile" method="post">
+
                     <div class="container">
                         <h1 id = "banner1">  Join us today!</h1>
                         <div class="form-container">
                             <p id = "banner2">  Please fill in this form to create an account.</p>
                             <hr>
-                            <label for="email"><b>Username   </b></label>
-                            <input type="text" placeholder="Your username" name="email" required>
+                            <label for="username"><b>Username   </b></label>
+                            <input type="text" placeholder="Create a username" name="username" required>
                             <br>
-                            <label for="psw"><b>Password   </b></label>
-                            <input type="password" placeholder="Your passcode" name="psw" required>
+                            <label for="password"><b>Password   </b></label>
+                            <input type="password" placeholder="Your passcode" name="password" required>
+                            <br>
+                            <label for="passwordConf"><b>Re-enterPassword </b></label>
+                            <input type="password" name="passwordConf" placeholder="Confirm Password" required="">
                             <br>
 
                             <div class="modal-footer">
                                 <button type="button" id="cancel" data-dismiss="modal">Maybe later...</button>
-                                <button type="submit" id="submit_signup">Sign Me Up ! </button>
+                                <button type="submit" id="submit_signup" value="REGISTER">Sign Me Up ! </button>
                             </div>
 
                         </div>
@@ -134,16 +144,17 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+
+                <form name="loginform" action="/profile" method="post">
                     <div class="container">
                         <h1 id = "banner1">  Welcome back!</h1>
                         <hr>
                         <div class="form-container">
-                            <label for="email"><b>Username   </b></label>
-                            <input type="text" placeholder="Your username" name="email" required>
+                            <label for="username"><b>Username   </b></label>
+                            <input type="text" placeholder="Your username" name="username" required>
                             <br>
-                            <label for="psw"><b>Password   </b></label>
-                            <input type="password" placeholder="Your passcode" name="psw" required>
+                            <label for="password"><b>Password   </b></label>
+                            <input type="password" placeholder="Your passcode" name="password" required>
                             <br>
                             <button type="submit" class="signup" id="submit_signup">Log me in !</button>
 
@@ -161,4 +172,169 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
+
 </html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Foodtopia</title>-->
+
+    <!--<link rel="stylesheet" href="../../css/account/signup.css" >-->
+    <!--<link rel="stylesheet" href="../../css/games/wordsearch.css" />-->
+
+    <!--&lt;!&ndash;Fonts&ndash;&gt;-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">-->
+
+    <!--&lt;!&ndash;template CSS&ndash;&gt;-->
+    <!--<link href="../../css/template.css" rel="stylesheet">-->
+
+    <!--&lt;!&ndash;Bootstrap&ndash;&gt;-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">-->
+
+    <!--&lt;!&ndash;template CSS&ndash;&gt;-->
+    <!--<link href="../../css/template.css" rel="stylesheet">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<header id = "navbar">-->
+    <!--<div class="main-header">-->
+
+        <!--<h1 class="name">Foodtopia</h1>-->
+        <!--<button type="button" id="login" data-toggle="modal" data-target="#id02">Log in</button>-->
+        <!--<button type="button" id="signup" data-toggle="modal" data-target="#id01">Sign up </button>-->
+
+    <!--</div>-->
+
+    <!--<div class="nav">-->
+        <!--<ul>-->
+            <!--<li><a href="/" ><button type="button" class="home"><img class="nav-icon" src="../../icon/home-icon-silhouette.png"><div>Home</div></button></a></li>-->
+
+            <!--<li><a href="/lookup" ><button type="button" class="lookup"><img class="nav-icon" src="../../icon/magnifier.png"><div>Lookup</div></button></a></li>-->
+
+            <!--<li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../../icon/gamepad-console.png"><div>Games</div></button></a></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</header>-->
+
+<!--<div class="content">-->
+    <!--&lt;!&ndash;put content here&ndash;&gt;-->
+    <!--<div class="content">-->
+        <!--<div class="wrap">-->
+            <!--<h2 class="logo">Word search game</h2>-->
+            <!--<section id="ws-area"></section>-->
+            <!--<ul class="ws-words"></ul>-->
+            <!--<div class="image"></div>-->
+        <!--</div>-->
+        <!--<script src="../../js/game/wordsearch/utility.js"></script>-->
+        <!--<script src="../../js/game/wordsearch/wordsearch.js"></script>-->
+        <!--<script type="text/javascript">-->
+            <!--var gameAreaEl = document.getElementById('ws-area');-->
+            <!--var gameobj = gameAreaEl.wordSearch();-->
+
+            <!--// Put words into `.ws-words`-->
+            <!--var words = gameobj.settings.wordsList,-->
+                <!--wordsWrap = document.querySelector('.ws-words');-->
+            <!--for (i in words) {-->
+                <!--var liEl = document.createElement('li');-->
+                <!--liEl.setAttribute('class', 'ws-word');-->
+                <!--liEl.setAttribute('style', 'font-size:0');-->
+                <!--liEl.innerText = words[i];-->
+                <!--wordsWrap.appendChild(liEl);-->
+            <!--}-->
+            <!--var imgs = gameobj.settings.img,-->
+                <!--image = document.querySelector('.image');-->
+            <!--for (i in imgs) {-->
+                <!--var img = document.createElement('img');-->
+                <!--img.setAttribute('class', 'images');-->
+                <!--//liEl.style.backgroundImage = "https://source.unsplash.com/b9wQvEXJTFg"  ;-->
+                <!--img.setAttribute('src',imgs[i]);-->
+                <!--image.appendChild(img);-->
+            <!--}-->
+        <!--</script>-->
+    <!--</div>-->
+
+<!--</div>-->
+
+<!--<footer class="footer">-->
+    <!--<p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>-->
+<!--</footer>-->
+
+<!--&lt;!&ndash; Sign up Modal &ndash;&gt;-->
+<!--<div class="modal fade" id="id01" tabindex="-1" role="dialog"  aria-hidden="true">-->
+    <!--<div class="modal-dialog modal-dialog-centered" role="document">-->
+        <!--<div class="modal-content">-->
+
+            <!--<div class="banner-img">-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                    <!--<span aria-hidden="true">&times;</span>-->
+                <!--</button>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--<form>-->
+                    <!--<div class="container">-->
+                        <!--<h1 id = "banner1">  Join us today!</h1>-->
+                        <!--<div class="form-container">-->
+                            <!--<p id = "banner2">  Please fill in this form to create an account.</p>-->
+                            <!--<hr>-->
+                            <!--<label for="email"><b>Username   </b></label>-->
+                            <!--<input type="text" placeholder="Your username" name="email" required>-->
+                            <!--<br>-->
+                            <!--<label for="psw"><b>Password   </b></label>-->
+                            <!--<input type="password" placeholder="Your passcode" name="psw" required>-->
+                            <!--<br>-->
+
+                            <!--<div class="modal-footer">-->
+                                <!--<button type="button" id="cancel" data-dismiss="modal">Maybe later...</button>-->
+                                <!--<button type="submit" id="submit_signup">Sign Me Up ! </button>-->
+                            <!--</div>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--&lt;!&ndash; Log in Modal &ndash;&gt;-->
+<!--<div class="modal fade" id="id02" tabindex="-1" role="dialog"  aria-hidden="true">-->
+    <!--<div class="modal-dialog modal-dialog-centered" role="document">-->
+        <!--<div class="modal-content">-->
+
+            <!--<div class="banner-img">-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                    <!--<span aria-hidden="true">&times;</span>-->
+                <!--</button>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--<form>-->
+                    <!--<div class="container">-->
+                        <!--<h1 id = "banner1">  Welcome back!</h1>-->
+                        <!--<hr>-->
+                        <!--<div class="form-container">-->
+                            <!--<label for="email"><b>Username   </b></label>-->
+                            <!--<input type="text" placeholder="Your username" name="email" required>-->
+                            <!--<br>-->
+                            <!--<label for="psw"><b>Password   </b></label>-->
+                            <!--<input type="password" placeholder="Your passcode" name="psw" required>-->
+                            <!--<br>-->
+                            <!--<button type="submit" class="signup" id="submit_signup">Log me in !</button>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash;Bootstrap JS&ndash;&gt;-->
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+<!--</body>-->
+
+<!--</html>-->
