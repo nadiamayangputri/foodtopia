@@ -24,7 +24,6 @@ app.use(session({
 }));
 app.use(function(req,res,next){
     var user = app.locals.user;
-    console.log('what is req.user',app.locals.user);
 
     if (app.locals.user) {
         res.locals.user = app.locals.user;
