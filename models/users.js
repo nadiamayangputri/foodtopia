@@ -6,7 +6,8 @@ var userSchema = mongoose.Schema({
     "password": String,
     "admin": Boolean,
     "points": Number,
-    "Badges" : Boolean,
+    "badges" : Number,
+    "journal": Number,
     "login" : Boolean
 });
 

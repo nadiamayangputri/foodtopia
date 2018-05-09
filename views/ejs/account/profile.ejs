@@ -43,9 +43,9 @@
             <img src="../../icon/user.png" class="user-img">
             <h3 class="username"><%=users.username%></h3>
             <ul class="profile-icons">
-                <li><img src="../../icon/medal.png" class="icon">Badges</li>
-                <li><img src="../../icon/favorite.png" class="icon">Points</li>
-                <li><img src="../../icon/journal.png" class="icon">Journal</li>
+                <li><img src="../../icon/medal.png" class="icon"><%=users.badges%> Badges</li>
+                <li><img src="../../icon/favorite.png" class="icon"><%=users.points%> Points</li>
+                <li><img src="../../icon/journal.png" class="icon"><%=users.journal%> Journal</li>
             </ul>
         </div>
     </div>
@@ -157,8 +157,6 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra . Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
             </div>
         </div>
-
-        <!--<h3 class="empty">No journal log yet :(</h3>-->
 
     </div>
     <div id="collection">

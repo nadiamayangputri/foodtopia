@@ -117,17 +117,17 @@ li {
 }
 
 
-. one{
+.one{
     grid-area: recipe1;
 }
-. two{
+.two{
     grid-area: recipe2;
 }
-. three{
+.three{
     grid-area: recipe3;
 }
 
-.add-collection {
+#add-collection {
     display: inline;
     float: left;
     width: 35px;

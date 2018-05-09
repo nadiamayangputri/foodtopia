@@ -42,6 +42,9 @@ module.exports.validate = function (req, res, next) {
                 newUser = new users({
                     "username": req.body.username,
                     "password": req.body.password,
+                    "points": 0,
+                    "badges" : 0,
+                    "journal": 0,
                     "admin": false,
                     "login" : false
                 });
