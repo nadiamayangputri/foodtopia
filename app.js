@@ -3,7 +3,7 @@ const app = express();
 
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-
+var flash = require('connect-flash');
 
 // database
 
@@ -22,12 +22,17 @@ app.use(session({
         mongooseConnection: db
     })
 }));
+
+app.use(flash());
+app.set('currentuser',app.locals.user );
 app.use(function(req,res,next){
     var user = app.locals.user;
 
     if (app.locals.user) {
+        app.set('currentuser',app.locals.user );
         res.locals.user = app.locals.user;
     }else{
+        // app.set('currentuser',null);
         res.locals.user = null;
     }
 

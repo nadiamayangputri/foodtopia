@@ -10,7 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
 
     <!--Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
@@ -22,16 +23,30 @@
 <header>
     <div class="main-header">
         <h1 class="name">Foodtopia</h1>
-        <a href="/logout"> <button type="button" id="login">Log out</button></a>
+        <a href="/logout">
+            <button type="button" id="login">Log out</button>
+        </a>
     </div>
 
     <div class="nav">
         <ul>
-            <li><a href="/" ><button type="button" class="home"><img class="nav-icon" src="../../icon/home-icon-silhouette.png"><div>Home</div></button></a></li>
+            <li><a href="/">
+                    <button type="button" class="home"><img class="nav-icon" src="../../icon/home-icon-silhouette.png">
+                        <div>Home</div>
+                    </button>
+                </a></li>
 
-            <li><a href="/lookup" ><button type="button" class="lookup"><img class="nav-icon" src="../../icon/magnifier.png"><div>Lookup</div></button></a></li>
+            <li><a href="/lookup">
+                    <button type="button" class="lookup"><img class="nav-icon" src="../../icon/magnifier.png">
+                        <div>Lookup</div>
+                    </button>
+                </a></li>
 
-            <li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../../icon/gamepad-console.png"><div>Games</div></button></a></li>
+            <li><a href="/games">
+                    <button type="button" class="games"><img class="nav-icon" src="../../icon/gamepad-console.png">
+                        <div>Games</div>
+                    </button>
+                </a></li>
         </ul>
     </div>
 </header>
@@ -41,7 +56,7 @@
     <div id="profile">
         <div class="profile-container">
             <img src="../../icon/user.png" class="user-img">
-            <h3 class="username"><%=users.username%></h3>
+            <h3 class="username"><%= users.username %></h3>
             <ul class="profile-icons">
                 <li><img src="../../icon/medal.png" class="icon"><%=users.badges%> Badges</li>
                 <li><img src="../../icon/favorite.png" class="icon"><%=users.points%> Points</li>
@@ -78,8 +93,9 @@
         <!-- Button trigger modal -->
         <button type="button" class="add-btn" data-toggle="modal" data-target="#add-journal">+</button>
 
-        <!-- Modal -->
-        <div class="modal fade" id="add-journal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <!-- Modal for journal -->
+        <div class="modal fade" id="add-journal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content" id="my-modal-content">
                     <div class="modal-header">
@@ -89,40 +105,44 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form method = post>
-                            <div class="form-group">
+                        <form id="journalentry" action="/journal" method="post">
+                            <div class="container">
                                 <label class="form-control-label" for="meal">What did you eat today?</label>
-                                <input type="text" class="form-control" id="meal">
+                                <input type="text" class="form-control" name="meal" required>
 
-                                <label class="form-control-label" for="ingredients">What ingredients are in it? (you can ask others what they think if you are unsure)</label>
-                                <input type="text" class="form-control" id="ingredients">
+                                <label class="form-control-label" for="ingredients">What ingredients are in it? (you can
+                                    ask others what they think if you are unsure)</label>
+                                <input type="text" class="form-control" name="ingredients" required>
 
                                 <label class="form-control-label" for="comments">Comments</label>
-                                <textarea class="form-control" id="comments"></textarea>
-
-                                <label class="form-control-label" for="rating">How much would you rate this meal?</label>
+                                <textarea type="text" form = "journalentry" class="form-control" name="comments" required>
+                               </textarea>
+                                <label class="form-control-label" for="rating">How much would you rate this
+                                    meal?</label>
                                 <div class="stars">
-                                    <form action="">
-                                        <input class="star star-5" id="star-5" type="radio" name="star"/>
-                                        <label class="star star-5" for="star-5"></label>
-                                        <input class="star star-4" id="star-4" type="radio" name="star"/>
-                                        <label class="star star-4" for="star-4"></label>
-                                        <input class="star star-3" id="star-3" type="radio" name="star"/>
-                                        <label class="star star-3" for="star-3"></label>
-                                        <input class="star star-2" id="star-2" type="radio" name="star"/>
-                                        <label class="star star-2" for="star-2"></label>
-                                        <input class="star star-1" id="star-1" type="radio" name="star"/>
-                                        <label class="star star-1" for="star-1"></label>
-                                    </form>
+                                <form >
+                                <input class="star star-5" id="star-5" type="radio" name="star"/>
+                                <label class="star star-5" for="star-5"></label>
+                                <input class="star star-4" id="star-4" type="radio" name="star"/>
+                                <label class="star star-4" for="star-4"></label>
+                                <input class="star star-3" id="star-3" type="radio" name="star"/>
+                                <label class="star star-3" for="star-3"></label>
+                                <input class="star star-2" id="star-2" type="radio" name="star"/>
+                                <label class="star star-2" for="star-2"></label>
+                                <input class="star star-1" id="star-1" type="radio" name="star"/>
+                                <label class="star star-1" for="star-1"></label>
+                                </form>
                                 </div>
+                                <div class="modal-footer">
 
+                                    <button type="submit" class="post-btn" value="addEntry">Post</button>
+                                </div>
 
                             </div>
                         </form>
+
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn post-btn" data-dismiss="modal">Post</button>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -133,28 +153,32 @@
                 <p>What I ate: _____</p>
                 <p>What it is made of: _____, _____,_____, ...</p>
                 <p>Comments:</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra . Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .
+                    Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
             </div>
             <div class="journal-entry entry-2">
                 <h4 class="date">Thursday, 27 March</h4>
                 <p>What I ate: _____</p>
                 <p>What it is made of: _____, _____,_____, ...</p>
                 <p>Comments:</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra . Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .
+                    Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
             </div>
             <div class="journal-entry entry-3">
                 <h4 class="date">Tuesday, 1 April</h4>
                 <p>What I ate: _____</p>
                 <p>What it is made of: _____, _____,_____, ...</p>
                 <p>Comments:</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra . Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .
+                    Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
             </div>
             <div class="journal-entry entry-4">
                 <h4 class="date">Friday, 5 April</h4>
                 <p>What I ate: _____</p>
                 <p>What it is made of: _____, _____,_____, ...</p>
                 <p>Comments:</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra . Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .
+                    Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
             </div>
         </div>
 
@@ -172,9 +196,15 @@
 </footer>
 
 <!--Bootstrap-->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

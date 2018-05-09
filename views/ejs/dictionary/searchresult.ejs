@@ -17,6 +17,7 @@
 <link href="../../css/account/signup.css" rel="stylesheet">
 <!--template CSS-->
 <link href="../../css/template.css" rel="stylesheet">
+<link href="../../css/autosearch.css" rel="stylesheet">
 
 
 
@@ -53,12 +54,14 @@
 <div class="content">
     <!--put content here-->
     <div class = "searchbox" id="search">
-        <p class="searchtext">Search by keyword</p>
-        <form id = "searchbox">
-            <input type="text" id="input" placeholder="Enter an ingredient " value="">
-            <div><button type="submit" class="search-btn"> Search </button></div>
-        </form>
-    </div>
+            <p class="searchtext">Search by keyword</p>
+            <form id = "fsearchbox">
+                <div>
+                     <input type="text" id="input" placeholder="Enter an ingredient " value="">
+                </div>
+                <button type="submit" class="search-btn"> Search </button>
+            </form>
+        </div>
     <div class="result">
         <h1 class="title"><%= ingredientsCategory[0].category %></h1>
         <div class="box">

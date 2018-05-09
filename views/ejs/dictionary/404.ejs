@@ -2,21 +2,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Foodtopia</title>
+    <meta charset="UTF-8">
+    <title>Foodtopia</title>
 
-<link rel="stylesheet" href="../../css/account/signup.css" >
-<link rel="stylesheet" href="../../css/dictionary/information.css">
-<!--Bootstrap-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<!--fonts-->
-<link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/account/signup.css" >
+    <link href="../../css/dictionary/lookup.css" rel="stylesheet">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
 
-<!--template CSS-->
-<link href="../../css/template.css" rel="stylesheet">
+    <!--template CSS-->
+    <link href="../../css/template.css" rel="stylesheet">
     <link href="../../css/autosearch.css" rel="stylesheet">
+    <style>
+        .error{
+            font-family: 'Righteous', cursive;
+            font-size: 400%;
+            text-align: center;
+            
+        }
+        .error:hover {
+            background-image: linear-gradient(to right,red,
+            orange , yellow, green);
+
+            font-weight: bold;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        body {
+            height: 850px;
+            background-color: #fbffd4;
+        }
+        .searchbox{
+            height: 400px;
+        }
+    </style>
 
 </head>
+
 <body>
 
 <header id = "navbar">
@@ -45,75 +69,20 @@
     </div>
 </header>
 
-
-<div class="content">
-    <!--put content here-->
-    <div class = "searchbox" id="search">
-        <p class="searchtext">Search by keyword</p>
-        <form id = "fsearchbox">
-            <div>
-                <input type="text" id="input" placeholder="Enter an ingredient " value="">
-            </div>
-            <button type="submit" class="search-btn"> Search </button>
-        </form>
-    </div>
-    <div class = "information">
-        <div class="wrapper">
-            <div class="food-name">
-                <h1 class="title"><%=ingredients.name%></h1>
-            </div>
-            <img class="food-img" src=<%=ingredients.img%> >
-            <div class="box general-info">
-                <p class="category"><b>Category:</b> <%=ingredients.category%></p>
-                <p><b>The Origin:</b> <%=ingredients.origin%></p>
-                <p><b>Amongst the different variations, here are a few of them:</b></p>
-                <ul id="kinds-ul">
-                    <% for(var i=0; i < ingredients.kinds.length; i++) { %>
-                    <li class="kinds"><%=ingredients.kinds[i]%></li>
-                    <% } %>
-                </ul>
-
-            </div>
-            <div class="box fact">
-                <h2>Facts</h2>
-                <ul id="facts-ul">
-                    <% for(var i=0; i < ingredients.facts.length; i++) { %>
-                    <li class="facts"><%=ingredients.facts[i]%></li>
-                    <br>
-                    <% } %>
-                </ul>
-            </div>
-            <div class="box recipes">
-                <h2>Recipes you can make with this ingredient:</h2>
-
-                <div class="recipe one">
-                    <div style="background-image: url(<%=recipe1[0].image%>)">
-                        <a href=<%=url1%> target="_blank"></a>
-                    </div>
-                    <p><b><a href=<%=url1%> target="_blank"><%=recipe1[0].title%></a></b></p>
-                </div>
-                <div class="recipe two">
-                    <div style="background-image: url(<%=recipe1[1].image%>)">
-                        <a href=<%=url2%> target="_blank"></a>
-                    </div>
-                    <p><b><a href=<%=url2%>  target="_blank"><%=recipe1[1].title%></a></b></p>
-                </div>
-                <div class="recipe three">
-                    <div style="background-image: url(<%=recipe1[2].image%>)">
-                        <a href=<%=url3%> target="_blank"></a>
-                    </div>
-                    <p><b><a href=<%=url3%>  target="_blank"><%=recipe1[2].title%></a></b></p>
-                </div>
-
-            </div>
-
-            <% if (user) { %>
-                <button type="button" id="add-collection"">+</button>
-            <% } %>
-
-        </div>
-    </div>
+<div class="error">
+    <p> Error: 404 </p>
+    <p>Item Not Found</p>
 </div>
+<div class = "searchbox" id="search" style="margin-bottom: 5%">
+    <p class="searchtext">Search by keyword</p>
+    <form id = "fsearchbox">
+        <div >
+            <input type="text" id="input" placeholder="Enter an ingredient " value="">
+        </div>
+        <button type="submit" class="search-btn"> Search </button>
+    </form>
+</div>
+
 
 <footer class="footer">
     <p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>
@@ -194,6 +163,7 @@
         </div>
     </div>
 </div>
+<script src="../../js/search.js" type="text/javascript"></script>
 
 <!--Bootstrap JS-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

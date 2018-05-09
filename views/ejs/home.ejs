@@ -17,6 +17,14 @@
     <link href="../css/account/signup.css" rel="stylesheet">
     <!--template CSS-->
     <link href="../css/template.css" rel="stylesheet">
+    <link href="../../css/autosearch.css" rel="stylesheet">
+    <style>
+        .autocomplete-items div{
+            width: 100%;
+            margin: 0;
+            margin-top: -1px;
+        }
+    </style>
 
 
 </head>
@@ -53,13 +61,18 @@
     <div class="main-background">
         <div class="main">
             <h1 class="tagline">Explore fresh food ingredients daily!</h1>
-            <form class= "searchbox" autocomplete="off">
+            <form class = "searchbox" id = "fsearchbox">
                 <label>Search food or food ingredient</label>
-                <input type="text" id="input" placeholder="Enter an ingredient " value="">
-                <div><button type="submit" class="search-btn"> Search </button></div>
+                <div id = "searchbox">
+                    <input type="text" id="input" placeholder="Enter an ingredient " value="">
+                </div>
+                <button type="submit" class="search-btn"> Search </button>
             </form>
+
+
         </div>
     </div>
+
     <div class="grid-container">
 
         <div class="grid-item match-game">
@@ -121,7 +134,7 @@
                             <input type="password" placeholder="Your passcode" name="password" required>
                             <br>
                             <label for="passwordConf"><b>Re-enterPassword </b></label>
-                            <input type="password" name="passwordConf" placeholder="Confirm Password" required="">
+                            <input type="password" name="passwordConf" placeholder="Confirm Password" required>
                             <br>
 
                             <div class="modal-footer">

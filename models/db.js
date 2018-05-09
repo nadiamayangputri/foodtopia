@@ -14,6 +14,6 @@ mongoose.connect(mongoDB,function (err) {
 });
 require('./users.js');
 require('./ingredients.js');
-// require('./journals.js');
+require('./journals.js');
 var db = mongoose.connection;
 module.exports=db;

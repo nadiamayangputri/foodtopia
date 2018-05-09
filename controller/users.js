@@ -8,6 +8,8 @@ mongoose.set('debug', true);
 //User database
 var users = mongoose.model('users');
 
+const journalController = require('../controller/journals');
+
 module.exports.validate = function (req, res, next) {
     var newname = req.body.username;
     var newpassword = req.body.password;
@@ -78,15 +80,15 @@ module.exports.profile = function (req, res, next) {
             if (error) {
                 return next(error);
             } else {
-                if (user === null) {
-                    var err = new Error('Not authorized! Go back!');
-                    err.status = 400;
-                    return next(err);
+                if (!user) {
+                    return res.redirect('/');
                 } else {
                     console.log('logged in');
                     req.app.locals.user = user;
-                    users.update({'_id':req.session.userId},{$set:{'login':'true'}});
-                    return res.render('ejs/account/profile.ejs', {users: user}); }
+                    users.update({'_id': req.session.userId}, {$set: {'login': 'true'}});
+                    var journals = journalController.findall(req.session.userId);
+                    return res.render('ejs/account/profile.ejs', {users: user , journals: journals});//,{}
+                }
             }
         });
 };
@@ -102,7 +104,8 @@ module.exports.logout = function (req, res, next) {
                 req.app.locals.user = null;
 
                 console.log('logged out');
-                return res.redirect('/');
+                return res.redirect('back');
+                //return res.redirect('/');
             }
         });
     }

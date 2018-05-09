@@ -22,7 +22,9 @@ module.exports.searchresult = function (req,res) {
 module.exports.information = function (req,res) {
     res.render('ejs/dictionary/information');
 };
-
+module.exports.searchnotfond = function (req,res) {
+    res.render('ejs/dictionary/404');
+};
 module.exports.wordsearch = function (req,res) {
     res.render('ejs/games/wordsearch');
 };
