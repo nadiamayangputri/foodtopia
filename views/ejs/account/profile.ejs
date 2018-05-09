@@ -86,112 +86,112 @@
         <button class="more-btn">Read More</button>
     </div>
 
-    <div id="journal">
-        <div class="subheading">
-            <h2>My Journal</h2>
-        </div>
-        <!-- Button trigger modal -->
-        <button type="button" class="add-btn" data-toggle="modal" data-target="#add-journal">+</button>
+    <!--<div id="journal">-->
+        <!--<div class="subheading">-->
+            <!--<h2>My Journal</h2>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+        <!--<button type="button" class="add-btn" data-toggle="modal" data-target="#add-journal">+</button>-->
 
-        <!-- Modal for journal -->
-        <div class="modal fade" id="add-journal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content" id="my-modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="my-modal-title">Create Journal Log</h5>
-                        <button type="button" class="close" id="my-close-btn" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="journalentry" action="/journal" method="post">
-                            <div class="container">
-                                <label class="form-control-label" for="meal">What did you eat today?</label>
-                                <input type="text" class="form-control" name="meal" required>
+        <!--&lt;!&ndash; Modal for journal &ndash;&gt;-->
+        <!--<div class="modal fade" id="add-journal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"-->
+             <!--aria-hidden="true">-->
+            <!--<div class="modal-dialog modal-dialog-centered" role="document">-->
+                <!--<div class="modal-content" id="my-modal-content">-->
+                    <!--<div class="modal-header">-->
+                        <!--<h5 class="modal-title" id="my-modal-title">Create Journal Log</h5>-->
+                        <!--<button type="button" class="close" id="my-close-btn" data-dismiss="modal" aria-label="Close">-->
+                            <!--<span aria-hidden="true">&times;</span>-->
+                        <!--</button>-->
+                    <!--</div>-->
+                    <!--<div class="modal-body">-->
+                        <!--<form id="journalentry" action="/journal" method="post">-->
+                            <!--<div class="container">-->
+                                <!--<label class="form-control-label" for="meal">What did you eat today?</label>-->
+                                <!--<input type="text" class="form-control" name="meal" required>-->
 
-                                <label class="form-control-label" for="ingredients">What ingredients are in it? (you can
-                                    ask others what they think if you are unsure)</label>
-                                <input type="text" class="form-control" name="ingredients" required>
+                                <!--<label class="form-control-label" for="ingredients">What ingredients are in it? (you can-->
+                                    <!--ask others what they think if you are unsure)</label>-->
+                                <!--<input type="text" class="form-control" name="ingredients" required>-->
 
-                                <label class="form-control-label" for="comments">Comments</label>
-                                <textarea type="text" form = "journalentry" class="form-control" name="comments" required>
-                               </textarea>
-                                <label class="form-control-label" for="rating">How much would you rate this
-                                    meal?</label>
-                                <div class="stars">
-                                <form >
-                                <input class="star star-5" id="star-5" type="radio" name="star"/>
-                                <label class="star star-5" for="star-5"></label>
-                                <input class="star star-4" id="star-4" type="radio" name="star"/>
-                                <label class="star star-4" for="star-4"></label>
-                                <input class="star star-3" id="star-3" type="radio" name="star"/>
-                                <label class="star star-3" for="star-3"></label>
-                                <input class="star star-2" id="star-2" type="radio" name="star"/>
-                                <label class="star star-2" for="star-2"></label>
-                                <input class="star star-1" id="star-1" type="radio" name="star"/>
-                                <label class="star star-1" for="star-1"></label>
-                                </form>
-                                </div>
-                                <div class="modal-footer">
+                                <!--<label class="form-control-label" for="comments">Comments</label>-->
+                                <!--<textarea type="text" form = "journalentry" class="form-control" name="comments" required>-->
+                               <!--</textarea>-->
+                                <!--<label class="form-control-label" for="rating">How much would you rate this-->
+                                    <!--meal?</label>-->
+                                <!--<div class="stars">-->
+                                <!--<form >-->
+                                <!--<input class="star star-5" id="star-5" type="radio" name="star"/>-->
+                                <!--<label class="star star-5" for="star-5"></label>-->
+                                <!--<input class="star star-4" id="star-4" type="radio" name="star"/>-->
+                                <!--<label class="star star-4" for="star-4"></label>-->
+                                <!--<input class="star star-3" id="star-3" type="radio" name="star"/>-->
+                                <!--<label class="star star-3" for="star-3"></label>-->
+                                <!--<input class="star star-2" id="star-2" type="radio" name="star"/>-->
+                                <!--<label class="star star-2" for="star-2"></label>-->
+                                <!--<input class="star star-1" id="star-1" type="radio" name="star"/>-->
+                                <!--<label class="star star-1" for="star-1"></label>-->
+                                <!--</form>-->
+                                <!--</div>-->
+                                <!--<div class="modal-footer">-->
 
-                                    <button type="submit" class="post-btn" value="addEntry">Post</button>
-                                </div>
+                                    <!--<button type="submit" class="post-btn" value="addEntry">Post</button>-->
+                                <!--</div>-->
 
-                            </div>
-                        </form>
+                            <!--</div>-->
+                        <!--</form>-->
 
-                    </div>
+                    <!--</div>-->
 
-                </div>
-            </div>
-        </div>
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="journal-container">
-            <div class="journal-entry entry-1">
-                <h4 class="date">Monday, 24 March</h4>
-                <p>What I ate: _____</p>
-                <p>What it is made of: _____, _____,_____, ...</p>
-                <p>Comments:</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .
-                    Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
-            </div>
-            <div class="journal-entry entry-2">
-                <h4 class="date">Thursday, 27 March</h4>
-                <p>What I ate: _____</p>
-                <p>What it is made of: _____, _____,_____, ...</p>
-                <p>Comments:</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .
-                    Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
-            </div>
-            <div class="journal-entry entry-3">
-                <h4 class="date">Tuesday, 1 April</h4>
-                <p>What I ate: _____</p>
-                <p>What it is made of: _____, _____,_____, ...</p>
-                <p>Comments:</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .
-                    Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
-            </div>
-            <div class="journal-entry entry-4">
-                <h4 class="date">Friday, 5 April</h4>
-                <p>What I ate: _____</p>
-                <p>What it is made of: _____, _____,_____, ...</p>
-                <p>Comments:</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .
-                    Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
-            </div>
-        </div>
+        <!--<div class="journal-container">-->
+            <!--<div class="journal-entry entry-1">-->
+                <!--<h4 class="date">Monday, 24 March</h4>-->
+                <!--<p>What I ate: _____</p>-->
+                <!--<p>What it is made of: _____, _____,_____, ...</p>-->
+                <!--<p>Comments:</p>-->
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .-->
+                    <!--Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>-->
+            <!--</div>-->
+            <!--<div class="journal-entry entry-2">-->
+                <!--<h4 class="date">Thursday, 27 March</h4>-->
+                <!--<p>What I ate: _____</p>-->
+                <!--<p>What it is made of: _____, _____,_____, ...</p>-->
+                <!--<p>Comments:</p>-->
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .-->
+                    <!--Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>-->
+            <!--</div>-->
+            <!--<div class="journal-entry entry-3">-->
+                <!--<h4 class="date">Tuesday, 1 April</h4>-->
+                <!--<p>What I ate: _____</p>-->
+                <!--<p>What it is made of: _____, _____,_____, ...</p>-->
+                <!--<p>Comments:</p>-->
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .-->
+                    <!--Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>-->
+            <!--</div>-->
+            <!--<div class="journal-entry entry-4">-->
+                <!--<h4 class="date">Friday, 5 April</h4>-->
+                <!--<p>What I ate: _____</p>-->
+                <!--<p>What it is made of: _____, _____,_____, ...</p>-->
+                <!--<p>Comments:</p>-->
+                <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra .-->
+                    <!--Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <!--<h3 class="empty">No journal log yet :(</h3>-->
+        <!--&lt;!&ndash;<h3 class="empty">No journal log yet :(</h3>&ndash;&gt;-->
 
-    </div>
-    <div id="collection">
-        <div class="subheading">
-            <h2>My Collection</h2>
-        </div>
-        <h3 class="empty">No item added yet :(</h3>
-    </div>
-</div>
+    <!--</div>-->
+    <!--<div id="collection">-->
+        <!--<div class="subheading">-->
+            <!--<h2>My Collection</h2>-->
+        <!--</div>-->
+        <!--<h3 class="empty">No item added yet :(</h3>-->
+    <!--</div>-->
+<!--</div>-->
 
 <footer class="footer">
     <p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>
