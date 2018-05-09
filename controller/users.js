@@ -7,8 +7,10 @@ mongoose.set('debug', true);
 // });
 //User database
 var users = mongoose.model('users');
+var ingredients = mongoose.model('ingredients');
 
 const journalController = require('../controller/journals');
+
 
 module.exports.validate = function (req, res, next) {
     var newname = req.body.username;
@@ -87,7 +89,14 @@ module.exports.profile = function (req, res, next) {
                     req.app.locals.user = user;
                     users.update({'_id': req.session.userId}, {$set: {'login': 'true'}});
                     var journals = journalController.findall(req.session.userId);
-                    return res.render('ejs/account/profile.ejs', {users: user , journals: journals});//,{}
+
+                    ingredients.find(function(err, ingredients){
+                        if (!err) {
+                            return res.render('ejs/account/profile.ejs', {users: user , journals: journals, ingredients: ingredients});//,{}
+                        } else {
+                            res.sendStatus(404);
+                        }
+                    });
                 }
             }
         });

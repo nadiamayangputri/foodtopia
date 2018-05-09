@@ -66,24 +66,25 @@
     </div>
 
     <div id="fact-day">
-        <h4 class="fact-heading">Food ingredient of the day: ______</h4>
+        <% var num = Math.floor(Math.random() * ingredients.length);%>
+        <h4 class="fact-heading">Food ingredient of the day: <%= ingredients[num].name%></h4>
         <div class="fact-container">
-            <img src="../../img/picture.png" class="food-img">
+            <img src="<%= ingredients[num].img%>" class="food-img">
 
             <div class="fact-desc">
-                <p>Category: _____</p>
-                <p>Where it comes from: _____</p>
+                <p>Category: <%= ingredients[num].category%></p>
+                <p>Where it comes from: <%= ingredients[num].origin%></p>
                 <div class="benefit">
-                    <p>Benefit:</p>
+                    <p>Facts:</p>
                     <ol class="benefit">
-                        <li>_______</li>
-                        <li>_______</li>
-                        <li>_______</li>
+                        <li><%= ingredients[num].facts[0]%></li>
+                        <li><%= ingredients[num].facts[1]%></li>
+                        <li><%= ingredients[num].facts[2]%></li>
                     </ol>
                 </div>
             </div>
         </div>
-        <button class="more-btn">Read More</button>
+        <button class="more-btn"><a href="/lookup/"+<%=ingredients[num].name%>>Read More</a></button>
     </div>
 
     <div id="journal">
