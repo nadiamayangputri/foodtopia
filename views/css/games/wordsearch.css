@@ -127,3 +127,17 @@ h2{
     padding:0;
     margin:0;
 }
+
+#attribution{
+    margin-left: 28%;
+    margin-bottom: 5%;
+    font-size: 1.1em;
+    font-family:'Comic Sans MS', bold, sans-serif;
+    text-align: justify;
+    clear:left;
+    color: orange;
+}
+#attribution:hover{
+    color: lightcoral;
+    transform: scale(1.1);
+}

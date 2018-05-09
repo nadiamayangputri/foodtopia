@@ -22,9 +22,9 @@ router.get('/games/match', controller.match_game);
 router.get('/games/wordsearch', controller.wordsearch);
 
 router.get('/lookup', ingredientController.allIngredients);
+router.get('/error', controller.searchnotfond);
 
 //router.get('/lookup/searchresult', controller.searchresult);
-
 
 router.get('/lookup/category/:category', ingredientController.searchIngredientByCategory);
 //router.get('/information', controller.information);
