@@ -15,7 +15,6 @@ li:first-letter{
 
     background: #ff8351;
     padding: 20px;
-    /*grid-template-columns: [cs-1] 20% [cs-2] 60% [cs-3] 20% [ce-3];*/
 }
 
 .food-name {
@@ -39,7 +38,11 @@ li {
     text-align: left;
 }
 
-
+#kinds-ul,
+#facts-ul {
+    display: block;
+    list-style: square;
+}
 
 .nutrition-fact {
     grid-area: nutrition;
@@ -55,15 +58,22 @@ li {
 
 
 .box {
-    text-align: center;
-    color: #444;
     border-radius: 5px;
-    padding: 20px;
-    font-family: "Baloo", sans-serif;
+    padding: 10px;
+    font-family: "Montserrat", sans-serif;
     font-size: 1.1em;
     margin: 10px 20px;
 }
 
+.fact h2 {
+    background: #fff6a8;
+    padding: 10px;
+}
+
+.recipes h2{
+    background: #daff8c;
+    padding: 10px;
+}
 
 .wrapper{
     font-family: "Baloo", sans-serif;
@@ -72,6 +82,7 @@ li {
     margin: 20px auto;
     padding: 10px;
     border-radius: 25px;
+    border: 20px solid #fc9e79;
 }
 
 .food-img{
@@ -80,9 +91,32 @@ li {
     width: 280px;
     margin: auto;
 }
-h5{
+
+.recipes h2{
     grid-area: head;
+    max-width: 790px;
 }
+
+.recipe {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.recipe div {
+    min-height: 180px;
+    min-width: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.recipe div a{
+    display: block;
+    min-width: 200px;
+    min-height: 180px;
+}
+
+
 . one{
     grid-area: recipe1;
 }
@@ -111,7 +145,17 @@ h5{
     transform: scale(1.2);
 }
 
+@media (max-width: 384px) {
+    .recipes, .food-img {
+        display: none;
+    }
+}
+
 @media (min-width: 768px) {
+    .box {
+        padding: 30px;
+    }
+
     .wrapper {
         display: grid;
         grid-template-columns: 2fr 1fr 2fr 1fr;
@@ -120,12 +164,27 @@ h5{
             "img general general general"
             "fact fact fact fact"
             "recipes recipes recipes recipes";
+        padding: 30px;
     }
 
-    .recipes{
+    .recipe div a{
+        min-width: 200px;
+        min-height: 180px;
+    }
+
+    .recipe div {
+        min-height: 180px;
+        min-width: 250px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .recipes {
         display: grid;
         grid-template-areas:
                 "head head head"
-                "recipe1 recipe2 recipe3"
+                "recipe1 recipe2 recipe3";
+        grid-gap: 10px;
     }
 }

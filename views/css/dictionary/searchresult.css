@@ -27,9 +27,11 @@
     font-family: "Baloo", sans-serif;
 }
 
+
+
 @media (min-width: 768px) {
     .result {
-        padding: 50px 220px;
+        padding: 50px 100px;
     }
 
     .box{
@@ -41,6 +43,12 @@
         grid-row-gap: 10px;
     }
 
+}
+
+@media (min-width: 1024px) {
+    .result {
+        padding: 50px 220px;
+    }
 }
 
 

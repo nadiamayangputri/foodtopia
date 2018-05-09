@@ -66,7 +66,7 @@ a.visited {
     height: 50px;
 }
 
-ul {
+.nav ul {
     display: flex;
     text-align: center;
     list-style: none;
@@ -231,9 +231,10 @@ button:hover {
     padding: 20px;
     border-radius: 10px;
     background: white;
+    margin: 5px;
 }
 
-.readmore button{
+.readmore button {
     border-radius: 10px;
     padding: 5px 10px;
     background: #a6ef19;
