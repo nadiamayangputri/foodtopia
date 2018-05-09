@@ -1,11 +1,39 @@
 const express = require('express');
 const app = express();
-var bodyParser = require('body-parser');
-app.use(bodyParser.json());
+
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
 
 // database
-require('./models/db.js');
 
+var db = require('./models/db.js');
+
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: false })); // for parsing application/x-www-form-urlencoded
+//use sessions for tracking logins
+
+app.use(session({
+    secret: 'work hard',
+    resave: true,
+    saveUninitialized: false,
+    store: new MongoStore({
+        mongooseConnection: db
+    })
+}));
+app.use(function(req,res,next){
+    var user = app.locals.user;
+    console.log('what is req.user',app.locals.user);
+
+    if (app.locals.user) {
+        res.locals.user = app.locals.user;
+    }else{
+        res.locals.user = null;
+    }
+
+    next();
+});
 const router =  require('./routes/home.js');
 
 app.set('view engine', 'ejs');

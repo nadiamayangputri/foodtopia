@@ -1,8 +1,7 @@
 
-var mongoose = require('mongoose');
-
 module.exports.home = function (req, res) {
     res.render('ejs/home');
+
 };
 module.exports.games = function (req, res) {
     res.render('ejs/games/games');

@@ -22,7 +22,7 @@
 <header>
     <div class="main-header">
         <h1 class="name">Foodtopia</h1>
-        <a href="/"> <button type="button" id="login">Log out</button></a>
+        <a href="/logout"> <button type="button" id="login">Log out</button></a>
     </div>
 
     <div class="nav">
@@ -41,7 +41,7 @@
     <div id="profile">
         <div class="profile-container">
             <img src="../../icon/user.png" class="user-img">
-            <h3 class="username">Username</h3>
+            <h3 class="username"><%=users.username%></h3>
             <ul class="profile-icons">
                 <li><img src="../../icon/medal.png" class="icon">Badges</li>
                 <li><img src="../../icon/favorite.png" class="icon">Points</li>
@@ -89,7 +89,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form method = post>
                             <div class="form-group">
                                 <label class="form-control-label" for="meal">What did you eat today?</label>
                                 <input type="text" class="form-control" id="meal">

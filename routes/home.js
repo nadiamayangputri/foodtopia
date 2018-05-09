@@ -11,11 +11,12 @@ var urlencodedParser = express().use(bodyParser.urlencoded({ extended: false }))
 // for parsing application/x-www-form-urlencoded
 
 router.get('/', controller.home);
-router.get('/profile', controller.profile);
+router.get('/profile', userController.profile);
 
-//router.post('/user/new',urlencodedParser,userController.createUser);// Create new user
-//router.post('/user/existing',urlencodedParser,userController.validateLogin);// Create new user
-
+router.post('/profile',urlencodedParser,userController.validate);// Create new user
+// router.post('/profile',urlencodedParser,userController.validateLogin);//Log in
+router.get('/profile', userController.profile);
+router.get('/logout', userController.logout);
 router.get('/games', controller.games);
 router.get('/games/match', controller.match_game);
 router.get('/games/wordsearch', controller.wordsearch);
