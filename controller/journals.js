@@ -11,7 +11,8 @@ var journals = mongoose.model('journals');
 
 module.exports.createEntry = function (req, res, next) {
     console.log(req.body);
-    console.log('user in req : ' + req.app.locals.user);
+    console.log('user in journal session: ' + req.session.userId);
+
     if (req.body.meal && req.body.ingredients) {
         var newEntry;
         newEntry = new journals({
@@ -19,7 +20,7 @@ module.exports.createEntry = function (req, res, next) {
             "date": new Date(),
             // "user" : req.app.get('currentuser').id,
             //need actual user
-            "user" : "temp",
+            "user" : req.session.userId,
                 "meal": req.body.meal,
             "ingredients": req.body.ingredients,
             "comments": req.body.comments,
@@ -33,8 +34,8 @@ module.exports.createEntry = function (req, res, next) {
                 console.log('New entry failed to save.');
                 res.sendStatus(400);
             } else {
-                return res.redirect('/profile');
                 console.log('New entry successfully saved.');
+                return res.redirect('/profile');
             }
         });
     } else {
@@ -42,13 +43,13 @@ module.exports.createEntry = function (req, res, next) {
     }
 };
 
-module.exports.findall = function (userID) {
-
-    journals.find({user: userID},function (err, entries) {
-        if (!err) {
-            return entries;
-        } else {
-            console.log('error getting all the journals');
+module.exports.findAll = function(userID, callback){
+    journals.find({user:userID}, function(err,entries){
+        if(!err){
+            // console.log('entries found in journal.js  '+entries);
+            callback(entries);
+        }else{
+            res.sendStatus(404);
         }
     });
 };

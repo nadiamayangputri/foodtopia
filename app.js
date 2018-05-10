@@ -24,12 +24,19 @@ app.use(session({
 }));
 
 app.use(flash());
-app.set('currentuser',app.locals.user );
+// app.set('currentuser',app.locals.user );
+
 app.use(function(req,res,next){
     var user = app.locals.user;
 
+  // if there's a flash message in the session request, make it available in the response, then delete it
+    res.locals.sessionFlash = req.session.sessionFlash;
+    // console.log(req.session.sessionFlash);
+    delete req.session.sessionFlash;
+
     if (app.locals.user) {
-        app.set('currentuser',app.locals.user );
+     //   console.log('app session user '+ req.session.username);
+        //app.set('currentuser',app.locals.user );
         res.locals.user = app.locals.user;
     }else{
         // app.set('currentuser',null);
