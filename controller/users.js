@@ -49,6 +49,7 @@ module.exports.validate = function (req, res, next) {
                     "points": 0,
                     "badges" : 0,
                     "journal": 0,
+                    "ingredient-collection" : [],
                     "admin": false,
                     "login" : false
                 });

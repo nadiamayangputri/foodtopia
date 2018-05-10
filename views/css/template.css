@@ -147,6 +147,7 @@ button:hover {
     cursor: pointer;
 }
 
+/*Search bar styles*/
 .searchbox input, button {
     border: none;
     outline: none;
@@ -194,6 +195,8 @@ button:hover {
 .searchbox input:focus {
     width: 350px;
 }
+
+/*Serach result box styles*/
 
 .label{
     text-align: center;

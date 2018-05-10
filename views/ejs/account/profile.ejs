@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <title>Foodtopia</title>
 
-    <link href="../../css/account/profile.css" rel="stylesheet">
-
     <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous|Montserrat" rel="stylesheet">
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -15,8 +13,9 @@
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
+    <link href="../../css/account/profile.css" rel="stylesheet">
     <!--template CSS-->
-    <link href="css/template.css" rel="stylesheet">
+    <link href="../../css/template.css" rel="stylesheet">
 </head>
 <body>
 
@@ -58,33 +57,39 @@
             <img src="../../icon/user.png" class="user-img">
             <h3 class="username"><%= users.username %></h3>
             <ul class="profile-icons">
-                <li><img src="../../icon/medal.png" class="icon"><%=users.badges%> Badges</li>
-                <li><img src="../../icon/favorite.png" class="icon"><%=users.points%> Points</li>
-                <li><img src="../../icon/journal.png" class="icon"><%=users.journal%> Journal</li>
+                <li>
+                    <p>Badges</p>
+                    <img src="../../icon/medal.png" class="icon">
+                    <p><%=users.badges%></p>
+                </li>
+                <li>
+                    <p>Points</p>
+                    <img src="../../icon/favorite.png" class="icon">
+                    <p><%=users.points%></p>
+                </li>
+                <li>
+                    <p>Journal</p>
+                    <img src="../../icon/journal.png" class="icon">
+                    <p><%=users.journal%></p>
+                </li>
             </ul>
         </div>
     </div>
 
     <div id="fact-day">
         <% var num = Math.floor(Math.random() * ingredients.length);%>
-        <h4 class="fact-heading">Food ingredient of the day: <%= ingredients[num].name%></h4>
-        <div class="fact-container">
-            <img src="<%= ingredients[num].img%>" class="food-img">
-
-            <div class="fact-desc">
-                <p>Category: <%= ingredients[num].category%></p>
-                <p>Where it comes from: <%= ingredients[num].origin%></p>
-                <div class="benefit">
-                    <p>Facts:</p>
-                    <ol class="benefit">
-                        <li><%= ingredients[num].facts[0]%></li>
-                        <li><%= ingredients[num].facts[1]%></li>
-                        <li><%= ingredients[num].facts[2]%></li>
-                    </ol>
-                </div>
+        <div class="food" id="fact-content">
+            <h4 class="fact-heading">Food ingredient to explore:</h4>
+            <div class="label"><%= ingredients[num].name %></div>
+            <div class="img" style="background-image:url(<%= ingredients[num].img %>)" >
             </div>
+            <div class="highlight">
+                <p class=><%= ingredients[num].facts[0] %></p>
+                <p class=><%= ingredients[num].facts[1] %></p>
+            </div>
+            <div class="readmore"><a href=<%="/lookup/"+ingredients[num].name%>><button>Read More</button></a></div>
         </div>
-        <button class="more-btn"><a href="/lookup/"+<%=ingredients[num].name%>>Read More</a></button>
+
     </div>
 
     <div id="journal">
@@ -182,6 +187,8 @@
                     Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,</p>
             </div>
         </div>
+
+        <!--<h3 class="empty">No journal log yet :(</h3>-->
 
     </div>
     <div id="collection">
