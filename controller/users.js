@@ -11,19 +11,16 @@ var ingredients = mongoose.model('ingredients');
 
 const journalController = require('../controller/journals');
 
-
 module.exports.validate = function (req, res, next) {
     var newname = req.body.username;
     var newpassword = req.body.password;
-    console.log(newname);
-    console.log(newpassword);
     //log in
     if (req.body.username && req.body.password && !(req.body.passwordConf)) {
         users.findOne({username: newname, password: newpassword}, function (err, user) {
 
             if (!user) {
                 console.log('wrong details')
-            }else{
+            } else {
                 req.session.userId = user._id;
                 return res.redirect('/profile');
                 // res.render('ejs/account/profile.ejs', {users: user});
@@ -32,7 +29,7 @@ module.exports.validate = function (req, res, next) {
 
         });
         //sign up
-    }else if (req.body.username && req.body.password && req.body.passwordConf) {
+    } else if (req.body.username && req.body.password && req.body.passwordConf) {
         if (req.body.password !== req.body.passwordConf) {
             var err = new Error('Passwords do not match.');
             err.status = 400;
@@ -51,25 +48,27 @@ module.exports.validate = function (req, res, next) {
                     "journal": 0,
                     "ingredient-collection" : [],
                     "admin": false,
-                    "login" : false
+                    "login": false
                 });
 
-                    newUser.save(function (err, user) {
-                        if (err) {
-                            console.log('New user failed to save.');
-                            res.sendStatus(400);
-                        } else {
+                newUser.save(function (err, user) {
+                    if (err) {
+                        console.log('New user failed to save.');
+                        res.sendStatus(400);
+                    } else {
 
-                            console.log('New user successfully saved.');
-                            // res.render('ejs/account/profile.ejs', {users: user});
-                            req.session.userId = user._id;
-                            return res.redirect('/profile');
-                        }
-                    });
+                        console.log('New user successfully saved.');
+                        // res.render('ejs/account/profile.ejs', {users: user});
+                        req.session.userId = user._id;
+                        req.session.username = user.username;
+
+                        return res.redirect('/profile');
+                    }
+                });
 
 
-            }else{
-                console.log(user+'name exists already');
+            } else {
+                console.log(user + 'name exists already');
             }
 
 
@@ -87,17 +86,28 @@ module.exports.profile = function (req, res, next) {
                     return res.redirect('/');
                 } else {
                     console.log('logged in');
+                    console.log(req.session.userId + ' printed user');
                     req.app.locals.user = user;
                     users.update({'_id': req.session.userId}, {$set: {'login': 'true'}});
-                    var journals = journalController.findall(req.session.userId);
 
-                    ingredients.find(function(err, ingredients){
-                        if (!err) {
-                            return res.render('ejs/account/profile.ejs', {users: user , journals: journals, ingredients: ingredients});//,{}
-                        } else {
-                            res.sendStatus(404);
-                        }
+                    var username = req.session.userId;
+                    var journals = journalController.findAll(username, function (entries) {
+                        // gets all ingredients from the database
+                        ingredients.find(function(err, ingredients){
+                            if (!err) {
+                                return res.render('ejs/account/profile.ejs', {
+                                    users: user ,
+                                    journals: entries,
+                                    ingredients: ingredients
+                                });
+                            } else {
+                                res.sendStatus(404);
+                            }
+                        });
+
                     });
+
+
                 }
             }
         });
@@ -119,13 +129,4 @@ module.exports.logout = function (req, res, next) {
             }
         });
     }
-};
-module.exports.findall = function (req,res) {
-    users.find(function(err,users){
-        if(!err){
-            res.send(users);
-        }else{
-            res.sendStatus(404);
-        }
-    });
 };

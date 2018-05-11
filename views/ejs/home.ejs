@@ -35,6 +35,7 @@
         <h1 class="name">Foodtopia</h1>
 
         <% if (user) { %>
+        <% console.log('ejs lala'+user._id) ; %>
         <a href="/profile"> <button type="button" id="login">My Profile</button></a>
         <a href="/logout"> <button type="button" id="login">Log out</button></a>
         <% } else { %>
@@ -127,6 +128,11 @@
                         <div class="form-container">
                             <p id = "banner2">  Please fill in this form to create an account.</p>
                             <hr>
+                            <% if ( sessionFlash && sessionFlash.message) { %>
+                            <div class="<%= sessionFlash.type %>">
+                                <strong>FLASH!</strong> <%= sessionFlash.message %>
+                            </div>
+                            <% } %>
                             <label for="username"><b>Username   </b></label>
                             <input type="text" placeholder="Create a username" name="username" required>
                             <br>

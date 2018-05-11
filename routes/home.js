@@ -19,7 +19,7 @@ router.get('/profile', userController.profile);
 router.get('/logout', userController.logout);
 
 router.post('/journal',urlencodedParser,journalController.createEntry); //create journal entry
-
+// router.get('/journal',journalController.findAll);
 router.get('/games', controller.games);
 router.get('/games/match', controller.match_game);
 router.get('/games/wordsearch', controller.wordsearch);
