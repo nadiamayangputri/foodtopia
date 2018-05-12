@@ -61,7 +61,15 @@ a.visited {
     font-size: 0.9em;
     padding: 5px;
 }
-
+.hidden {display: none;}
+.errormsg{
+    font-family: 'Arial',sans-serif;
+    background-color: #ffb3b3;
+    color: #b30000;
+    border: 1px solid red;
+    border-radius: 10%;
+    text-align: center;
+}
 .nav {
     height: 50px;
 }

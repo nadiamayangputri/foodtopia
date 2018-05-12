@@ -24,31 +24,33 @@ app.use(session({
 }));
 
 app.use(flash());
-// app.set('currentuser',app.locals.user );
 
 app.use(function(req,res,next){
-    var user = app.locals.user;
 
-  // if there's a flash message in the session request, make it available in the response, then delete it
-    res.locals.sessionFlash = req.session.sessionFlash;
-    // console.log(req.session.sessionFlash);
-    delete req.session.sessionFlash;
+     //if there is a valid session, assign res user object for ejs
+    if (req.session.userId) {
+          res.locals.user = app.locals.user;
+    }else{
+        res.locals.user = null;
+        res.locals.messages = null;
 
-    if (app.locals.user) {
-     //   console.log('app session user '+ req.session.username);
-        //app.set('currentuser',app.locals.user );
-        res.locals.user = app.locals.user;
+    }
+    if (req.session.errormsg) {
+        res.locals.messages = req.session.errormsg;
     }else{
         // app.set('currentuser',null);
-        res.locals.user = null;
+        res.locals.messages = null;
     }
+    var user = app.locals.user;
 
     next();
 });
+
 const router =  require('./routes/home.js');
 
 app.set('view engine', 'ejs');
 app.use(router);
+
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/views/js'));
 // app.use('/static', express.static(__dirname + '/icon/KR_Fruity'));

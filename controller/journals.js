@@ -1,11 +1,7 @@
 
 var mongoose = require('mongoose');
 mongoose.set('debug', true);
-// var alertModel = mongoose.model('Alert');
-// alertModel.find().exec(function (err, docs) {
-//     if(!err)
-//         console.log(docs);
-// });
+
 //User database
 var journals = mongoose.model('journals');
 
@@ -41,13 +37,10 @@ module.exports.createEntry = function (req, res, next) {
         newEntry = new journals({
 
             "date": dateString,
-            // "user" : req.app.get('currentuser').id,
-            //need actual user
             "user" : req.session.userId,
                 "meal": req.body.meal,
             "ingredients": req.body.ingredients,
-            "comments": req.body.comments,
-            //need to fix rating
+            "comments": req.body.comments
         });
 
         newEntry.save(function (err, entry) {

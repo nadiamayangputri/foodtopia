@@ -1,10 +1,5 @@
 var mongoose = require('mongoose');
 mongoose.set('debug', true);
-// var alertModel = mongoose.model('Alert');
-// alertModel.find().exec(function (err, docs) {
-//     if(!err)
-//         console.log(docs);
-// });
 //User database
 var users = mongoose.model('users');
 var ingredients = mongoose.model('ingredients');
@@ -19,22 +14,28 @@ module.exports.validate = function (req, res, next) {
         users.findOne({username: newname, password: newpassword}, function (err, user) {
 
             if (!user) {
-                console.log('wrong details')
-            } else {
+                console.log('wrong details');
+
+                req.session.errormsg = "Login Error: Invalid username or password";
+                return res.redirect('back');
+            }else{
                 req.session.userId = user._id;
+                req.session.username = user.username;
+                req.session.errormsg = null;
                 return res.redirect('/profile');
-                // res.render('ejs/account/profile.ejs', {users: user});
             }
-
-
         });
         //sign up
     } else if (req.body.username && req.body.password && req.body.passwordConf) {
         if (req.body.password !== req.body.passwordConf) {
-            var err = new Error('Passwords do not match.');
-            err.status = 400;
-            res.send("passwords dont match");
-            return next(err);
+            // var err = new Error('Passwords do not match.');
+            // err.status = 400;
+            // res.send("passwords dont match");
+            // return next(err);
+            req.session.errormsg = "Signup Error: Passwords dont match";
+            return res.redirect('back');
+
+
         }
         var newUser;
         users.findOne({username: newname}, function (err, user) {
@@ -44,9 +45,9 @@ module.exports.validate = function (req, res, next) {
                     "username": req.body.username,
                     "password": req.body.password,
                     "points": 0,
-                    "badges" : 0,
+                    "badges": 0,
                     "journal": 0,
-                    "ingredient-collection" : [],
+                    "ingredient-collection": [],
                     "admin": false,
                     "login": false
                 });
@@ -56,12 +57,9 @@ module.exports.validate = function (req, res, next) {
                         console.log('New user failed to save.');
                         res.sendStatus(400);
                     } else {
-
+                        req.session.errormsg = null;
                         console.log('New user successfully saved.');
-                        // res.render('ejs/account/profile.ejs', {users: user});
                         req.session.userId = user._id;
-                        req.session.username = user.username;
-
                         return res.redirect('/profile');
                     }
                 });
@@ -69,9 +67,10 @@ module.exports.validate = function (req, res, next) {
 
             } else {
                 console.log(user + 'name exists already');
+                req.session.errormsg ="Signup Error: Username "+ req.body.username + " has been taken :(";
+                return res.redirect('back');
+
             }
-
-
         });
     }
 };
@@ -86,17 +85,16 @@ module.exports.profile = function (req, res, next) {
                     return res.redirect('/');
                 } else {
                     console.log('logged in');
-                    console.log(req.session.userId + ' printed user');
                     req.app.locals.user = user;
                     users.update({'_id': req.session.userId}, {$set: {'login': 'true'}});
 
                     var username = req.session.userId;
-                    var journals = journalController.findAll(username, function (entries) {
+                    journalController.findAll(username, function (entries) {
                         // gets all ingredients from the database
-                        ingredients.find(function(err, ingredients){
+                        ingredients.find(function (err, ingredients) {
                             if (!err) {
                                 return res.render('ejs/account/profile.ejs', {
-                                    users: user ,
+                                    users: user,
                                     journals: entries,
                                     ingredients: ingredients
                                 });
