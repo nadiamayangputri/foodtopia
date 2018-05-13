@@ -30,18 +30,17 @@ app.use(function(req,res,next){
      //if there is a valid session, assign res user object for ejs
     if (req.session.userId) {
           res.locals.user = app.locals.user;
+
     }else{
         res.locals.user = null;
-        res.locals.messages = null;
 
     }
     if (req.session.errormsg) {
         res.locals.messages = req.session.errormsg;
+        delete  req.session.errormsg;
     }else{
-        // app.set('currentuser',null);
         res.locals.messages = null;
     }
-    var user = app.locals.user;
 
     next();
 });
