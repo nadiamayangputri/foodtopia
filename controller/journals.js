@@ -1,12 +1,6 @@
 
 var mongoose = require('mongoose');
 mongoose.set('debug', true);
-// var alertModel = mongoose.model('Alert');
-// alertModel.find().exec(function (err, docs) {
-//     if(!err)
-//         console.log(docs);
-// });
-//User database
 var journals = mongoose.model('journals');
 
 // returns a formatted date for journal
@@ -23,7 +17,7 @@ function formatDate(date) {
       "Friday", "Saturday", "Sunday"
     ];
 
-    var dayIndex = date.getDay();
+    var dayIndex = date.getDay() - 1;
     var day = date.getDate();
     var monthIndex = date.getMonth();
     var year = date.getFullYear();
@@ -39,15 +33,11 @@ module.exports.createEntry = function (req, res, next) {
         var newEntry;
         var dateString = formatDate(new Date());
         newEntry = new journals({
-
             "date": dateString,
-            // "user" : req.app.get('currentuser').id,
-            //need actual user
             "user" : req.session.userId,
-                "meal": req.body.meal,
+            "meal": req.body.meal,
             "ingredients": req.body.ingredients,
             "comments": req.body.comments,
-            //need to fix rating
         });
 
         newEntry.save(function (err, entry) {
@@ -59,6 +49,7 @@ module.exports.createEntry = function (req, res, next) {
                 return res.redirect('/profile');
             }
         });
+
     } else {
         console.log('please fill in fields');
     }
@@ -67,7 +58,6 @@ module.exports.createEntry = function (req, res, next) {
 module.exports.findAll = function(userID, callback){
     journals.find({user:userID}, function(err,entries){
         if(!err){
-            // console.log('entries found in journal.js  '+entries);
             callback(entries);
         }else{
             res.sendStatus(404);

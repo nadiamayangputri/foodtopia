@@ -8,7 +8,6 @@ var userSchema = mongoose.Schema({
     "points": Number,
     "badges" : Number,
     "journal": Number,
-    "ingredient-collection" : Array,
     "login" : Boolean
 });
 

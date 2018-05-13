@@ -9,6 +9,7 @@
 
 /*Profile box style*/
 #profile {
+    position: relative;
     grid-area: profile;
     background-color: #a6ef19;
     border: 5px solid #fff;
@@ -58,6 +59,20 @@
 
 li {
     display: block;
+}
+
+.info {
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    background: none;
+    border: none;
+    width: 25px;
+    height: 25px;
+}
+
+.info img {
+    width: 22px;
 }
 
 /*Fact box style*/
@@ -146,17 +161,71 @@ li {
 
 .journal-entry p{
     font-family: "Montserrat", sans-serif;
+    font-size: 0.9em;
+}
+
+.journal-content {
+    background-color: #95ecda;
+    min-height: 200px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
 }
 
 .date {
     color: #fff;
     text-align: center;
+    font-size: 1.2em;
 }
 
-#collection {
-    grid-area: collection;
+/*Style for badges*/
+#badges {
+    grid-area: badges;
     min-height: 200px;
+    padding-bottom: 10px;
 }
+
+.badges-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.badge {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 8px double #FFD700;
+}
+
+.locked-container {
+    background-color: #aaaaaa;
+    border: 8px double #898989;
+}
+
+.badge-img {
+    display: block;
+    margin: 20px auto;
+    width: 80px;
+}
+
+.locked {
+    padding-top: 70px;
+}
+
+.locked h3{
+    font-size: 1.2em;
+    text-align: center;
+    color: #fff;
+}
+.locked h3 span {
+    font-family: "Titan One", sans-serif ;
+    color: #a6ef19;
+}
+
 
 .empty {
     display: block;
@@ -168,7 +237,7 @@ li {
 
 /*add journal modal style*/
 #add-journal {
-    font-family: "Candal", sans-serif;
+    font-family: "Baloo", sans-serif;
 }
 
 #my-close-btn {
@@ -217,11 +286,25 @@ li {
         grid-template-areas:
             "fact profile"
             "journal journal"
-            "collection collection";
+            "badges badges";
     }
 
     .username {
         width: 75%;
+    }
+
+    .profile-container {
+        margin-top: 40px;
+    }
+
+    .badges-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: auto;
+    }
+
+    .badge {
+        margin: auto;
     }
 
     #profile {
@@ -285,6 +368,8 @@ li {
     .journal-container {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 10px;
+        margin: 40px 20px;
+        padding: 10px;
     }
 
 
@@ -299,7 +384,8 @@ li {
     }
 
     #journal,
-    #collection{
+    #collection,
+    #badges{
         border: 5px solid #fff;
         border-radius: 20px;
         margin: 15px 75px;

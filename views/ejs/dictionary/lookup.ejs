@@ -22,11 +22,11 @@
 
 <header id = "navbar">
     <div class="main-header">
-        <h1 class="name">Foodtopia</h1>
+        <h1 class="name"><a href="/">Foodtopia</a></h1>
 
         <% if (user) { %>
-        <a href="/profile"> <button type="button" id="login">My Profile</button></a>
-        <a href="/logout"> <button type="button" id="login">Log out</button></a>
+        <a href="/profile"> <button type="button" id="profile-btn">My Profile</button></a>
+        <a href="/logout"> <button type="button" id="logout">Log out</button></a>
         <% } else { %>
         <button type="button" id="login" data-toggle="modal" data-target="#id02">Log in</button>
         <button type="button" id="signup" data-toggle="modal" data-target="#id01">Sign up </button>
@@ -67,6 +67,8 @@
             <div class="category even"><a href="/lookup/category/dairy">Dairy</a></div>
             <div class="category odd"><a href="/lookup/category/common food ingredients">Common food ingredient</a></div>
         </div>
+
+        <!--Display all ingredients in Database-->
         <div class="ingredients">
             <% for(var i=0; i < ingredients.length; i++) { %>
             <div class="food">
@@ -84,7 +86,7 @@
 </div>
 
 <footer class="footer">
-    <p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>
+    <p class='copyright'>Copyright&copy; 2018 of <span class="team-name">Rainbow Rift</span></p>
 </footer>
 
 <!-- Sign up Modal -->

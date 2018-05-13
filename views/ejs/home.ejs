@@ -32,12 +32,12 @@
 
 <header id = "navbar">
     <div class="main-header">
-        <h1 class="name">Foodtopia</h1>
+        <h1 class="name"><a href="/">Foodtopia</a></h1>
 
         <% if (user) { %>
         <% console.log('ejs lala'+user._id) ; %>
-        <a href="/profile"> <button type="button" id="login">My Profile</button></a>
-        <a href="/logout"> <button type="button" id="login">Log out</button></a>
+        <a href="/profile"> <button type="button" id="profile-btn">My Profile</button></a>
+        <a href="/logout"> <button type="button" id="logout">Log out</button></a>
         <% } else { %>
         <button type="button" id="login" data-toggle="modal" data-target="#id02">Log in</button>
         <button type="button" id="signup" data-toggle="modal" data-target="#id01">Sign up </button>
@@ -87,8 +87,14 @@
             </div>
         </div>
         <div class="grid-item journal-ad">
-            <h3>Ad for Journal</h3>
         </div>
+
+        <div class="grid-item points-ad">
+        </div>
+        <div class="grid-item word-game">
+            <a href="/games/wordsearch"> <button class="play-btn">Play</button> </a>
+        </div>
+
         <div class="grid-item second-fact">
             <h3>Did you know?</h3>
             <div class="fact-content">
@@ -96,18 +102,15 @@
                 <p>Fiber helps your body digest food. It is found in vegetables, whole grains and fruit.</p>
             </div>
         </div>
-        <div class="grid-item points-ad">
-            <h3>Ad for Points</h3>
-        </div>
-        <div class="grid-item word-game">
-            <a href="/games/wordsearch"> <button class="play-btn">Play</button> </a>
-        </div>
     </div>
-    <button class="create-account" data-toggle="modal" data-target="#id01">Create account now</button>
+
+    <% if (!user) { %>
+        <button class="create-account" data-toggle="modal" data-target="#id01">Create account now</button>
+    <% }%>
 </div>
 
 <footer class="footer">
-    <p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>
+    <p class='copyright'>Copyright&copy; 2018 of <span class="team-name">Rainbow Rift</span></p>
 </footer>
 
 <!-- Sign up Modal -->

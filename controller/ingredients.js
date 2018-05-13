@@ -33,11 +33,14 @@ var findIngredientByName = function(req, res){
     })
 };
 
-
+// search ingredients by category
 var searchIngredientByCategory = function(req, res){
+
+    // gets the category specified in path
     var ingredientCategory = req.params.category;
     ingredients.find({category:ingredientCategory},function(err, ingredientCategory){
         if(!err){
+            // render in search result page including ingredients with specified category
             res.render('ejs/dictionary/searchresult', {ingredientsCategory :ingredientCategory});
         }else{
             res.sendStatus(404);
@@ -45,9 +48,11 @@ var searchIngredientByCategory = function(req, res){
     });
 };
 
+// gets all ingredients in database
 var allIngredients = function(req, res){
     ingredients.find(function(err, ingredients){
     if (!err) {
+        // render it in lookup page
         res.render('ejs/dictionary/lookup', {ingredients: ingredients});
     } else {
         res.sendStatus(404);
@@ -56,6 +61,7 @@ var allIngredients = function(req, res){
 
 };
 
+// export variables defined for use outside of this file
 module.exports.findIngredientByName = findIngredientByName;
 module.exports.searchIngredientByCategory = searchIngredientByCategory;
 module.exports.allIngredients = allIngredients;

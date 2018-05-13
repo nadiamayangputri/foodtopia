@@ -26,11 +26,11 @@
 
 <header id = "navbar">
     <div class="main-header">
-        <h1 class="name">Foodtopia</h1>
+        <h1 class="name"><a href="/">Foodtopia</a></h1>
 
         <% if (user) { %>
-        <a href="/profile"> <button type="button" id="login">My Profile</button></a>
-        <a href="/logout"> <button type="button" id="login">Log out</button></a>
+        <a href="/profile"> <button type="button" id="profile-btn">My Profile</button></a>
+        <a href="/logout"> <button type="button" id="logout">Log out</button></a>
         <% } else { %>
         <button type="button" id="login" data-toggle="modal" data-target="#id02">Log in</button>
         <button type="button" id="signup" data-toggle="modal" data-target="#id01">Sign up </button>
@@ -52,7 +52,6 @@
 
 
 <div class="content">
-    <!--put content here-->
     <div class = "searchbox" id="search">
             <p class="searchtext">Search by keyword</p>
             <form id = "fsearchbox">
@@ -62,6 +61,8 @@
                 <button type="submit" class="search-btn"> Search </button>
             </form>
         </div>
+
+    <!--Display all ingredients with the specified category-->
     <div class="result">
         <h1 class="title"><%= ingredientsCategory[0].category %></h1>
         <div class="box">
@@ -83,7 +84,7 @@
 
 
 <footer class="footer">
-    <p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>
+    <p class='copyright'>Copyright&copy; 2018 of <span class="team-name">Rainbow Rift</span></p>
 </footer>
 
 <!-- Sign up Modal -->

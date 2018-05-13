@@ -42,13 +42,16 @@ a.visited {
 }
 
 #login:hover,
-#signup:hover{
+#signup:hover,
+#logout:hover {
     transform: scale(1.2);
 }
 
 
 #login,
-#signup {
+#signup,
+#logout,
+#profile-btn {
     border-radius: 5px;
     border: none;
     background-color: #cdf576;
@@ -60,6 +63,10 @@ a.visited {
     margin-left: 8px;
     font-size: 0.9em;
     padding: 5px;
+}
+
+#logout {
+    background-color: #fb6159;
 }
 
 .nav {
@@ -145,6 +152,10 @@ button {
 button:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+button:focus {
+    outline:0;
 }
 
 /*Search bar styles*/
@@ -250,7 +261,9 @@ button:hover {
    ====================*/
 @media (min-width: 600px) {
     #login,
-    #signup {
+    #signup,
+    #logout,
+    #profile-btn {
         padding: 5px 10px;
     }
     
@@ -283,7 +296,9 @@ button:hover {
      
     
     #login,
-    #signup {
+    #signup,
+    #logout,
+    #profile-btn{
         border-radius: 5px;
         border: none;
         margin: auto 10px;
@@ -310,7 +325,7 @@ button:hover {
     }
     
     .copyright {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
 }
@@ -321,24 +336,26 @@ button:hover {
     }
 
     #login,
-    #signup {
-        font-size: 1.3em;
-        padding: 12px;
+    #signup,
+    #logout,
+    #profile-btn{
+        font-size: 1.1em;
+        padding: 8px;
     }
 
     .main-header {
-        height: 120px;
+        height: 100px;
     }
 
     .name {
-        margin-top: 10px;
+        margin-top: 3px;
         margin-left: 15px;
-        font-size: 2.5em;
+        font-size: 2.3em;
     }
 
     .footer {
         height: 100px;
-        padding: 30px
+        padding: 37px
     }
 }
 

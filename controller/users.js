@@ -1,10 +1,6 @@
 var mongoose = require('mongoose');
 mongoose.set('debug', true);
-// var alertModel = mongoose.model('Alert');
-// alertModel.find().exec(function (err, docs) {
-//     if(!err)
-//         console.log(docs);
-// });
+
 //User database
 var users = mongoose.model('users');
 var ingredients = mongoose.model('ingredients');
@@ -46,7 +42,6 @@ module.exports.validate = function (req, res, next) {
                     "points": 0,
                     "badges" : 0,
                     "journal": 0,
-                    "ingredient-collection" : [],
                     "admin": false,
                     "login": false
                 });
@@ -58,7 +53,6 @@ module.exports.validate = function (req, res, next) {
                     } else {
 
                         console.log('New user successfully saved.');
-                        // res.render('ejs/account/profile.ejs', {users: user});
                         req.session.userId = user._id;
                         req.session.username = user.username;
 
@@ -92,9 +86,27 @@ module.exports.profile = function (req, res, next) {
 
                     var username = req.session.userId;
                     var journals = journalController.findAll(username, function (entries) {
+
                         // gets all ingredients from the database
                         ingredients.find(function(err, ingredients){
                             if (!err) {
+                                // update user journal count
+                                user.journal = entries.length;
+
+                                // set points according to the number of journal entries made
+                                if (entries.length > 0) {
+                                    // each entries counts as 5 points
+                                    user.points = entries.length * 5;
+                                }
+
+                                if (user.points >= 50) {
+                                    user.badges = 1;
+                                } else if (user.points >= 100) {
+                                    user.badges = 2;
+                                } else if (user.points >= 200) {
+                                    user.badges = 3;
+                                }
+
                                 return res.render('ejs/account/profile.ejs', {
                                     users: user ,
                                     journals: entries,
@@ -103,10 +115,11 @@ module.exports.profile = function (req, res, next) {
                             } else {
                                 res.sendStatus(404);
                             }
+
+
                         });
 
                     });
-
 
                 }
             }

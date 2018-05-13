@@ -3,10 +3,10 @@
     background-color: #fbffd4;
 }
 #ad_to_create_account{
-    font-family: 'Baloo', serif;
+    font-family: 'Black Han Sans', serif;
     font-size: 1em;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 15px;
     color: #444;
     text-align: center;
 }
@@ -89,7 +89,7 @@ button#game2 {
 
 #game1:hover,
 #game2:hover{
-    transform: scale(0.8);
+    transform: scale(0.9);
 }
 
 
@@ -97,14 +97,10 @@ button#game2 {
 
     #ad_to_create_account{
         margin: auto;
-        margin-top: 50px;
+        margin-top: 60px;
         color: #444;
         text-align: center;
-        height: 300px;
-    }
-
-    #ad_to_create_account h2 {
-        font-size: 2em;
+        height: 200px;
     }
 
     .create-account {

@@ -5,7 +5,7 @@
     <title>Foodtopia</title>
 
     <!--Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous|Montserrat|Titan+One" rel="stylesheet">
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -21,9 +21,9 @@
 
 <header>
     <div class="main-header">
-        <h1 class="name">Foodtopia</h1>
+        <h1 class="name"><a href="/">Foodtopia</a></h1>
         <a href="/logout">
-            <button type="button" id="login">Log out</button>
+            <button type="button" id="logout">Log out</button>
         </a>
     </div>
 
@@ -59,7 +59,7 @@
             <ul class="profile-icons">
                 <li>
                     <p>Badges</p>
-                    <img src="../../icon/medal.png" class="icon">
+                    <a href="#badges"><img src="../../icon/medal.png" class="icon"></a>
                     <p><%=users.badges%></p>
                 </li>
                 <li>
@@ -67,13 +67,15 @@
                     <img src="../../icon/favorite.png" class="icon">
                     <p><%=users.points%></p>
                 </li>
-                <li>
-                    <p>Journal</p>
-                    <img src="../../icon/journal.png" class="icon">
+                <li><p>Journal</p>
+                    <a href="#journal"><img src="../../icon/journal.png" class="icon"></a>
                     <p><%=users.journal%></p>
                 </li>
             </ul>
         </div>
+        <button class="info" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Gain points and badges by adding to your journal! ">
+            <img src="../../icon/info.png">
+        </button>
     </div>
 
     <div id="fact-day">
@@ -116,13 +118,11 @@
                                 <label class="form-control-label" for="meal">What did you eat today?</label>
                                 <input type="text" class="form-control" name="meal" required>
 
-                                <label class="form-control-label" for="ingredients">What ingredients are in it? (you can
-                                    ask others what they think if you are unsure)</label>
+                                <label class="form-control-label" for="ingredients">What ingredients are in it? (Seperate the ingredients with commas)</label>
                                 <input type="text" class="form-control" name="ingredients" required>
 
                                 <label class="form-control-label" for="comments">Comments</label>
-                                <textarea type="text" form="journalentry" class="form-control" name="comments" required>
-                               </textarea>
+                                <textarea type="text" form="journalentry" class="form-control" name="comments" required> </textarea>
 
                                 <div class="modal-footer">
                                     <button type="submit" class="post-btn" value="addEntry">Post</button>
@@ -137,30 +137,100 @@
             </div>
         </div>
 
+        <!--Display all journals created by user-->
         <div class="journal-container">
-            <% for(var i = 0; i < journals.length; i++) {%>
-            <div class="journal-entry">
-                <h4 class="date"><%=journals[i].date%></h4>
-                <p><b>What I ate:</b> <%=journals[i].meal%></p>
-                <p><b>What it is made of:</b> <%=journals[i].ingredients%></p>
-                <p><b>Comments:</b></p>
-                <p><%=journals[i].comments%></p>
-            </div>
+            <% if(journals.length === 0) { %>
+                <h3 class="empty">No Posts yet :(</h3>
+            <% } else { %>
+                <% for(var i = 0; i < journals.length; i++) {%>
+                <div class="journal-entry">
+                        <h4 class="date"><%=journals[i].date%></h4>
+                    <div class="journal-content">
+                        <p><b>What I ate:</b> <%=journals[i].meal%></p>
+                        <p><b>What it is made of:</b> <%=journals[i].ingredients%></p>
+                        <p><b>Comments:</b></p>
+                        <p><%=journals[i].comments%></p>
+                    </div>
+                </div>
+                <%}%>
             <%}%>
         </div>
 
 
     </div>
-    <div id="collection">
+    <div id="badges">
         <div class="subheading">
-            <h2>My Collection</h2>
+            <h2>My Badges</h2>
         </div>
-        <h3 class="empty">No item added yet :(</h3>
+        <div class="badges-container">
+            <!--Display badges according to the number of badges earned-->
+            <% if(users.badges === 0) { %>
+                <div class="badge locked-container">
+                    <div class="locked">
+                        <h3>Gain <span>50</span> points</h3>
+                        <h3>to unlock this badge!</h3>
+                    </div>
+                </div>
+                <div class="badge locked-container">
+                    <div class="locked">
+                        <h3>Gain <span>100</span> points</h3>
+                        <h3>to unlock this badge!</h3>
+                    </div>
+                </div>
+                <div class="badge locked-container">
+                    <div class="locked">
+                        <h3>Gain <span>200</span> points</h3>
+                        <h3>to unlock this badge!</h3>
+                    </div>
+                </div>
+            <% } else if(users.badges == 1) { %>
+                <div class="badge">
+                    <img class="badge-img" src="../../icon/badges/bronze.png">
+                </div>
+                <div class="badge locked-container">
+                    <div class="locked">
+                        <h3>Gain <span>100</span> points</h3>
+                        <h3>to unlock this badge!</h3>
+                    </div>
+                </div>
+                <div class="badge locked-container">
+                    <div class="locked">
+                        <h3>Gain <span>200</span> points</h3>
+                        <h3>to unlock this badge!</h3>
+                    </div>
+                </div>
+
+            <% } else if(users.badges == 2) { %>
+                <div class="badge">
+                    <img class="badge-img" src="../../icon/badges/bronze.png">
+                </div>
+                <div class="badge">
+                    <img class="badge-img" src="../../icon/badges/silver.png">
+                </div>
+                <div class="badge locked-container">
+                    <div class="locked">
+                        <h3>Gain <span>200</span> points</h3>
+                        <h3>to unlock this badge!</h3>
+                    </div>
+                </div>
+            <% } else if(users.badges == 3) { %>
+                <div class="badge">
+                    <img class="badge-img" src="../../icon/badges/bronze.png">
+                </div>
+                <div class="badge">
+                    <img class="badge-img" src="../../icon/badges/silver.png">
+                </div>
+                <div class="badge">
+                    <img class="badge-img" src="../../icon/badges/gold.png">
+                </div>
+            <% } %>
+
+        </div>
     </div>
 </div>
 
 <footer class="footer">
-    <p class='copyright'>Copyright of <span class="team-name">Rainbow Rift</span></p>
+    <p class='copyright'>Copyright&copy; 2018 of <span class="team-name">Rainbow Rift</span></p>
 </footer>
 
 <!--Bootstrap-->
@@ -173,6 +243,12 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
+</script>
 
 </body>
 </html>

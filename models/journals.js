@@ -5,7 +5,7 @@ var journalSchema = mongoose.Schema(
         "user": String,
         "meal":String,
         "ingredients":String,
-        "comments":String,
+        "comments":String
     }
 );
 mongoose.model('journals',journalSchema);
