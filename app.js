@@ -3,7 +3,6 @@ const app = express();
 
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
-var flash = require('connect-flash');
 
 // database
 
@@ -22,9 +21,6 @@ app.use(session({
         mongooseConnection: db
     })
 }));
-
-app.use(flash());
-
 app.use(function(req,res,next){
 
      //if there is a valid session, assign res user object for ejs
@@ -37,6 +33,7 @@ app.use(function(req,res,next){
     }
     if (req.session.errormsg) {
         res.locals.messages = req.session.errormsg;
+        console.log(res.locals.messages);
         delete  req.session.errormsg;
     }else{
         res.locals.messages = null;
