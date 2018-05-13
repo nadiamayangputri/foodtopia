@@ -116,7 +116,7 @@ var ingredient = ["Apple", "Banana", "Tomato", "Lemon", "Avocado", "Chili", "Ros
                     "Potato", "Flour", "Mango", "Rice", "Apricot", "Orange", "Coconut", "Watermelon", "Lime", "Carrot",
                     "Onion", "Broccoli", "Zucchini", "Asparagus","Cauliflower","Beans","Radish","Beetroot","Pea",
                     "Muskmelon", "Grapes", "Pear", "Strawberry", "Blueberry", "Raspberry", "Cranberry", "Cucumber", "Eggplant",
-                    "Starfruit ", "Pumpkin", "Kiwi", "Peach", "Cherry", "Pineapple"
+                    "Starfruit", "Pumpkin", "Kiwi", "Peach", "Cherry", "Pineapple"
                     ];
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("input"), ingredient);

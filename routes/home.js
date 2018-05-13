@@ -28,5 +28,6 @@ router.get('/flash', controller.flash);
 router.get('/lookup', ingredientController.allIngredients);
 router.get('/lookup/category/:category', ingredientController.searchIngredientByCategory);
 router.get('/lookup/:name',ingredientController.findIngredientByName);
+router.get('/error', controller.searchnotfond);
 
 module.exports = router;
