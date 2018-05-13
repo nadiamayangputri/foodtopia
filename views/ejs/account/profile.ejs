@@ -65,12 +65,13 @@
                 <li>
                     <p>Points</p>
                     <img src="../../icon/favorite.png" class="icon">
-                    <p><%=users.points%></p>
+                    <!--//points are calculated according to the number of journals-->
+                    <p><%=journals.length*5%></p>
                 </li>
                 <li>
                     <p>Journal</p>
                     <img src="../../icon/journal.png" class="icon">
-                    <p><%=users.journal%></p>
+                    <p><%=journals.length%></p>
                 </li>
             </ul>
         </div>
