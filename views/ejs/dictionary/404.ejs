@@ -41,8 +41,8 @@
 
 </head>
 
-<body>
-
+<body onload="handleLoginError()">
+<div id="messages" class="hidden"><%= messages%></div>
 <header id = "navbar">
     <div class="main-header">
         <h1 class="name"><a href="/">Foodtopia</a></h1>
@@ -89,7 +89,7 @@
 </footer>
 
 <!-- Sign up Modal -->
-<div class="modal fade" id="id01" tabindex="-1" role="dialog"  aria-hidden="true">
+<div class="modal fade" id="id01" tabindex="-1" role="dialog" >
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
 
@@ -102,10 +102,16 @@
                 <form name="signupform" action="/profile" method="post">
 
                     <div class="container">
+
+                        <% if(typeof messages != 'undefined' && messages) {%>
+                        <p class="errormsg"><%= messages%></p>
+                        <%}%>
+
                         <h1 id = "banner1">  Join us today!</h1>
                         <div class="form-container">
                             <p id = "banner2">  Please fill in this form to create an account.</p>
                             <hr>
+
                             <label for="username"><b>Username   </b></label>
                             <input type="text" placeholder="Create a username" name="username" required>
                             <br>
@@ -113,7 +119,7 @@
                             <input type="password" placeholder="Your passcode" name="password" required>
                             <br>
                             <label for="passwordConf"><b>Re-enterPassword </b></label>
-                            <input type="password" name="passwordConf" placeholder="Confirm Password" required="">
+                            <input type="password" name="passwordConf" placeholder="Confirm Password" required>
                             <br>
 
                             <div class="modal-footer">
@@ -131,7 +137,7 @@
 </div>
 
 <!-- Log in Modal -->
-<div class="modal fade" id="id02" tabindex="-1" role="dialog"  aria-hidden="true">
+<div class="modal fade" id="id02" tabindex="-1" role="dialog" >
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
 
@@ -144,6 +150,10 @@
 
                 <form name="loginform" action="/profile" method="post">
                     <div class="container">
+                        <% if(typeof messages != 'undefined' && messages) {%>
+                        <p class="errormsg"><%= messages%></p>
+                        <%}%>
+
                         <h1 id = "banner1">  Welcome back!</h1>
                         <hr>
                         <div class="form-container">

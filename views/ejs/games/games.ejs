@@ -1,24 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Foodtopia</title>
 
-
-    <link rel="stylesheet" href="../../css/games/games.css" >
+    <link rel="stylesheet" href="../../css/games/games.css">
     <!--Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Baloo|Candal|Carter+One|Righteous|Russo+One|Black+Han+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <!--template CSS-->
     <link href="../../css/template.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/account/signup.css" >
+    <link rel="stylesheet" href="../../css/account/signup.css">
 </head>
-<body>
 
-<header id = "navbar">
+<body onload="handleLoginError()">
+<div id="messages" class="hidden"><%= messages %></div>
+<header id="navbar">
     <div class="main-header">
         <h1 class="name"><a href="/">Foodtopia</a></h1>
 
@@ -27,7 +27,7 @@
         <a href="/logout"> <button type="button" id="logout">Log out</button></a>
         <% } else { %>
         <button type="button" id="login" data-toggle="modal" data-target="#id02">Log in</button>
-        <button type="button" id="signup" data-toggle="modal" data-target="#id01">Sign up </button>
+        <button type="button" id="signup" data-toggle="modal" data-target="#id01">Sign up</button>
 
         <% } %>
 
@@ -35,11 +35,23 @@
 
     <div class="nav">
         <ul>
-            <li><a href="/" ><button type="button" class="home"><img class="nav-icon" src="../icon/home-icon-silhouette.png"><div>Home</div></button></a></li>
+            <li><a href="/">
+                    <button type="button" class="home"><img class="nav-icon" src="../icon/home-icon-silhouette.png">
+                        <div>Home</div>
+                    </button>
+                </a></li>
 
-            <li><a href="/lookup" ><button type="button" class="lookup"><img class="nav-icon" src="../icon/magnifier.png"><div>Lookup</div></button></a></li>
+            <li><a href="/lookup">
+                    <button type="button" class="lookup"><img class="nav-icon" src="../icon/magnifier.png">
+                        <div>Lookup</div>
+                    </button>
+                </a></li>
 
-            <li><a href="/games" ><button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png"><div>Games</div></button></a></li>
+            <li><a href="/games">
+                    <button type="button" class="games"><img class="nav-icon" src="../icon/gamepad-console.png">
+                        <div>Games</div>
+                    </button>
+                </a></li>
         </ul>
     </div>
 </header>
@@ -56,12 +68,12 @@
                 <br>
             </div>
         </div>
-        <div id = games>
+        <div id=games>
             <div class="match">
                 <button id="game1"><a href="/games/match">Play</a></button>
             </div>
             <div class="wordsearch">
-                <button id = "game2"><a href="/games/wordsearch">Play</a></button>
+                <button id="game2"><a href="/games/wordsearch">Play</a></button>
             </div>
 
 
@@ -73,8 +85,9 @@
     <p class='copyright'>Copyright&copy; 2018 of <span class="team-name">Rainbow Rift</span></p>
 </footer>
 
+
 <!-- Sign up Modal -->
-<div class="modal fade" id="id01" tabindex="-1" role="dialog"  aria-hidden="true">
+<div class="modal fade" id="id01" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
 
@@ -87,23 +100,29 @@
                 <form name="signupform" action="/profile" method="post">
 
                     <div class="container">
-                        <h1 id = "banner1">  Join us today!</h1>
+
+                        <% if(typeof messages != 'undefined' && messages) { %>
+                        <p class="errormsg"><%= messages %></p>
+                        <% } %>
+
+                        <h1 id="banner1"> Join us today!</h1>
                         <div class="form-container">
-                            <p id = "banner2">  Please fill in this form to create an account.</p>
+                            <p id="banner2"> Please fill in this form to create an account.</p>
                             <hr>
-                            <label for="username"><b>Username   </b></label>
+
+                            <label for="username"><b>Username </b></label>
                             <input type="text" placeholder="Create a username" name="username" required>
                             <br>
-                            <label for="password"><b>Password   </b></label>
+                            <label for="password"><b>Password </b></label>
                             <input type="password" placeholder="Your passcode" name="password" required>
                             <br>
                             <label for="passwordConf"><b>Re-enterPassword </b></label>
-                            <input type="password" name="passwordConf" placeholder="Confirm Password" required="">
+                            <input type="password" name="passwordConf" placeholder="Confirm Password" required>
                             <br>
 
                             <div class="modal-footer">
                                 <button type="button" id="cancel" data-dismiss="modal">Maybe later...</button>
-                                <button type="submit" id="submit_signup" value="REGISTER">Sign Me Up ! </button>
+                                <button type="submit" id="submit_signup" value="REGISTER">Sign Me Up !</button>
                             </div>
 
                         </div>
@@ -116,7 +135,7 @@
 </div>
 
 <!-- Log in Modal -->
-<div class="modal fade" id="id02" tabindex="-1" role="dialog"  aria-hidden="true">
+<div class="modal fade" id="id02" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
 
@@ -129,13 +148,17 @@
 
                 <form name="loginform" action="/profile" method="post">
                     <div class="container">
-                        <h1 id = "banner1">  Welcome back!</h1>
+                        <% if(typeof messages != 'undefined' && messages) { %>
+                        <p class="errormsg"><%= messages %></p>
+                        <% } %>
+
+                        <h1 id="banner1"> Welcome back!</h1>
                         <hr>
                         <div class="form-container">
-                            <label for="username"><b>Username   </b></label>
+                            <label for="username"><b>Username </b></label>
                             <input type="text" placeholder="Your username" name="username" required>
                             <br>
-                            <label for="password"><b>Password   </b></label>
+                            <label for="password"><b>Password </b></label>
                             <input type="password" placeholder="Your passcode" name="password" required>
                             <br>
                             <button type="submit" class="signup" id="submit_signup">Log me in !</button>
@@ -148,10 +171,19 @@
         </div>
     </div>
 </div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+<script src="../../js/signin.js" type="text/javascript"></script>
 <!--Bootstrap JS-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

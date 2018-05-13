@@ -129,14 +129,14 @@ h2{
 }
 
 #attribution{
-    margin-left: 28%;
-    margin-bottom: 5%;
+    margin: 10px auto;
+    text-align: center;
     font-size: 1.1em;
-    font-family:'Comic Sans MS', bold, sans-serif;
-    text-align: justify;
+    font-family:'Baloo', bold, sans-serif;
     clear:left;
     color: orange;
 }
+
 #attribution:hover{
     color: lightcoral;
     transform: scale(1.1);

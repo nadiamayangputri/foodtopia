@@ -1,7 +1,13 @@
 
 module.exports.home = function (req, res) {
     res.render('ejs/home');
+    // res.send(req.flash('info'))
 
+};
+module.exports.flash = function(req, res){
+    // Set a flash message by passing the key, followed by the value, to req.flash().
+    req.flash('info', 'Flash is back!')
+    res.redirect('/');
 };
 module.exports.games = function (req, res) {
     res.render('ejs/games/games');

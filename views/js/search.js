@@ -109,11 +109,15 @@ function autocomplete(inp, arr) {
     });
 }
 
-/*An array containing all the country names in the world:*/
+/*An array containing all the ingredient names in the world:*/
 var ingredient = ["Apple", "Banana", "Tomato", "Lemon", "Avocado", "Chili", "Rosemary", "Ginger-root", "Basil",
                     "Cumin", "Cinnamon", "Clove", "Spinach", "Parsley", "Garlic", "Lettuce", "Celery", "Corn",
                     "Coriander", "Mint", "Cabbage", "Sugar", "Cheese", "Milk", "Butter", "Yoghurt", "Salt", "Black-pepper",
-                    "Potato", "Flour", "Mango", "Rice", "Apricot", "Orange", "Coconut", "Watermelon", "Lime"    ]
+                    "Potato", "Flour", "Mango", "Rice", "Apricot", "Orange", "Coconut", "Watermelon", "Lime", "Carrot",
+                    "Onion", "Broccoli", "Zucchini", "Asparagus","Cauliflower","Beans","Radish","Beetroot","Pea",
+                    "Muskmelon", "Grapes", "Pear", "Strawberry", "Blueberry", "Raspberry", "Cranberry", "Cucumber", "Eggplant",
+                    "Starfruit", "Pumpkin", "Kiwi", "Peach", "Cherry", "Pineapple"
+                    ];
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
 autocomplete(document.getElementById("input"), ingredient);
 

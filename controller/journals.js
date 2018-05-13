@@ -1,6 +1,8 @@
 
 var mongoose = require('mongoose');
 mongoose.set('debug', true);
+
+//User database
 var journals = mongoose.model('journals');
 
 // returns a formatted date for journal
@@ -37,7 +39,7 @@ module.exports.createEntry = function (req, res, next) {
             "user" : req.session.userId,
             "meal": req.body.meal,
             "ingredients": req.body.ingredients,
-            "comments": req.body.comments,
+            "comments": req.body.comments
         });
 
         newEntry.save(function (err, entry) {
