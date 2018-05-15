@@ -157,9 +157,6 @@ li {
     border-radius: 20px;
     padding: 10px;
     background-color: #3ee1bf;
-}
-
-.journal-entry p{
     font-family: "Montserrat", sans-serif;
     font-size: 0.9em;
 }
@@ -177,6 +174,22 @@ li {
     text-align: center;
     font-size: 1.2em;
 }
+
+.linked {
+    font-family: "Montserrat", sans-serif;
+    border: 0;
+    border-radius: 10px;
+    padding: 3px;
+    background-color: #a6ef19;
+    color: #fff;
+    margin: 2px;
+}
+
+
+.journal-p {
+    margin: 5px 0 0 0;
+}
+
 
 /*Style for badges*/
 #badges {

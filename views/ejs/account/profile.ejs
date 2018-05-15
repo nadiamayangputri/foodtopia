@@ -137,8 +137,20 @@
             </div>
         </div>
 
+
         <!--Display all journals created by user-->
         <div class="journal-container">
+
+            <!--Stores all the ingredients in the database-->
+            <% var ingredientsInDatabase = ["apple", "banana", "tomato", "lemon", "avocado", "chili", "rosemary", "ginger-root", "basil",
+                "cumin", "cinnamon", "clove", "spinach", "parsley", "garlic", "lettuce", "celery", "corn",
+                "coriander", "mint", "cabbage", "sugar", "cheese", "milk", "butter", "yoghurt", "salt", "black-pepper",
+                "potato", "flour", "mango", "rice", "apricot", "orange", "coconut", "watermelon", "lime", "carrot",
+                "onion", "broccoli", "zucchini", "asparagus","cauliflower","beans","radish","beetroot","pea",
+                "muskmelon", "grapes", "pear", "strawberry", "blueberry", "raspberry", "cranberry", "cucumber", "eggplant",
+                "starfruit", "pumpkin", "kiwi", "peach", "cherry", "pineapple"
+            ];%>
+
             <% if(journals.length === 0) { %>
                 <h3 class="empty">No Posts yet :(</h3>
             <% } else { %>
@@ -146,10 +158,33 @@
                 <div class="journal-entry">
                         <h4 class="date"><%=journals[i].date%></h4>
                     <div class="journal-content">
-                        <p><b>What I ate:</b> <%=journals[i].meal%></p>
-                        <p><b>What it is made of:</b> <%=journals[i].ingredients%></p>
-                        <p><b>Comments:</b></p>
-                        <p><%=journals[i].comments%></p>
+                        <p class="journal-p"><b>What I ate:</b> <%=journals[i].meal%></p>
+
+                        <p class="journal-p"><b>What it is made of:</b></p>
+                        <!--display each ingredient the user inputted and link it to database if it's available-->
+                        <% for (var j = 0; j < journals[i].ingredients.length; j++) {%>
+
+                            <!--standardise the ingredients inputted by removing white spaces and making lower case-->
+                            <% var ingredient = journals[i].ingredients[j].trim().toLowerCase()%>
+                            <!--find index of the ingredient-->
+                            <% var ingredientIndex = ingredientsInDatabase.indexOf(ingredient)%>
+
+                            <!--if index is -1, it means its not in the database. Hence, donli create a link on it.-->
+                            <% if( ingredientIndex > 0) { %>
+                                <a target="_blank" href=<%="/lookup/" + ingredientsInDatabase[ingredientIndex]%>>
+                                    <button class="linked"><%=journals[i].ingredients[j]%></button>
+                                </a>
+                            <% } else { %>
+                                <%=journals[i].ingredients[j]%>
+                            <% } %>
+
+                            <!--put seperator between ingredients-->
+                            <%if(j !== journals[i].ingredients.length - 1) { %>
+                                <span> | </span>
+                            <% } %>
+                        <% } %>
+                        <p class="journal-p"><b>Comments:</b></p>
+                        <%=journals[i].comments%>
                     </div>
                 </div>
                 <%}%>

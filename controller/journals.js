@@ -34,11 +34,14 @@ module.exports.createEntry = function (req, res, next) {
     if (req.body.meal && req.body.ingredients) {
         var newEntry;
         var dateString = formatDate(new Date());
+        var ingredientsArray= req.body.ingredients.split(',')
+
         newEntry = new journals({
             "date": dateString,
             "user" : req.session.userId,
             "meal": req.body.meal,
-            "ingredients": req.body.ingredients,
+            "ingredients": ingredientsArray,
+            // "ingredients": req.body.ingredients,
             "comments": req.body.comments
         });
 

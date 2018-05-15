@@ -4,7 +4,7 @@ var journalSchema = mongoose.Schema(
         "date": String,
         "user": String,
         "meal":String,
-        "ingredients":String,
+        "ingredients":Array,
         "comments":String
     }
 );
