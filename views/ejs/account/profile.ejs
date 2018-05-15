@@ -170,7 +170,7 @@
                             <% var ingredientIndex = ingredientsInDatabase.indexOf(ingredient)%>
 
                             <!--if index is -1, it means its not in the database. Hence, donli create a link on it.-->
-                            <% if( ingredientIndex > 0) { %>
+                            <% if( ingredientIndex >= 0) { %>
                                 <a target="_blank" href=<%="/lookup/" + ingredientsInDatabase[ingredientIndex]%>>
                                     <button class="linked"><%=journals[i].ingredients[j]%></button>
                                 </a>
