@@ -15,11 +15,10 @@ function formatDate(date) {
     ];
 
     var dayNames = [
-      "Monday", "Tuesday", "Wednesday", "Thursday",
-      "Friday", "Saturday", "Sunday"
+      "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
     ];
 
-    var dayIndex = date.getDay() - 1;
+    var dayIndex = date.getDay();
     var day = date.getDate();
     var monthIndex = date.getMonth();
     var year = date.getFullYear();
