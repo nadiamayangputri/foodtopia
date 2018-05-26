@@ -126,6 +126,10 @@
 
 }
 
+.nav, .content{
+    background-color: white;
+}
+
 .word-game {
     grid-area: game-2;
     height: 200px;

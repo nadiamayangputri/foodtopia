@@ -1,0 +1,13 @@
+
+#list{
+    display: flex; /*or inline-flex*/
+    flex-direction : column;
+    font-family: 'Helvetica', sans-serif;
+}
+.ack_link{
+    padding-bottom: 0.5em;
+}
+
+.ack_link:hover{
+    color: lightsalmon;
+}

@@ -127,7 +127,9 @@ a.visited {
 .content {
     flex: 1 0 auto;
 }
-
+.nav, .content{
+    background-color: #fbffd4;
+}
 .footer {
     flex-shrink: 0;
     background-color: #a6ef19;
@@ -143,11 +145,14 @@ a.visited {
 
 .team-name {
     font-family: 'Righteous', cursive;
+    font-size: 2em;
+    color: #fff;
+
 }
 
 .team-name:hover {
-    background-image: linear-gradient(to right,red,
-    orange , yellow, green);
+    background-image: linear-gradient(to right,
+    orange , yellow, greenyellow,forestgreen, cornflowerblue, blue, violet);
     
     font-weight: bold;
     -webkit-background-clip: text;

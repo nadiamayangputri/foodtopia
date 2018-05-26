@@ -13,6 +13,8 @@ var urlencodedParser = express().use(bodyParser.urlencoded({ extended: false }))
 
 
 router.get('/', controller.home);
+router.get('/aboutus', controller.aboutus);
+
 
 router.post('/profile',urlencodedParser,userController.validate);// Create new user
 router.get('/profile', userController.profile);

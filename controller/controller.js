@@ -42,3 +42,7 @@ module.exports.signup = function (req,res) {
     res.render('ejs/account/signup');
 
 };
+module.exports.aboutus = function (req,res) {
+    res.render('ejs/about_us');
+
+};
