@@ -42,7 +42,7 @@ app.use(function(req,res,next){
     next();
 });
 
-const router =  require('./routes/home.js');
+const router =  require('./routes/allroutes.js');
 
 app.set('view engine', 'ejs');
 app.use(router);

@@ -133,30 +133,27 @@ a.visited {
 .footer {
     flex-shrink: 0;
     background-color: #a6ef19;
-    padding: 20px 20px;
+    padding: 10px 20px;
 }
 
-.copyright {
+.copyright,
+.about {
     color: #fff;
     text-align: right;
     margin: 0;
-    font-size: 0.8em;
+    font-family: "Montserrat", sans-serif;
 }
 
-.team-name {
-    font-family: 'Righteous', cursive;
-    font-size: 2em;
-    color: #fff;
-
+.about {
+    font-size: 0.9em;
 }
 
-.team-name:hover {
-    background-image: linear-gradient(to right,
-    orange , yellow, greenyellow,forestgreen, cornflowerblue, blue, violet);
-    
+.copyright {
+    font-size: 0.5em;
+}
+
+.about:hover {
     font-weight: bold;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 button {
@@ -369,7 +366,7 @@ button:focus {
 
     .footer {
         height: 100px;
-        padding: 37px
+        padding: 27px
     }
 }
 

@@ -1,13 +1,89 @@
+.content {
+    padding: 10px 0px;
+    font-family: "Montserrat", sans-serif;
+}
 
-#list{
+.subheading {
+    background-color: #3ee1bf;
+    border-top: solid 5px #fff;
+    border-bottom: solid 5px #fff;
+    font-family: "Candal", sans-serif;
+    color: #fff;
+    padding: 10px 20px;
+}
+#authors_intro {
+    padding: 25px 0;
+}
+
+
+.team-name {
+    font-family: 'Righteous', cursive;
+    font-size: 2em;
+    font-weight: bolder;
+    color: #3a3a3a;
+
+}
+
+.team-name:hover {
+    background-image: linear-gradient(to right,
+    orange , yellow, greenyellow,forestgreen, cornflowerblue, blue, violet);
+
+    font-weight: bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+.team {
+    /*text-shadow: 3px 5px 10px rgba(0,0,0,0.5);*/
+    color: #606060;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+#memberlist {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+#memberlist div {
+    padding: 10px;
+
+}
+
+.ack {
+    padding: 25px;
+}
+
+.ack_message {
+    text-align: center;
+}
+
+
+.list{
     display: flex; /*or inline-flex*/
     flex-direction : column;
-    font-family: 'Helvetica', sans-serif;
+    text-align: center;
+    list-style: none;
 }
+
 .ack_link{
     padding-bottom: 0.5em;
 }
 
 .ack_link:hover{
     color: lightsalmon;
+}
+
+@media (max-width: 900px) {
+    .content {
+        padding: 10px 0;
+    }
+
+    #memberlist {
+        flex-direction: column;
+    }
+
+
 }

@@ -1,9 +1,4 @@
 
-.content {
-    background-color: #ff8351;
-    width: 100%;
-}
-
 .main-background {
     background-color: #fff;
 }
@@ -173,6 +168,12 @@
     padding: 5px 15px;
     margin: auto;
     margin-bottom: 2em;
+}
+
+
+.content {
+    background-color: #ff8351;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
